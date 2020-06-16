@@ -21,7 +21,7 @@ The MVP features for my app include:
 
     A survey for to fill out, for those who have been before or for users after their trip.
 
-    There are a lot of additional features I would like to add. Information on restroom locations, shops, restaurants and extend attractions to include parades and shows. A countdown clock. Each attraction having an average wait time and ride duration information. time information distinguished by time of day, day of week, and time of year. Fun quizes. A more interactive map.
+    There are a lot of additional features I would like to add. Information on restroom locations, shops, restaurants and extend attractions to include parades and shows. A countdown clock. Each attraction having an average wait time and ride duration information. time information distinguished by time of day, day of week, and time of year. Fun quizes. A more interactive map. Use of fast passes. 
 
     Views:
 
@@ -46,29 +46,85 @@ The MVP features for my app include:
 
     Table Users:
 
-    user_id: serial
-    username: varchar(20) primary key
+    user_id: serial primary key
+    username: varchar(20) 
     password: varchar(20)
     email: varchar(30)
 
     Table trip:
 
     trip_id: serial
-    user: varchar(20) foreign key
+    user: integer foreign key
     attraction: varchar(20)
 
     Table attractions:
 
-    attraction_id: serial
-    name: varchar(20) primary key
+    attraction_id: serial primary key
+    name: varchar(20) 
     location: varchar(20)
 
     Table rating:
 
     rating_id: serial
+    attraction_id: integer foreign key
     attraction: varchar(20)
     rating: integer
     comments: varchar(100)
+
+End Points:
+
+Post register new user "/api/register"
+Post login "/api/login"
+Delete logout "/api/logout"
+Get all attractions "/api/attractions"
+Get attraction "/api/attraction/:id"
+Get trip "/api/trip"
+Post to trip "/api/trip"
+Delete from trip "/api/trip/:id"
+Post new survey "/api/survey"
+Put edit survey "/api/survey/:id"
+
+register: async (req, res) => {
+const db = req.app.get('db')
+const { username, password, email} = req.body
+
+const exisitingUser = await db.check_user(username)
+if(existingUser[0]) {
+    return res.status(409).send("User already exists!")
+}
+const salt = bcrypt.genSaltSync(10)
+const hash = bcrypt.hashSync(password, salt)
+
+const newUser = await db.register_user([username, hash])
+
+req.session.user = {
+    id: newUser[0].id,
+    username: newUser[0].username
+    email: newUser[0].email
+}
+res.status(200).send(req.session.user)
+},
+
+
+
+70 points:
+
+3 responsive views: 10
+Redux: 15
+Hooks: 10
+Authentication: 10
+
+NodeMailer: 10
+ChartJS: 10
+Sass: 10
+
+Hosting: 15
+
+Presentation: 10
+
+
+
+
 
 
 

@@ -1,0 +1,99 @@
+.disneyland {
+background-color: aquamarine;
+width: 100vw;
+height: 100vh;
+border-radius: 45%;
+}
+.starwars {
+background-color: silver;
+width: 300px;
+height: 150px;
+position: relative;
+top: 15px;
+left: 200px;
+z-index: 4;
+border-radius: 30%;
+
+}
+.toontown {
+background-color: yellow;
+width: 400px;
+height: 100px;
+position: relative;
+top: -195px;
+left: 500px;
+z-index: 2;
+border-radius: 30%;
+}
+.crittercountry {
+    background-color: brown;
+    width: 200px;
+    height: 200px;
+    position: relative;
+    top: -171px;
+    left: 50px;
+    z-index: 5;
+    border-radius: 15%;
+}
+.lake {
+    background-color: darkblue;
+    width: 200px;
+    height: 200px;
+    border-radius: 90%;
+    position: relative;
+    left: 200px;
+    top: -245px;
+}
+.frontierland {
+    background-color: orange;
+    width: 200px;
+    height: 200px;
+    position: relative;
+    top: -445px;
+    left: 400px;
+    z-index: 2;
+}
+.fantasyland {
+background-color: pink;
+width: 450px;
+height: 300px;
+position: relative;
+left: 400px;
+top: -795px;
+z-index: 1;
+border-radius: 30%;
+}
+.neworleanssquare {
+    background-color: purple;
+    width: 200px;
+    height: 200px;
+    position: relative;
+    bottom: 770px;
+    left: 80px;
+    border-radius: 45%;
+}
+.adventureland {
+    background-color: green;
+    width: 200px;
+    height: 200px;
+    position: relative;
+    bottom: 900px;
+    left: 300px;
+}
+.mainstreet {
+    background-color: red;
+    width: 100px;
+    height: 200px;
+    position: relative;
+    left: 500px;
+    bottom: 1100px;
+}
+.tomorrowland {
+    background-color: lightblue;
+    width: 350px;
+    height: 700px;
+    position: relative;
+    left: 680px;
+    bottom: 1780px;
+    border-radius: 30%;
+}

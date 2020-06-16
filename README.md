@@ -1,68 +1,74 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Ideas and users:
 
-## Available Scripts
+This app helps people who are taking a trip to Disneyland maximize their trip.
 
-In the project directory, you can run:
+It does this by helping know which attractions they want to experience based on descriptions and by a rating based on other users' input. It helps them deicde in advance the order they want to visit attractions in advance to save time and confusion in the park.
 
-### `npm start`
+This is primarily for people how are going to Disneyland for the first time or people who haven't been for a long time although this will also be enjoyable for any fans of Disneyland.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Features:
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+The MVP features for my app include:
 
-### `npm test`
+    The ability to create and login to your own profile.
+    A map to reference the park.
+    
+    A list of all the attractions in the park.
+    
+    The ability to click on an attraction from either the map  or the list to see general information and user ratings and opinions on that attraction. 
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    The ability to select attractions from the list and at them to your trip plan, also the ability to remove items from your plan.
 
-### `npm run build`
+    A survey for to fill out, for those who have been before or for users after their trip.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    There are a lot of additional features I would like to add. Information on restroom locations, shops, restaurants and extend attractions to include parades and shows. A countdown clock. Each attraction having an average wait time and ride duration information. time information distinguished by time of day, day of week, and time of year. Fun quizes. A more interactive map.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+    Views:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    Login Page : When coming to the page you will come here first. You will also be sent back here once you have logged out.
 
-### `npm run eject`
+    Map: There will be a link on the navbar that will direct you here.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+    My Trip: Once you login in you will be sent here. There will also be a link on the navbar that will send you here.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    Survey Form: There will be a link on the navbar that will send you here.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+    Attraction: You will be sent here when you click on an attraction on either the map or my trip view.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+    Routes:
 
-## Learn More
+    Login Page: "/Auth"
+    My Trip: "/"
+    Map: "/Map"
+    Survey Form: "/Survey"
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    Schema:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+    Table Users:
 
-### Code Splitting
+    user_id: serial
+    username: varchar(20) primary key
+    password: varchar(20)
+    email: varchar(30)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+    Table trip:
 
-### Analyzing the Bundle Size
+    trip_id: serial
+    user: varchar(20) foreign key
+    attraction: varchar(20)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+    Table attractions:
 
-### Making a Progressive Web App
+    attraction_id: serial
+    name: varchar(20) primary key
+    location: varchar(20)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+    Table rating:
 
-### Advanced Configuration
+    rating_id: serial
+    attraction: varchar(20)
+    rating: integer
+    comments: varchar(100)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
 
-### Deployment
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify

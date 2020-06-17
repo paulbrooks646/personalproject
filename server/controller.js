@@ -1,4 +1,4 @@
-import bcrypt from('bcrypt')
+const bcrypt = require('bcrypt')
 
 module.exports = {
 
@@ -6,7 +6,7 @@ module.exports = {
         const db = req.app.get('db')
         const { username, password, email} = req.body
         
-        const exisitingUser = await db.check_user(username)
+        const existingUser = await db.check_user(username)
         if(existingUser[0]) {
             return res.status(409).send("User already exists!")
         }
@@ -90,11 +90,11 @@ module.exports = {
             const db = req.app.get('db')
             const {tripId} = req.body
 
-            db.get_trip()
+            db.get_trip(tripId)
             .then( trip => res.status(200).send(trip))
         },
 
-            addToTrip: (req, res) => {
+        addToTrip: (req, res) => {
             const db = req.app.get('db')
             const {tripId, userId, attraction_id} = req.body
 

@@ -69,7 +69,34 @@ module.exports = {
                 res.sendStatus(404)}
             },
 
+        newSurvey: (req, res) => {
+            const db = req.app.get('db')
             
-        
+            },
+        editSurvey: (req, res) => {
+            const db = req.app.get('db')
 
+        },
+        retrieveTrip: (req, res) => {
+            const db = req.app.get('db')
+
+            db.get_trip()
+            .then( trip => res.status(200).send(trip))
+        },
+        newTrip: (req, res) => {
+            const db = req.app.get('db')
+
+            
+        },
+        addToTrip: (req, res) => {
+            const db = req.app.get('db')
+
+
+        },
+        deleteFromTrip: (req, res) => {
+        const db = req.app.get('db')
+        const {attraction_id} = req.params
+        db.remove_attraction(attraction_id)
+        .then( () => res.sendStatus(200))
+        }         
 }

@@ -16,7 +16,7 @@ module.exports = {
         const newUser = await db.register_user([username, hash, email])
         
         req.session.user = {
-            id: newUser[0].id,
+            id: newUser[0].user_id,
             username: newUser[0].username,
             email: newUser[0].email
         }
@@ -71,34 +71,34 @@ module.exports = {
 
         newSurvey: (req, res) => {
             const db = req.app.get('db')
-            const {newArray} = req.body
+            const {attraction_id, user_id, rating, comments} = req.body
 
-            db.new_survey([...newArray])
+            db.new_survey([attraction_id, user_id, rating, comments])
             .then( () => res.sendStatus(200))
             },
 
         editSurvey: (req, res) => {
             const db = req.app.get('db')
             const {id} = req.params
-            const {newArray} = req.body
+            const {attraction_id, rating, comments} = req.body
 
-            db.edit_survey([...newArray], id)
+            db.edit_survey(id, attraction_id, rating, comments)
             .then( () => res.sendStatus(200))
         },
 
         retrieveTrip: (req, res) => {
             const db = req.app.get('db')
-            const {tripId} = req.body
+            const {trip_id} = req.body
 
-            db.get_trip(tripId)
+            db.get_trip(trip_id)
             .then( trip => res.status(200).send(trip))
         },
 
         addToTrip: (req, res) => {
             const db = req.app.get('db')
-            const {tripId, userId, attraction_id} = req.body
+            const {trip_id, user_id, attraction_id} = req.body
 
-            db.add_to_trip([tripId, userId, attraction_id])
+            db.add_to_trip([trip_id, user_id, attraction_id])
             .then(res.sendStatus(200))
         },
 

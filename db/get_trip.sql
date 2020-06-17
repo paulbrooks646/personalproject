@@ -1,2 +1,2 @@
-select * from trip
-where travel_id = $1;
+select * from trips
+where trip_id = $1;

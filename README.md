@@ -55,8 +55,8 @@ The MVP features for my app include:
 
     id: serial primary key
     trip_id: integer
-    user: integer foreign key
-    attraction_id: varchar(20) foreign key
+    user_id: integer foreign key
+    attraction_id: integer foreign key
 
     Table attractions:
 

@@ -53,9 +53,10 @@ The MVP features for my app include:
 
     Table trip:
 
-    trip_id: serial
+    id: serial primary key
+    trip_id: integer
     user: integer foreign key
-    attraction: varchar(20)
+    attraction_id: varchar(20) foreign key
 
     Table attractions:
 
@@ -67,6 +68,7 @@ The MVP features for my app include:
 
     rating_id: serial
     attraction_id: integer foreign key
+    user_id: integer foreign key
     attraction: varchar(20)
     rating: integer
     comments: varchar(100)

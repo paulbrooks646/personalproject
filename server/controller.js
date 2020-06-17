@@ -71,32 +71,42 @@ module.exports = {
 
         newSurvey: (req, res) => {
             const db = req.app.get('db')
-            
+            const {newArray} = req.body
+
+            db.new_survey([...newArray])
+            .then( () => res.sendStatus(200))
             },
+
         editSurvey: (req, res) => {
             const db = req.app.get('db')
+            const {id} = req.params
+            const {newArray} = req.body
 
+            db.edit_survey([...newArray], id)
+            .then( () => res.sendStatus(200))
         },
+
         retrieveTrip: (req, res) => {
             const db = req.app.get('db')
+            const {tripId} = req.body
 
             db.get_trip()
             .then( trip => res.status(200).send(trip))
         },
-        newTrip: (req, res) => {
+
+            addToTrip: (req, res) => {
             const db = req.app.get('db')
+            const {tripId, userId, attraction_id} = req.body
 
-            
+            db.add_to_trip([tripId, userId, attraction_id])
+            .then(res.sendStatus(200))
         },
-        addToTrip: (req, res) => {
-            const db = req.app.get('db')
 
-
-        },
         deleteFromTrip: (req, res) => {
         const db = req.app.get('db')
-        const {attraction_id} = req.params
-        db.remove_attraction(attraction_id)
+        const {id} = req.params
+
+        db.remove_attraction(id)
         .then( () => res.sendStatus(200))
         }         
 }

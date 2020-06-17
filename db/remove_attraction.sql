@@ -1,2 +1,2 @@
 delete from trip
-where attraction_id = $1;
+where id = $1;

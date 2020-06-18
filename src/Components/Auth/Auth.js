@@ -1,9 +1,77 @@
-import React from 'react'
+import React, {useState} from 'react'
+import axios from 'axios'
+import {connect} from 'react-redux'
+import {loginUser, registerUser} from '../../ducks/userReducer'
 
 function Auth(props) {
+
+const [username, setUsername] = useState("")
+const [password, setPassword] = useState("")
+const [newUsername, setNewUsername] = useState("")
+const [newPassword, setNewPassword] = useState("")
+const [newEmail, setNewEmail] = useState("")
+
+const login = () => {
+    axios.post('/api/login', {username, password})
+    .then( res => {
+        props.loginUser(res.data)
+        props.history.push('/Dashboard')
+    })
+    .catch (err => {alert('Username or password incorrect')})
+}
+
+const register = () => {
+    console.log({newUsername, newPassword, newEmail})
+    axios.post('/api/register', {newUsername, newPassword, newEmail})
+    .then( res => {
+        props.registerUser(res.data)
+        props.history.push('/Dashboard')
+    })
+    .catch( err => { alert('Could not register')})
+}
+
     return (
-        <div>Auth</div>
+        <div>
+            <h1>Disneyland Trip Planner</h1>
+            <h2>If you already have an account, login here:</h2>
+            <div>
+                <input 
+                    placeholder="username"
+                    type="text"
+                    value={username} 
+                    onChange={e => setUsername(e.target.value)}/>
+                <input 
+                    placeholder="password"
+                    type="password"
+                    value={password} 
+                    onChange={e => setPassword(e.target.value)}/>
+                <button onClick={() => login()}>Login</button>
+            </div>
+            <h2>If you are new to Disneyland Trip Planner, register here:</h2>
+            <div>
+                <input 
+                    placeholder="username"
+                    type="text"
+                    value={newUsername} 
+                    onChange={e => setNewUsername(e.target.value)}/>
+                <input 
+                    placeholder="password"
+                    type="password"
+                    value={newPassword} 
+                    onChange={e => setNewPassword(e.target.value)}/>
+                <input 
+                    placeholder="email"
+                    type="email"
+                    value={newEmail} 
+                    onChange={e => setNewEmail(e.target.value)}/>
+                <button onClick={() => register()} >Register</button>
+            </div>
+        </div>
     )
 }
 
-export default Auth
+const mapStateToProps = reduxState => reduxState
+
+const mapDispatchToProps = {loginUser, registerUser}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Auth)

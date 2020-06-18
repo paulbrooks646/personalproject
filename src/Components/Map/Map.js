@@ -1,12 +1,20 @@
 import React from 'react'
+import {connect} from 'react-redux'
+import {getAttractions} from '../../ducks/attractionReducer'
 import './Map.css'
 
 
-function Map() {
+function Map(props) {
+
+    const attractionsArray = props.attractions.attractions.map( (e, index) => {
+        return <div key={index} className="attraction"></div>
+   })
 
     return (
         <div className="disneyland">
-            <div className="starwars"></div>
+            {attractionsArray}
+
+            {/* <div className="starwars"></div>
             <div className="toontown"></div>
             <div className="crittercountry"></div>
             <div className="lake"></div>
@@ -15,9 +23,10 @@ function Map() {
             <div className="neworleanssquare"></div>
             <div className="adventureland"></div>
             <div className="mainstreet"></div>
-            <div className="tomorrowland"></div>
+            <div className="tomorrowland"></div> */}
         </div>
     )
 }
 
-export default Map
+const mapStateToProps = reduxState => reduxState
+export default connect(mapStateToProps, {getAttractions})(Map)

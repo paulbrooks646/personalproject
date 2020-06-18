@@ -10,7 +10,7 @@ import Survey from './Components/Survey/Survey.js'
 export default (
     <Switch>
         <Route exact path="/" component={Auth}/>
-        <Route path="/Attraction/:attraction-id" component={Attraction}/>
+        <Route path="/Attraction/:attraction_id" component={Attraction}/>
         <Route path="/Dashboard" component={Dashboard}/>
         <Route path="/Map" component={Map}/>
         <Route path="/Survey" component={Survey}/>

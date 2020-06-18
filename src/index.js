@@ -11,7 +11,7 @@ ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
     <HashRouter>
-    <App/>
+    <App />
     </HashRouter>
     </Provider>
   </React.StrictMode>,

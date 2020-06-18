@@ -2,9 +2,7 @@ import React from 'react'
 import './Map.css'
 
 
-export default function() {
-
-
+function Map() {
 
     return (
         <div className="disneyland">
@@ -21,3 +19,5 @@ export default function() {
         </div>
     )
 }
+
+export default Map

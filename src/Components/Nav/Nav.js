@@ -31,10 +31,10 @@ const logout = () => {
             <div className="imagediv">
                 <img className="image" src="https://cdn1.parksmedia.wdprapps.disney.com/media/blog/wp-content/uploads/2019/05/ksjfhury85ui11.jpg" alt="Disneyland Castle" />
             </div>
-            <div>
-                <h2>Welcome</h2>
+            <div className="greetingdiv">
+                <h2 className="greeting">Welcome {props.user.user.username}</h2>
             </div>
-            <div>
+            <div className="linkdiv">
                <Link to="/Dashboard">
                    <button>Trip Builder</button>
                </Link>
@@ -45,7 +45,7 @@ const logout = () => {
                    <button>Survey</button>
                </Link>
             </div>
-            <div>
+            <div className="logoutdiv">
                 <button onClick={() => logout()}>Logout</button>
             </div>
         </div>            

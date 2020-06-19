@@ -10,8 +10,8 @@ function Survey(props) {
 
     const attractionsArray = props.attractions.attractions.map( (e, index) => {
     return (
-    <div>
-        <h2 key={index}>{e.name}</h2>
+    <div key={index} className="radio">
+        <h3 className="surveyattraction">{e.name}</h3>
         <label>1</label>
         <input type="radio" name={index} value="1"/>
         <label>2</label>
@@ -32,9 +32,8 @@ function Survey(props) {
         <input type="radio" name={index} value="9"/>
         <label>10</label>
         <input type="radio" name={index} value="10"/>
-        <label>Haven't tried it.</label>
-        <input type="radio" name={index} value="null" />
-        
+        <label>Haven't tried it</label>
+        <input type="radio" name={index} value="null" />  
     </div>)
    })   
 

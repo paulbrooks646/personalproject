@@ -2,6 +2,7 @@ import React, {useEffect} from 'react'
 import {connect} from 'react-redux'
 import {getAttractions} from '../../ducks/attractionReducer'
 import axios from 'axios'
+import './Dashboard.css'
 
 function Dashboard(props) {
 
@@ -13,10 +14,10 @@ function Dashboard(props) {
     }, [])
 
     const attractionsArray = props.attractions.attractions.map( (e, index) => {
-         return <h2 key={index}>{e.name}</h2>
+         return <div><h2 key={index}>{e.name}</h2></div>
     })
     return (
-        <div>{attractionsArray}</div>
+        <div className="dashboard">{attractionsArray}</div>
     )
 }
 

@@ -18,8 +18,8 @@ export default function(state = initialState, action) {
     switch(action.type) {
             case GET_ATTRACTIONS:
                 return {...state, attractions: action.payload}
-                
+
             default: 
-                return initialState
+                return state
     }
 }

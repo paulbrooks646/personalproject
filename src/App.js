@@ -6,8 +6,12 @@ import Nav from './Components/Nav/Nav.js'
 function App() {
   return (
     <div className="App">
+      <div>
       <Nav/>
+      </div>
+      <div className="routes">
       {Routes}
+      </div>
     </div>
   );
 }

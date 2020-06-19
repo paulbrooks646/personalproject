@@ -1,0 +1,110 @@
+@import './functions';
+@import './mixins';
+@import './variables';
+
+//AUTH
+
+.authmain {
+    width: 100vw;
+    height: 100vh;
+    background: $background;
+    margin-top: -54px;
+}
+
+.authtitle {
+    color: $green;
+    font-size: 80px;
+}
+
+.authimage {
+    width: 300px;
+    height: 200px;
+}
+
+.authh2 {
+    font-size: 35px;
+    margin-top: 40px;
+}
+
+.authinputdiv {
+    margin-top: 50px;
+}
+
+.authinput {
+margin-right: 20px;
+height: 25px;
+width: 200px;
+}
+
+.authbutton {
+    @include button
+}
+
+//NAV
+
+.navbar {
+    @include center(space-evenly);
+    position: fixed;
+    width: 100vw;
+    height: 120px;
+    margin-bottom: 200px;
+    background-color: #FFFF33;
+    z-index: 2;
+}
+
+.image{
+    width: 100px;
+    height: 100px;
+}
+
+.navbutton {
+    @include button;
+    font-size: 11px;
+}
+
+//DASHBOARD
+
+.dashboarddiv {
+    @include center(flex-start);
+}
+
+.dashboardbutton {
+    @include button
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.attraction {
+    background-color: darkorange;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+
+.radio {
+    display: flex;
+    align-items: center;
+    position: relative;
+    top: -15px;
+    margin-top: -25px;
+}
+.surveyattraction {
+    margin-left: 20px;
+    font-size: 15px;
+    margin-right: 20px;
+}

@@ -1,5 +1,5 @@
 import React from 'react'
-
+import "./components.scss"
 
 function Attraction(props) {
     return (

@@ -1,10 +1,10 @@
 import React from "react"
 import {Switch, Route} from 'react-router-dom'
-import Attraction from './Components/Attraction/Attraction.js'
-import Auth from './Components/Auth/Auth.js'
-import Dashboard from './Components/Dashboard/Dashboard.js'
-import Map from './Components/Map/Map.js'
-import Survey from './Components/Survey/Survey.js'
+import Attraction from './Components/Attraction.js'
+import Auth from './Components/Auth.js'
+import Dashboard from './Components/Dashboard.js'
+import Map from './Components/Map.js'
+import Survey from './Components/Survey.js'
 
 
 export default (

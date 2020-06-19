@@ -1,8 +1,9 @@
 import React, {useEffect} from 'react'
 import {connect} from 'react-redux'
-import {getAttractions} from '../../ducks/attractionReducer'
+import {getAttractions} from '../ducks/attractionReducer'
 import axios from 'axios'
-import './Dashboard.css'
+import './components.scss'
+import {Link} from 'react-router-dom'
 
 function Dashboard(props) {
 
@@ -14,7 +15,7 @@ function Dashboard(props) {
     }, [])
 
     const attractionsArray = props.attractions.attractions.map( (e, index) => {
-         return <div><h2 key={index}>{e.name}</h2></div>
+         return <div className="dashboarddiv" key={index}><Link to={`/Attraction/${e.attraction_id}`}><h2>{e.name}</h2></Link><button className="dashboardbutton">Add to Trip</button></div>
     })
     return (
         <div className="dashboard">{attractionsArray}</div>

@@ -1,7 +1,7 @@
 import React from 'react';
-import './App.css';
+import './App.scss';
 import Routes from './routes.js'
-import Nav from './Components/Nav/Nav.js'
+import Nav from './Components/Nav.js'
 
 function App() {
   return (

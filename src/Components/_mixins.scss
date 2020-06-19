@@ -1,0 +1,13 @@
+@mixin button {
+    height: 30px;
+    width: 100px;
+    background-color: black;
+    color: $white; 
+    margin-right: 10px;
+};
+
+@mixin center($justify) {
+    display: flex;
+    justify-content: $justify;
+    align-items: center;
+}

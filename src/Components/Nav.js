@@ -1,9 +1,9 @@
 import React, {useEffect} from 'react'
 import {Link, withRouter} from 'react-router-dom'
 import {connect} from 'react-redux'
-import {logoutUser, getUser} from '../../ducks/userReducer'
+import {logoutUser, getUser} from '../ducks/userReducer'
 import axios from 'axios'
-import './Nav.css'
+import './components.scss'
 
 
 function Nav(props) {
@@ -36,17 +36,17 @@ const logout = () => {
             </div>
             <div className="linkdiv">
                <Link to="/Dashboard">
-                   <button>Trip Builder</button>
+                   <button className="navbutton">Trip Builder</button>
                </Link>
                <Link to="/Map">
-                   <button>Disneyland Map</button>
+                   <button className="navbutton">Disneyland Map</button>
                </Link>
                <Link to="/Survey">
-                   <button>Survey</button>
+                   <button className="navbutton">Survey</button>
                </Link>
             </div>
             <div className="logoutdiv">
-                <button onClick={() => logout()}>Logout</button>
+                <button className="navbutton" onClick={() => logout()}>Logout</button>
             </div>
         </div>            
     )}

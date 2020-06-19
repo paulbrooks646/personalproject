@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {getAttractions} from '../../ducks/attractionReducer'
-import './Survey.css'
+import {getAttractions} from '../ducks/attractionReducer'
+import './components.scss'
 
 
 

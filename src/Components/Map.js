@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {getAttractions} from '../../ducks/attractionReducer'
-import './Map.css'
+import {getAttractions} from '../ducks/attractionReducer'
+import './components.scss'
 
 
 function Map(props) {
@@ -12,6 +12,7 @@ function Map(props) {
 
     return (
         <div className="disneyland">
+            <div className="brown"></div>
             {attractionsArray}
 
             {/* <div className="starwars"></div>

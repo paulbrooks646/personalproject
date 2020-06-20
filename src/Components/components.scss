@@ -1,3 +1,7 @@
+* {
+    text-decoration: none;    
+}
+
 @import './functions';
 @import './mixins';
 @import './variables';
@@ -64,14 +68,54 @@ width: 200px;
 
 //DASHBOARD
 
+.dashboardmain {
+    display: flex;
+}
+
 .dashboarddiv {
     @include center(flex-start);
+    height: 35px;
+    width: 50vw;
 }
 
 .dashboardbutton {
     @include button
 }
 
+.dashboard {
+    position: relative;
+    top: 120px;
+}
+.dashboardattraction {
+    margin-right: 20px;
+
+}
+
+.dashboardlist {
+    @include center(center);
+    width: 50vw;
+}
+
+
+
+
+
+
+
+
+.attractioncard {
+    height: 500px;
+    width: 500px;
+    background-color: $frontier;
+    position: relative;
+    top: 200px;
+    @include center(center);
+    flex-direction: column;
+}
+
+.attractionmain {
+    @include center(center)
+}
 
 
 
@@ -88,11 +132,17 @@ width: 200px;
 
 
 
-.attraction {
-    background-color: darkorange;
-    width: 20px;
-    height: 20px;
+
+
+
+.Dumbo {
+    background-color: black;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
+    z-index: 3;
+    position: relative;
+    top: -420px;
 }
 
 
@@ -107,4 +157,28 @@ width: 200px;
     margin-left: 20px;
     font-size: 15px;
     margin-right: 20px;
+}
+
+.disneyland {
+    opacity: 1;
+    position: relative;
+    top: 120px;
+    width: 100vw;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: 80% 80%;
+    background-image: url($map);
+}
+
+.Alice {
+    Width: 300px;
+    height: 300px;
+    background-color: $main;
+}
+
+.mapattraction {
+    width: 20px;
+    height: 20px;
+    background-color: $blue;
+    border-radius: 50%;
 }

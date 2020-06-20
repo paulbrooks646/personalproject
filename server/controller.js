@@ -24,8 +24,9 @@ module.exports = {
 
         login: async (req, res) => {
             const db = req.app.get('db')
+            console.log(req.body)
             const {username, password} = req.body
-
+            console.log(username)
             const user = await db.check_user(username)
             
             if (!user[0]) {
@@ -87,27 +88,28 @@ module.exports = {
             .then( () => res.sendStatus(200))
         },
 
-        retrieveTrip: (req, res) => {
+        retrieveTrips: (req, res) => {
             const db = req.app.get('db')
-            const {trip_id} = req.body
-
-            db.get_trip(trip_id)
+            console.log(req.params)
+            const {id} = req.params
+            console.log(id)
+            db.get_trips(id)
             .then( trip => res.status(200).send(trip))
         },
 
-        addToTrip: (req, res) => {
+        addTrip: (req, res) => {
             const db = req.app.get('db')
-            const {trip_id, user_id, attraction_id} = req.body
+            const {user_id} = req.body
 
-            db.add_to_trip([trip_id, user_id, attraction_id])
+            db.add_trip(user_id)
             .then(res.sendStatus(200))
         },
 
-        deleteFromTrip: (req, res) => {
-        const db = req.app.get('db')
-        const {id} = req.params
+        // deleteFromTrip: (req, res) => {
+        // const db = req.app.get('db')
+        // const {id} = req.params
 
-        db.remove_attraction(id)
-        .then( () => res.sendStatus(200))
-        }         
+        // db.remove_attraction(id)
+        // .then( () => res.sendStatus(200))
+        // }         
 }

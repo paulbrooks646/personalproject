@@ -1,2 +1,2 @@
 select * from trips
-where trip_id = $1;
+where user_id = $1;

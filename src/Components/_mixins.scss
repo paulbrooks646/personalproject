@@ -4,10 +4,18 @@
     background-color: black;
     color: $white; 
     margin-right: 10px;
-};
+}
 
 @mixin center($justify) {
     display: flex;
     justify-content: $justify;
     align-items: center;
+}
+
+@mixin ride($top, $left) {
+    position: relative;
+    color: black;
+    font-size: 12px;
+    top: $top;
+    left: $left;
 }

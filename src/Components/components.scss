@@ -118,33 +118,7 @@ width: 200px;
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.Dumbo {
-    background-color: black;
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    z-index: 3;
-    position: relative;
-    top: -420px;
-}
-
+//SURVEY
 
 .radio {
     display: flex;
@@ -159,26 +133,198 @@ width: 200px;
     margin-right: 20px;
 }
 
+//MAP
+
 .disneyland {
-    opacity: 1;
+    opacity: .75;
     position: relative;
-    top: 120px;
     width: 100vw;
     height: 100vh;
     background-repeat: no-repeat;
-    background-size: 80% 80%;
+    background-size: 960px 800px;
     background-image: url($map);
+    background-position: center;
+    
+}
+
+.mapnavbar {
+    @include center(space-evenly);
+    position: fixed;
+    width: 100vw;
+    height: 160px;
+    top: 650px;
+    background-color: #FFFF33;
+    z-index: 2;
 }
 
 .Alice {
-    Width: 300px;
-    height: 300px;
-    background-color: $main;
+@include ride(-585px, 10px);
 }
 
-.mapattraction {
-    width: 20px;
-    height: 20px;
-    background-color: $blue;
-    border-radius: 50%;
+.Astro {
+@include ride(-500px, 170px);
 }
+
+.Astroblasters {
+    @include ride(-540px, 260px);
+}
+
+.Autopia {
+    @include ride(-600px, 400px);
+}
+
+.Big {
+    @include ride(-680px, -110px);
+}
+
+.Casey {
+    @include ride(-780px, 5px);
+}
+
+.Disneyland {
+    @include ride(-400px, 70px);
+}
+
+.Dumbo {
+    @include ride(-830px, 90px);
+}
+
+.Enchanted {
+    @include ride(-640px, -10px);
+}
+
+.Gadgets {
+    @include ride(-980px, -10px);
+}
+
+.Haunted {
+    @include ride(-730px, -340px);
+}
+
+.Indiana {
+    @include ride(-610px, -160px);
+}
+
+.Its {
+    @include ride(-1030px, 230px);
+}
+
+.Jungle {
+    @include ride(-760px, -60px);
+}
+
+.King {
+    @include ride(-1005px, 60px);
+}
+
+.Mark {
+    @include ride(-940px, -150px);
+}
+
+.Matterhorn {
+    @include ride(-1770px, 230px);
+}
+
+.Millenium {
+     @include ride(-2000px, 0px);
+    opacity: 1; 
+}
+
+// .Mr {
+//     @include ride;
+//     left: 10px;
+// top: -500px;
+// }
+
+// .Peter {
+//     @include ride;
+//     left: 10px;
+// top: -500px;
+// }
+
+// .Pinocchio {
+//     @include ride;
+//     left: 10px;
+// top: -500px;
+// }
+
+// .Pirates {
+//     @include ride;
+//     left: 10px;
+// top: -500px;
+// }
+
+// .Rise {
+//     @include ride;
+//     left: 10px;
+// top: -500px;
+// }
+
+// .Roger {
+//     @include ride;
+//     left: 10px;
+// top: -500px;
+// }
+
+// .Sailing {
+//     @include ride;
+//     left: 10px;
+// top: -500px;
+// }
+
+// .Snow {
+//     @include ride;
+//     left: 10px;
+// top: -500px;
+// }
+
+// .Space {
+//     @include ride;
+//     left: 10px;
+// top: -500px;
+// }
+
+// .Splash {
+//     @include ride;
+//     left: 10px;
+// top: -500px;
+// }
+
+// .Star {
+//     @include ride;
+//     left: 10px;
+// top: -500px;
+// }
+
+// .Storybookland {
+//     @include ride;
+//     left: 10px;
+// top: -500px;
+// }
+
+// .Submarine {
+//     @include ride;
+//     left: 10px;
+// top: -500px;
+// }
+
+// .Tarzan {
+//     @include ride;
+//     left: 10px;
+// top: -500px;
+// }
+
+// .Teacups {
+//     @include ride;
+//     left: 10px;
+// top: -500px;
+// }
+
+// .Winnie {
+//     @include ride;
+//     left: 10px;
+// top: -500px;
+// }
+
+
+   

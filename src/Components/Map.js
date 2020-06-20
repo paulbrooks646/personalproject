@@ -1,30 +1,19 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {getAttractions} from '../ducks/attractionReducer'
+import {Link} from 'react-router-dom'
 import './components.scss'
 
 
 function Map(props) {
 
     const attractionsArray = props.attractions.attractions.map( (e, index) => {
-        return <div key={index} className={e.name} mapattraction><div className="mapattraction"><h3>{e.name}</h3></div></div>
+        return <Link to={`/Attraction/${e.attraction_id}`}><h3 key={index} className={e.name}>{e.name}</h3></Link>
    })
 
     return (
         <div><div className="disneyland">
-            </div>{attractionsArray}
-            </div>
-            /* <div className="starwars"></div>
-            <div className="toontown"></div>
-            <div className="crittercountry"></div>
-            <div className="lake"></div>
-            <div className="frontierland"></div>
-            <div className="fantasyland"></div>
-            <div className="neworleanssquare"></div>
-            <div className="adventureland"></div>
-            <div className="mainstreet"></div>
-            <div className="tomorrowland"></div> */
-        
+            </div>{attractionsArray}</div>        
     )
 }
 

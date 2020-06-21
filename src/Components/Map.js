@@ -13,7 +13,7 @@ function Map(props) {
 
     return (
         <div><div className="disneyland">
-            </div>{attractionsArray}</div>        
+            </div><div className="container">{attractionsArray}</div></div>        
     )
 }
 

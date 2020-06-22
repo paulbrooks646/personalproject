@@ -105,6 +105,14 @@ module.exports = {
             .then(res.sendStatus(200))
         },
 
+        addEvent: (req, res) => {
+            const db = req.app.get('db')
+            const {trip_id, attraction_id} = req.body
+
+            db.add_event([trip_id, attraction_id])
+                .then(res.sendStatus(200))
+        }
+
         // deleteFromTrip: (req, res) => {
         // const db = req.app.get('db')
         // const {id} = req.params

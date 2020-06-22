@@ -5,6 +5,7 @@
 @import './functions';
 @import './mixins';
 @import './variables';
+@import './mapqueries';
 
 //AUTH
 
@@ -96,6 +97,11 @@ width: 200px;
     width: 50vw;
 }
 
+.triptrip {
+    margin-top: 150px;
+    margin-right: 150px;
+}
+
 //ATTRACTION
 
 
@@ -126,6 +132,7 @@ width: 200px;
     position: relative;
     top: -15px;
     margin-top: -25px;
+    border: solid 1px black;
 }
 .surveyattraction {
     margin-left: 20px;
@@ -157,143 +164,8 @@ width: 200px;
     z-index: 2;
 }
 
-.Alice {
-@include ride(-628px, 430px);
-}
 
-.Astro {
-@include ride(-510px, 605px);
-}
 
-.Astroblasters {
-    @include ride(-555px, 695px);
-}
-
-.Autopia {
-    @include ride(-620px, 840px);
-}
-
-.Big {
-    @include ride(-710px, 330px);
-}
-
-.Casey {
-    @include ride(-830px, 435px);
-}
-
-.Disneyland {
-    @include ride(-430px, 520px);
-}
-
-.Dumbo {
-    @include ride(-900px, 530px);
-}
-
-.Enchanted {
-    @include ride(-720px, 430px);
-}
-
-.Gadgets {
-    @include ride(-1070px, 440px);
-}
-
-.Haunted {
-    @include ride(-850px, 100px);
-}
-
-.Indiana {
-    @include ride(-730px, 260px);
-}
-
-.Its {
-    @include ride(-1150px, 670px);
-}
-
-.Jungle {
-    @include ride(-895px, 370px);
-}
-
-.King {
-    @include ride(-1150px, 520px);
-}
-
-.Mark {
-    @include ride(-1115px, 290px);
-}
-
-.Matterhorn {
-    @include ride(-1875px, 680px);
-}
-
-.Millenium {
-     @include ride(-1500px, 0px);
-    // opacity: 1; 
-}
-
-.Mr {
-    @include ride(-1250px, 590px);
-}
-
-.Peter {
-    @include ride(-1260px, 580px);
-}
-
-.Pinocchio {
-    @include ride(-1335px, 430px);
-}
-
-.Pirates {
-    @include ride(-1190px, 240px);
-}
-
-.Rise {
-    @include ride(-1700px, 0px);
-   opacity: 1
-}
-
-.Roger {
-    @include ride(-1610px, 610px);
-}
-
-.Sailing {
-    @include ride(-1750px, 290px);
-}
-
-.Snow {
-    @include ride(-1465px, 440px);
-}
-
-.Space {
-    @include ride(-1310px, 750px);
-}
-
-.Splash {
-    @include ride(-1500px, 50px);
-}
-
-.Star {
-    @include ride(-1460px, 710px);
-}
-
-.Storybookland {
-    @include ride(-1690px, 620px);
-}
-
-.Submarine {
-    @include ride(-1630px, 770px);
-}
-
-.Tarzan {
-    @include ride(-1555px, 330px);
-}
-
-.Teacups {
-    @include ride(-1780px, 610px);
-}
-
-.Winnie {
-    @include ride(-1770px, 80px);
-}
 
 // .container {
 //     width: 100%;

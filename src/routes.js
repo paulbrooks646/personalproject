@@ -5,6 +5,7 @@ import Auth from './Components/Auth.js'
 import Dashboard from './Components/Dashboard.js'
 import Map from './Components/Map.js'
 import Survey from './Components/Survey.js'
+import Trip from './Components/Trip.js'
 
 
 export default (
@@ -14,5 +15,6 @@ export default (
         <Route path="/Dashboard" component={Dashboard}/>
         <Route path="/Map" component={Map}/>
         <Route path="/Survey" component={Survey}/>
+        <Route path="/Trip/:trip_id" component={Trip}/> 
     </Switch>
 )

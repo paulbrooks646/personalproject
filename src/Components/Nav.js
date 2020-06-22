@@ -7,9 +7,9 @@ import './components.scss'
 
 
 function Nav(props) {
-
+   
     useEffect(() => {
-        props.getUser()
+        getUser()
     }, [])
 
 const logout = () => {

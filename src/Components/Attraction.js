@@ -4,15 +4,17 @@ import axios from 'axios'
 
 function Attraction(props) {
 
+ 
 
     const [attraction, setAttraction] = useState([])
 
     useEffect(() => {
-        axios.get(`/api/attraction/${props.match.params.attraction_id}`)
+        const {attraction_id} = props.match.params
+        axios.get(`/api/attraction/${attraction_id}`)
         .then( res => {
             setAttraction(res.data)
         })
-    }, [])
+    }, [props.match.params])
 
 const info = attraction.map((e, index) => {
     return (

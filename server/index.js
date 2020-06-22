@@ -15,15 +15,6 @@ app.use(session({
     secret: SESSION_SECRET
 }))
 
-massive({
-    connectionString: CONNECTION_STRING,
-    ssl: {rejectUnauthorized: false}
-}).then( db => {
-    app.set("db", db)
-    console.log('I eat db connections for breakfast!')
-    app.listen(SERVER_PORT, () => console.log(`I'm port ${SERVER_PORT}, I'll improvise.`))
-}).catch(err => console.log(err))
-
 app.post('/api/register', controller.register)
 app.post('/api/login', controller.login)
 app.get('/api/attractions', controller.retrieveAttractions)
@@ -33,6 +24,16 @@ app.get('/api/user', controller.getUser)
 app.post('/api/survey', controller.newSurvey)
 app.put('/api/survey/:id', controller.editSurvey)
 app.get('/api/trips/:id', controller.retrieveTrips)
+app.get('/api/trip/:id', controller.getTrip)
 app.post('/api/trip', controller.addTrip)
 app.post('/api/event', controller.addEvent)
-//app.delete('/api/trip/:id', controller.deleteFromTrip)
+app.delete('/api/trip/:id', controller.deleteFromTrip)
+
+massive({
+    connectionString: CONNECTION_STRING,
+    ssl: {rejectUnauthorized: false}
+}).then( db => {
+    app.set("db", db)
+    console.log('I eat db connections for breakfast!')
+    app.listen(SERVER_PORT, () => console.log(`I'm port ${SERVER_PORT}, I'll improvise.`))
+}).catch(err => console.log(err))

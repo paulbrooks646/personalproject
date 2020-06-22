@@ -8,8 +8,7 @@ import { Link } from 'react-router-dom'
 
 function Dashboard(props) {
 
-    const [trips, setTrips] = useState([])
-
+    const [trip, setTrip] = useState([])
 
     useEffect(() => {
         axios.get('/api/attractions')
@@ -17,46 +16,37 @@ function Dashboard(props) {
                 props.getAttractions(res.data)
             })
 
-
-        // getRides();
-        // getTrips();
+        getTrip();
     }, [props.getAttractions])
 
 
-
-    // function getRides() {
-
-    // }
-
-    function getTrips() {
-
-        axios.get(`/api/trips/1`)
-            .then(res =>
-                setTrips(res.data)
-            )
-
+    function getTrip() {
+       axios.get(`/api/trip/${props.match.params.trip_id}`)
+       .then(res =>
+        setTrip(res.data)) 
     }
 
-    function newlist(user_id) {
-        console.log(user_id)
-        console.log(props.user.user.id)
-        axios.post('/api/trip', { user_id });
+   function newEvent(trip_id, attraction_id) {
+       console.log(trip_id, attraction_id)
+        axios.post('/api/event', {trip_id, attraction_id})
+        getTrip()
+        }
+
+    function removeFromTrip(id) {
+        axios.delete(`/api/trip/${id}`)
+        getTrip()
     }
-
-console.log(trips)
-    const currentTrip = trips.map((e) =>
-
-        <Link><h1 key={e.trip_id}>{e.trip_id}</h1></Link>)
-
+    
+const tripArray = trip.map((e) => <div><h1>{e.name}</h1><button onClick={() => removeFromTrip(e.event_id)}>Remove From Trip</button></div>)
 
 
 
     const attractionsArray = props.attractions.attractions.map((e, index) => {
-        return <div className="dashboarddiv" key={index}><Link to={`/Attraction/${e.attraction_id}`}><h2 className="dashboardattraction">{e.name}</h2></Link><button className="dashboardbutton">Add to Trip</button></div>
+        return <div className="dashboarddiv" key={index}><Link to={`/Attraction/${e.attraction_id}`}><h2 className="dashboardattraction">{e.name}</h2></Link><button className="dashboardbutton" onClick={() => newEvent(props.match.params.trip_id, e.attraction_id)}>Add to Trip</button></div>
     })
     return (
 
-        <div className="dashboardmain"><div className="dashboard">{attractionsArray}</div><div className="dashboardlist"><button className="dashboardbutton" onClick={() => newlist(props.user.user.id)}>Create a Trip</button></div><div className="triptrip">{currentTrip}</div></div>
+        <div className="dashboardmain"><div className="dashboard">{attractionsArray}</div><div className="triptrip">{tripArray}</div></div>
     )
 }
 

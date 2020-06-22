@@ -24,9 +24,7 @@ module.exports = {
 
         login: async (req, res) => {
             const db = req.app.get('db')
-            console.log(req.body)
             const {username, password} = req.body
-            console.log(username)
             const user = await db.check_user(username)
             
             if (!user[0]) {
@@ -38,7 +36,6 @@ module.exports = {
                         username: user[0].username,
                         email: user[0].email
                     }
-                    console.log(req.session.user)
                     res.status(200).send(req.session.user)}
                     else {
                         res.status(403).send("Username or password incorrect!")
@@ -90,9 +87,8 @@ module.exports = {
 
         retrieveTrips: (req, res) => {
             const db = req.app.get('db')
-            console.log(req.params)
             const {id} = req.params
-            console.log(id)
+
             db.get_trips(id)
             .then( trip => res.status(200).send(trip))
         },
@@ -111,13 +107,22 @@ module.exports = {
 
             db.add_event([trip_id, attraction_id])
                 .then(res.sendStatus(200))
-        }
+        },
 
-        // deleteFromTrip: (req, res) => {
-        // const db = req.app.get('db')
-        // const {id} = req.params
+        getTrip: (req, res) => {
+            const db = req.app.get('db')
+            const {id} = req.params
+            
+            db.get_trip([id])
+            .then(trip => res.status(200).send(trip))
 
-        // db.remove_attraction(id)
-        // .then( () => res.sendStatus(200))
-        // }         
+        },
+
+        deleteFromTrip: (req, res) => {
+        const db = req.app.get('db')
+        const {id} = req.params
+
+        db.remove_attraction(id)
+        .then( () => res.sendStatus(200))
+        }         
 }

@@ -1,2 +1,2 @@
-delete from trips
-where id = $1;
+delete from events
+where event_id = $1;

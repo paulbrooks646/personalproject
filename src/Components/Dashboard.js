@@ -38,15 +38,13 @@ function Dashboard(props) {
     }
 
     function newlist(user_id) {
-        console.log(user_id)
-        console.log(props.user.user.id)
         axios.post('/api/trip', { user_id });
     }
 
 console.log(trips)
     const currentTrip = trips.map((e, index) =>
 
-        <Link to={`/Trip/${index}`}><h1 key={e.trip_id}>{e.trip_id}</h1></Link>)
+        <Link to={`/Trip/${e.trip_id}`}><h1 key={e.trip_id}>{e.trip_id}</h1></Link>)
 
 
     const attractionsArray = props.attractions.attractions.map((e, index) => {

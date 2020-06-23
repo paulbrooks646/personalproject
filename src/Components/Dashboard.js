@@ -8,7 +8,6 @@ import { Link } from 'react-router-dom'
 
 function Dashboard(props) {
 
-    const [trips, setTrips] = useState([])
 
 
     useEffect(() => {
@@ -17,42 +16,49 @@ function Dashboard(props) {
                 props.getAttractions(res.data)
             })
 
-
-        // getRides();
-        getTrips();
     }, [props.getAttractions])
 
+    const [trips, setTrips] = useState([])
 
+    useEffect(() => {
 
-    // function getRides() {
+        getTrips();
+    }, [])
 
-    // }
 
     function getTrips() {
-
-        axios.get(`/api/trips/1`)
+        console.log(props.user.user.id)
+        const {id} = props.user.user
+        console.log(id)
+        axios.get(`/api/trips/${id}`)
             .then(res =>
                 setTrips(res.data)
             )
-
     }
 
     function newlist(user_id) {
         axios.post('/api/trip', { user_id });
+        getTrips()
     }
 
-console.log(trips)
-    const currentTrip = trips.map((e, index) =>
+    function deleteDay(trip_id) {
+        axios.delete(`/api/day/${trip_id}`)
+        getTrips()
+    }
 
-        <Link to={`/Trip/${e.trip_id}`}><h1 key={e.trip_id}>{e.trip_id}</h1></Link>)
+
+    let i = 0
+    const currentTrip = trips.map((e, index) => {
+        i++
+        return (
+    <div key={e.trip_id}><Link to={`/Trip/${e.trip_id}`}><h1>Day {i}</h1></Link><button onClick={() => deleteDay(e.trip_id)}>Delete Day</button></div> )})
+
+        
 
 
-    const attractionsArray = props.attractions.attractions.map((e, index) => {
-        return <div className="dashboarddiv" key={index}><Link to={`/Attraction/${e.attraction_id}`}><h2 className="dashboardattraction">{e.name}</h2></Link><button className="dashboardbutton">Add to Trip</button></div>
-    })
     return (
 
-        <div className="dashboardmain"><div className="dashboard">{attractionsArray}</div><div className="dashboardlist"><button className="dashboardbutton" onClick={() => newlist(props.user.user.id)}>Create a Trip</button></div><div className="triptrip">{currentTrip}</div></div>
+        <div className="dashboardmain"><div className="dashboardlist"><button className="dashboardbutton" onClick={() => newlist(props.user.user.id)}>Create a Trip</button></div><div className="triptrip">{currentTrip}</div></div>
     )
 }
 

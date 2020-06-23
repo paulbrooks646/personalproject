@@ -22,3 +22,7 @@
     width: 85px;
   
 }
+
+@mixin main {
+color: $main    
+}

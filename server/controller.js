@@ -124,5 +124,15 @@ module.exports = {
 
         db.remove_attraction(id)
         .then( () => res.sendStatus(200))
-        }         
+        },
+        
+        deleteDay: (req, res) => {
+            const db = req.app.get('db')
+            const {id} = req.params
+
+            db.delete_day(id)
+            .then(() => 
+                res.sendStatus(200)
+            )
+        }
 }

@@ -1,3 +1,439 @@
+    @media (max-width: 750px) {
+    
+    
+    .Alice {
+        @include location($fantasy);
+        left: -200px;
+        }
+        
+        .Astro {
+        @include location($tomorrow);
+        }
+        
+        .Astroblasters {
+            @include location($tomorrow);
+        }
+        
+        .Autopia {
+            @include location($tomorrow);
+        }
+        
+        .Big {
+            @include location($frontier);
+        }
+        
+        .Casey {
+            @include location($fantasy);
+        }
+        
+        .Disneyland {
+            @include location($main);
+        }
+        
+        .Dumbo {
+            @include location($fantasy);
+        }
+        
+        .Enchanted {
+            @include location($adventure);
+        }
+        
+        .Gadgets {
+            @include location($toon);
+        }
+        
+        .Haunted {
+            @include location($new);
+        }
+        
+        .Indiana {
+            @include location($adventure);
+        }
+        
+        .Its {
+            @include location($fantasy);
+        }
+        
+        .Jungle {
+            @include location($adventure);
+        }
+        
+        .King {
+            @include location($fantasy);
+        }
+        
+        .Mark {
+            @include location($frontier);
+        }
+        
+        .Matterhorn {
+            @include location($fantasy);
+        }
+        
+        .Millenium {
+        display: none 
+        }
+        
+        .Mr {
+            @include location($fantasy);
+        }
+        
+        .Peter {
+            @include location($fantasy);
+        }
+        
+        .Pinocchio {
+            @include location($fantasy);
+        }
+        
+        .Pirates {
+            @include location($new);
+        }
+        
+        .Rise {
+        display: none;
+        }
+        
+        .Roger {
+            @include location($toon);
+        }
+        
+        .Sailing {
+            @include location($frontier);
+        }
+        
+        .Snow {
+            @include location($fantasy);
+        }
+        
+        .Space {
+            @include location($tomorrow);
+        }
+        
+        .Splash {
+            @include location($critter);
+        }
+        
+        .Star {
+            @include location($tomorrow);
+        }
+        
+        .Storybookland {
+            @include location($fantasy);
+        }
+        
+        .Submarine {
+            @include location($tomorrow);
+        }
+        
+        .Tarzan {
+            @include location($adventure);
+        }
+        
+        .Teacups {
+            @include location($fantasy);
+        }
+        
+        .Winnie {
+            @include location($critter);
+            }
+            .disneyland {
+                display: none
+            }
+        .container {
+            position: relative;
+            top: -0px;
+        }
+        }
+        
+
+
+
+
+@media (min-width: 750px) {
+
+    .Alice {
+        @include ride(-628px, 330px);
+        }
+        
+        .Astro {
+        @include ride(-510px, 505px);
+        }
+        
+        .Astroblasters {
+            @include ride(-555px, 595px);
+        }
+        
+        .Autopia {
+            @include ride(-620px, 740px);
+        }
+        
+        .Big {
+            @include ride(-710px, 230px);
+        }
+        
+        .Casey {
+            @include ride(-830px, 335px);
+        }
+        
+        .Disneyland {
+            @include ride(-430px, 420px);
+        }
+        
+        .Dumbo {
+            @include ride(-900px, 430px);
+        }
+        
+        .Enchanted {
+            @include ride(-720px, 330px);
+        }
+        
+        .Gadgets {
+            @include ride(-1070px, 340px);
+        }
+        
+        .Haunted {
+            @include ride(-850px, 50px);
+        }
+        
+        .Indiana {
+            @include ride(-730px, 160px);
+        }
+        
+        .Its {
+            @include ride(-1150px, 570px);
+        }
+        
+        .Jungle {
+            @include ride(-895px, 270px);
+        }
+        
+        .King {
+            @include ride(-1150px, 420px);
+        }
+        
+        .Mark {
+            @include ride(-1115px, 240px);
+        }
+        
+        .Matterhorn {
+            @include ride(-1875px, 580px);
+        }
+        
+        .Millenium {
+             @include ride(-1500px, 0px);
+            // opacity: 1; 
+        }
+        
+        .Mr {
+            @include ride(-1250px, 490px);
+        }
+        
+        .Peter {
+            @include ride(-1260px, 480px);
+        }
+        
+        .Pinocchio {
+            @include ride(-1335px, 330px);
+        }
+        
+        .Pirates {
+            @include ride(-1190px, 140px);
+        }
+        
+        .Rise {
+            @include ride(-1700px, 0px);
+           opacity: 1
+        }
+        
+        .Roger {
+            @include ride(-1610px, 510px);
+        }
+        
+        .Sailing {
+            @include ride(-1750px, 240px);
+        }
+        
+        .Snow {
+            @include ride(-1465px, 340px);
+        }
+        
+        .Space {
+            @include ride(-1310px, 650px);
+        }
+        
+        .Splash {
+            @include ride(-1500px, 0px);
+        }
+        
+        .Star {
+            @include ride(-1460px, 610px);
+        }
+        
+        .Storybookland {
+            @include ride(-1690px, 520px);
+        }
+        
+        .Submarine {
+            @include ride(-1630px, 670px);
+        }
+        
+        .Tarzan {
+            @include ride(-1555px, 230px);
+        }
+        
+        .Teacups {
+            @include ride(-1780px, 510px);
+        }
+        
+        .Winnie {
+            @include ride(-1770px, 30px);
+            }
+        }
+
+
+@media (min-width: 850px) {
+
+    .Alice {
+        @include ride(-628px, 380px);
+        }
+        
+        .Astro {
+        @include ride(-510px, 555px);
+        }
+        
+        .Astroblasters {
+            @include ride(-555px, 645px);
+        }
+        
+        .Autopia {
+            @include ride(-620px, 790px);
+        }
+        
+        .Big {
+            @include ride(-710px, 280px);
+        }
+        
+        .Casey {
+            @include ride(-830px, 385px);
+        }
+        
+        .Disneyland {
+            @include ride(-430px, 470px);
+        }
+        
+        .Dumbo {
+            @include ride(-900px, 480px);
+        }
+        
+        .Enchanted {
+            @include ride(-720px, 380px);
+        }
+        
+        .Gadgets {
+            @include ride(-1070px, 390px);
+        }
+        
+        .Haunted {
+            @include ride(-850px, 50px);
+        }
+        
+        .Indiana {
+            @include ride(-730px, 210px);
+        }
+        
+        .Its {
+            @include ride(-1150px, 620px);
+        }
+        
+        .Jungle {
+            @include ride(-895px, 320px);
+        }
+        
+        .King {
+            @include ride(-1150px, 470px);
+        }
+        
+        .Mark {
+            @include ride(-1115px, 240px);
+        }
+        
+        .Matterhorn {
+            @include ride(-1875px, 630px);
+        }
+        
+        .Millenium {
+             @include ride(-1500px, 0px);
+            // opacity: 1; 
+        }
+        
+        .Mr {
+            @include ride(-1250px, 540px);
+        }
+        
+        .Peter {
+            @include ride(-1260px, 530px);
+        }
+        
+        .Pinocchio {
+            @include ride(-1335px, 380px);
+        }
+        
+        .Pirates {
+            @include ride(-1190px, 190px);
+        }
+        
+        .Rise {
+            @include ride(-1700px, 0px);
+           opacity: 1
+        }
+        
+        .Roger {
+            @include ride(-1610px, 560px);
+        }
+        
+        .Sailing {
+            @include ride(-1750px, 240px);
+        }
+        
+        .Snow {
+            @include ride(-1465px, 390px);
+        }
+        
+        .Space {
+            @include ride(-1310px, 650px);
+        }
+        
+        .Splash {
+            @include ride(-1500px, 0px);
+        }
+        
+        .Star {
+            @include ride(-1460px, 660px);
+        }
+        
+        .Storybookland {
+            @include ride(-1690px, 570px);
+        }
+        
+        .Submarine {
+            @include ride(-1630px, 720px);
+        }
+        
+        .Tarzan {
+            @include ride(-1555px, 280px);
+        }
+        
+        .Teacups {
+            @include ride(-1780px, 560px);
+        }
+        
+        .Winnie {
+            @include ride(-1770px, 30px);
+            }
+}
+
+
 
 @media (min-width: 900px) {
 
@@ -1131,566 +1567,5 @@
                             }
                         }
 
-                        @media (max-width: 900px) {
-
-                            .Alice {
-                                @include ride(-628px, 430px);
-                                }
+                       
                                 
-                                .Astro {
-                                @include ride(-510px, 605px);
-                                }
-                                
-                                .Astroblasters {
-                                    @include ride(-555px, 695px);
-                                }
-                                
-                                .Autopia {
-                                    @include ride(-620px, 840px);
-                                }
-                                
-                                .Big {
-                                    @include ride(-710px, 330px);
-                                }
-                                
-                                .Casey {
-                                    @include ride(-830px, 435px);
-                                }
-                                
-                                .Disneyland {
-                                    @include ride(-430px, 520px);
-                                }
-                                
-                                .Dumbo {
-                                    @include ride(-900px, 530px);
-                                }
-                                
-                                .Enchanted {
-                                    @include ride(-720px, 430px);
-                                }
-                                
-                                .Gadgets {
-                                    @include ride(-1070px, 440px);
-                                }
-                                
-                                .Haunted {
-                                    @include ride(-850px, 100px);
-                                }
-                                
-                                .Indiana {
-                                    @include ride(-730px, 260px);
-                                }
-                                
-                                .Its {
-                                    @include ride(-1150px, 670px);
-                                }
-                                
-                                .Jungle {
-                                    @include ride(-895px, 370px);
-                                }
-                                
-                                .King {
-                                    @include ride(-1150px, 520px);
-                                }
-                                
-                                .Mark {
-                                    @include ride(-1115px, 290px);
-                                }
-                                
-                                .Matterhorn {
-                                    @include ride(-1875px, 680px);
-                                }
-                                
-                                .Millenium {
-                                     @include ride(-1500px, 0px);
-                                    // opacity: 1; 
-                                }
-                                
-                                .Mr {
-                                    @include ride(-1250px, 590px);
-                                }
-                                
-                                .Peter {
-                                    @include ride(-1260px, 580px);
-                                }
-                                
-                                .Pinocchio {
-                                    @include ride(-1335px, 430px);
-                                }
-                                
-                                .Pirates {
-                                    @include ride(-1190px, 240px);
-                                }
-                                
-                                .Rise {
-                                    @include ride(-1700px, 0px);
-                                   opacity: 1
-                                }
-                                
-                                .Roger {
-                                    @include ride(-1610px, 610px);
-                                }
-                                
-                                .Sailing {
-                                    @include ride(-1750px, 290px);
-                                }
-                                
-                                .Snow {
-                                    @include ride(-1465px, 440px);
-                                }
-                                
-                                .Space {
-                                    @include ride(-1310px, 750px);
-                                }
-                                
-                                .Splash {
-                                    @include ride(-1500px, 50px);
-                                }
-                                
-                                .Star {
-                                    @include ride(-1460px, 710px);
-                                }
-                                
-                                .Storybookland {
-                                    @include ride(-1690px, 620px);
-                                }
-                                
-                                .Submarine {
-                                    @include ride(-1630px, 770px);
-                                }
-                                
-                                .Tarzan {
-                                    @include ride(-1555px, 330px);
-                                }
-                                
-                                .Teacups {
-                                    @include ride(-1780px, 610px);
-                                }
-                                
-                                .Winnie {
-                                    @include ride(-1770px, 80px);
-                                    }
-                                }
-
-                                @media (max-width: 900px) {
-
-                                    .Alice {
-                                        @include ride(-628px, 380px);
-                                        }
-                                        
-                                        .Astro {
-                                        @include ride(-510px, 555px);
-                                        }
-                                        
-                                        .Astroblasters {
-                                            @include ride(-555px, 645px);
-                                        }
-                                        
-                                        .Autopia {
-                                            @include ride(-620px, 790px);
-                                        }
-                                        
-                                        .Big {
-                                            @include ride(-710px, 280px);
-                                        }
-                                        
-                                        .Casey {
-                                            @include ride(-830px, 385px);
-                                        }
-                                        
-                                        .Disneyland {
-                                            @include ride(-430px, 470px);
-                                        }
-                                        
-                                        .Dumbo {
-                                            @include ride(-900px, 480px);
-                                        }
-                                        
-                                        .Enchanted {
-                                            @include ride(-720px, 380px);
-                                        }
-                                        
-                                        .Gadgets {
-                                            @include ride(-1070px, 390px);
-                                        }
-                                        
-                                        .Haunted {
-                                            @include ride(-850px, 50px);
-                                        }
-                                        
-                                        .Indiana {
-                                            @include ride(-730px, 210px);
-                                        }
-                                        
-                                        .Its {
-                                            @include ride(-1150px, 620px);
-                                        }
-                                        
-                                        .Jungle {
-                                            @include ride(-895px, 320px);
-                                        }
-                                        
-                                        .King {
-                                            @include ride(-1150px, 470px);
-                                        }
-                                        
-                                        .Mark {
-                                            @include ride(-1115px, 240px);
-                                        }
-                                        
-                                        .Matterhorn {
-                                            @include ride(-1875px, 630px);
-                                        }
-                                        
-                                        .Millenium {
-                                             @include ride(-1500px, 0px);
-                                            // opacity: 1; 
-                                        }
-                                        
-                                        .Mr {
-                                            @include ride(-1250px, 540px);
-                                        }
-                                        
-                                        .Peter {
-                                            @include ride(-1260px, 530px);
-                                        }
-                                        
-                                        .Pinocchio {
-                                            @include ride(-1335px, 380px);
-                                        }
-                                        
-                                        .Pirates {
-                                            @include ride(-1190px, 190px);
-                                        }
-                                        
-                                        .Rise {
-                                            @include ride(-1700px, 0px);
-                                           opacity: 1
-                                        }
-                                        
-                                        .Roger {
-                                            @include ride(-1610px, 560px);
-                                        }
-                                        
-                                        .Sailing {
-                                            @include ride(-1750px, 240px);
-                                        }
-                                        
-                                        .Snow {
-                                            @include ride(-1465px, 390px);
-                                        }
-                                        
-                                        .Space {
-                                            @include ride(-1310px, 700px);
-                                        }
-                                        
-                                        .Splash {
-                                            @include ride(-1500px, 0px);
-                                        }
-                                        
-                                        .Star {
-                                            @include ride(-1460px, 660px);
-                                        }
-                                        
-                                        .Storybookland {
-                                            @include ride(-1690px, 570px);
-                                        }
-                                        
-                                        .Submarine {
-                                            @include ride(-1630px, 720px);
-                                        }
-                                        
-                                        .Tarzan {
-                                            @include ride(-1555px, 280px);
-                                        }
-                                        
-                                        .Teacups {
-                                            @include ride(-1780px, 560px);
-                                        }
-                                        
-                                        .Winnie {
-                                            @include ride(-1770px, 30px);
-                                            }
-                                        }
-
-                                        @media (max-width: 900px) {
-
-                                            .Alice {
-                                                @include ride(-628px, 430px);
-                                                }
-                                                
-                                                .Astro {
-                                                @include ride(-510px, 605px);
-                                                }
-                                                
-                                                .Astroblasters {
-                                                    @include ride(-555px, 695px);
-                                                }
-                                                
-                                                .Autopia {
-                                                    @include ride(-620px, 840px);
-                                                }
-                                                
-                                                .Big {
-                                                    @include ride(-710px, 330px);
-                                                }
-                                                
-                                                .Casey {
-                                                    @include ride(-830px, 435px);
-                                                }
-                                                
-                                                .Disneyland {
-                                                    @include ride(-430px, 520px);
-                                                }
-                                                
-                                                .Dumbo {
-                                                    @include ride(-900px, 530px);
-                                                }
-                                                
-                                                .Enchanted {
-                                                    @include ride(-720px, 430px);
-                                                }
-                                                
-                                                .Gadgets {
-                                                    @include ride(-1070px, 440px);
-                                                }
-                                                
-                                                .Haunted {
-                                                    @include ride(-850px, 100px);
-                                                }
-                                                
-                                                .Indiana {
-                                                    @include ride(-730px, 260px);
-                                                }
-                                                
-                                                .Its {
-                                                    @include ride(-1150px, 670px);
-                                                }
-                                                
-                                                .Jungle {
-                                                    @include ride(-895px, 370px);
-                                                }
-                                                
-                                                .King {
-                                                    @include ride(-1150px, 520px);
-                                                }
-                                                
-                                                .Mark {
-                                                    @include ride(-1115px, 290px);
-                                                }
-                                                
-                                                .Matterhorn {
-                                                    @include ride(-1875px, 680px);
-                                                }
-                                                
-                                                .Millenium {
-                                                     @include ride(-1500px, 0px);
-                                                    // opacity: 1; 
-                                                }
-                                                
-                                                .Mr {
-                                                    @include ride(-1250px, 590px);
-                                                }
-                                                
-                                                .Peter {
-                                                    @include ride(-1260px, 580px);
-                                                }
-                                                
-                                                .Pinocchio {
-                                                    @include ride(-1335px, 430px);
-                                                }
-                                                
-                                                .Pirates {
-                                                    @include ride(-1190px, 240px);
-                                                }
-                                                
-                                                .Rise {
-                                                    @include ride(-1700px, 0px);
-                                                   opacity: 1
-                                                }
-                                                
-                                                .Roger {
-                                                    @include ride(-1610px, 610px);
-                                                }
-                                                
-                                                .Sailing {
-                                                    @include ride(-1750px, 290px);
-                                                }
-                                                
-                                                .Snow {
-                                                    @include ride(-1465px, 440px);
-                                                }
-                                                
-                                                .Space {
-                                                    @include ride(-1310px, 750px);
-                                                }
-                                                
-                                                .Splash {
-                                                    @include ride(-1500px, 50px);
-                                                }
-                                                
-                                                .Star {
-                                                    @include ride(-1460px, 710px);
-                                                }
-                                                
-                                                .Storybookland {
-                                                    @include ride(-1690px, 620px);
-                                                }
-                                                
-                                                .Submarine {
-                                                    @include ride(-1630px, 770px);
-                                                }
-                                                
-                                                .Tarzan {
-                                                    @include ride(-1555px, 330px);
-                                                }
-                                                
-                                                .Teacups {
-                                                    @include ride(-1780px, 610px);
-                                                }
-                                                
-                                                .Winnie {
-                                                    @include ride(-1770px, 80px);
-                                                    }
-                                                }
-                
-                                                @media (max-width: 900px) {
-                
-                                                    .Alice {
-                                                        @include ride(-628px, 380px);
-                                                        }
-                                                        
-                                                        .Astro {
-                                                        @include ride(-510px, 555px);
-                                                        }
-                                                        
-                                                        .Astroblasters {
-                                                            @include ride(-555px, 645px);
-                                                        }
-                                                        
-                                                        .Autopia {
-                                                            @include ride(-620px, 790px);
-                                                        }
-                                                        
-                                                        .Big {
-                                                            @include ride(-710px, 280px);
-                                                        }
-                                                        
-                                                        .Casey {
-                                                            @include ride(-830px, 385px);
-                                                        }
-                                                        
-                                                        .Disneyland {
-                                                            @include ride(-430px, 470px);
-                                                        }
-                                                        
-                                                        .Dumbo {
-                                                            @include ride(-900px, 480px);
-                                                        }
-                                                        
-                                                        .Enchanted {
-                                                            @include ride(-720px, 380px);
-                                                        }
-                                                        
-                                                        .Gadgets {
-                                                            @include ride(-1070px, 390px);
-                                                        }
-                                                        
-                                                        .Haunted {
-                                                            @include ride(-850px, 50px);
-                                                        }
-                                                        
-                                                        .Indiana {
-                                                            @include ride(-730px, 210px);
-                                                        }
-                                                        
-                                                        .Its {
-                                                            @include ride(-1150px, 620px);
-                                                        }
-                                                        
-                                                        .Jungle {
-                                                            @include ride(-895px, 320px);
-                                                        }
-                                                        
-                                                        .King {
-                                                            @include ride(-1150px, 470px);
-                                                        }
-                                                        
-                                                        .Mark {
-                                                            @include ride(-1115px, 240px);
-                                                        }
-                                                        
-                                                        .Matterhorn {
-                                                            @include ride(-1875px, 630px);
-                                                        }
-                                                        
-                                                        .Millenium {
-                                                             @include ride(-1500px, 0px);
-                                                            // opacity: 1; 
-                                                        }
-                                                        
-                                                        .Mr {
-                                                            @include ride(-1250px, 540px);
-                                                        }
-                                                        
-                                                        .Peter {
-                                                            @include ride(-1260px, 530px);
-                                                        }
-                                                        
-                                                        .Pinocchio {
-                                                            @include ride(-1335px, 380px);
-                                                        }
-                                                        
-                                                        .Pirates {
-                                                            @include ride(-1190px, 190px);
-                                                        }
-                                                        
-                                                        .Rise {
-                                                            @include ride(-1700px, 0px);
-                                                           opacity: 1
-                                                        }
-                                                        
-                                                        .Roger {
-                                                            @include ride(-1610px, 560px);
-                                                        }
-                                                        
-                                                        .Sailing {
-                                                            @include ride(-1750px, 240px);
-                                                        }
-                                                        
-                                                        .Snow {
-                                                            @include ride(-1465px, 390px);
-                                                        }
-                                                        
-                                                        .Space {
-                                                            @include ride(-1310px, 700px);
-                                                        }
-                                                        
-                                                        .Splash {
-                                                            @include ride(-1500px, 0px);
-                                                        }
-                                                        
-                                                        .Star {
-                                                            @include ride(-1460px, 660px);
-                                                        }
-                                                        
-                                                        .Storybookland {
-                                                            @include ride(-1690px, 570px);
-                                                        }
-                                                        
-                                                        .Submarine {
-                                                            @include ride(-1630px, 720px);
-                                                        }
-                                                        
-                                                        .Tarzan {
-                                                            @include ride(-1555px, 280px);
-                                                        }
-                                                        
-                                                        .Teacups {
-                                                            @include ride(-1780px, 560px);
-                                                        }
-                                                        
-                                                        .Winnie {
-                                                            @include ride(-1770px, 30px);
-                                                            }
-                                                        }

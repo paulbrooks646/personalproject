@@ -23,6 +23,8 @@
   
 }
 
-@mixin main {
-color: $main    
+@mixin location($color) {
+    font-size: 20px;
+    color: $color;
+    position: relative;
 }

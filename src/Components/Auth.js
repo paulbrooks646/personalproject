@@ -13,7 +13,6 @@ const [newPassword, setNewPassword] = useState("")
 const [newEmail, setNewEmail] = useState("")
 
 const login = () => {
-    console.log(username)
     axios.post('/api/login', {username, password})
     .then( res => {
         props.loginUser(res.data)

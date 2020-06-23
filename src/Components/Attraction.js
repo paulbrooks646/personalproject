@@ -18,7 +18,7 @@ function Attraction(props) {
 
 const info = attraction.map((e, index) => {
     return (
-    <div className="attractioncard" key={index}><h1>{e.name}</h1><h1>Rating: {e.rating}</h1><h2>Location: {e.location}</h2><p>{e.comments}</p></div>
+    <div className={`attractioncard${e.location}`} key={index}><h1>{e.name}</h1><h1>Rating: {e.rating}</h1><h2>Location: {e.location}</h2><p>{e.comments}</p></div>
     )
 })
 

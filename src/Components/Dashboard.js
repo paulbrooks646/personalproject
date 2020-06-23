@@ -4,7 +4,7 @@ import { getAttractions } from '../ducks/attractionReducer'
 import axios from 'axios'
 import './components.scss'
 import { Link } from 'react-router-dom'
-//import Trip from './Trip'
+
 
 function Dashboard(props) {
 
@@ -15,29 +15,33 @@ function Dashboard(props) {
             .then(res => {
                 props.getAttractions(res.data)
             })
-
+            getTrips()
+            getDays()
     }, [props.getAttractions])
 
     const [trips, setTrips] = useState([])
-
-    useEffect(() => {
-
-        getTrips();
-    }, [])
+    const [days, setDays] = useState([])
 
 
-    function getTrips() {
-        console.log(props.user.user.id)
+    function getDays() {
         const {id} = props.user.user
-        console.log(id)
+        axios.get(`/api/days/${id}`)
+        .then(res =>
+            setDays(res.data)
+        )
+    }
+
+    function getTrips() {  
+        const {id} = props.user.user
         axios.get(`/api/trips/${id}`)
             .then(res =>
                 setTrips(res.data)
             )
     }
 
-    function newlist(user_id) {
-        axios.post('/api/trip', { user_id });
+    function newlist() {
+        const {id} = props.user.user
+        axios.post('/api/trip', { id });
         getTrips()
     }
 
@@ -51,14 +55,14 @@ function Dashboard(props) {
     const currentTrip = trips.map((e, index) => {
         i++
         return (
-    <div key={e.trip_id}><Link to={`/Trip/${e.trip_id}`}><h1>Day {i}</h1></Link><button onClick={() => deleteDay(e.trip_id)}>Delete Day</button></div> )})
+    <div key={index}><Link to={`/Trip/${e.trip_id}`}><h1>Day {i}</h1></Link><button onClick={() => deleteDay(e.trip_id)}>Delete Day</button></div> )})
 
         
 
 
     return (
 
-        <div className="dashboardmain"><div className="dashboardlist"><button className="dashboardbutton" onClick={() => newlist(props.user.user.id)}>Create a Trip</button></div><div className="triptrip">{currentTrip}</div></div>
+        <div className="dashboardmain"><div className="dashboardupper"><h1 className="dashboardtitle">Your Trip</h1><button className="dashboardbutton" onClick={() => newlist()}>Add a Day</button><h2>Click on a day to edit it.</h2></div><div className="dashboardlist">{currentTrip}</div></div>
     )
 }
 

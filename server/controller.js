@@ -95,17 +95,18 @@ module.exports = {
 
         addTrip: (req, res) => {
             const db = req.app.get('db')
-            const {user_id} = req.body
+            console.log(req.body)
+            const {id} = req.body
 
-            db.add_trip(user_id)
+            db.add_trip(id)
             .then(res.sendStatus(200))
         },
 
         addEvent: (req, res) => {
             const db = req.app.get('db')
-            const {trip_id, attraction_id} = req.body
+            const {trip_id, attraction_id, user_id} = req.body
 
-            db.add_event([trip_id, attraction_id])
+            db.add_event([trip_id, attraction_id, user_id])
                 .then(res.sendStatus(200))
         },
 
@@ -134,5 +135,27 @@ module.exports = {
             .then(() => 
                 res.sendStatus(200)
             )
-        }
+        },
+        getDays: (req, res) => {
+            const db = req.app.get('db')
+            const {id} = req.params
+            
+            db.get_days([id])
+            .then(events => {
+                const formattedEvents = events.reduce((acc, curr) => {
+                    const index = acc.findIndex(e => {
+                        return e.trip_id === curr.trip_id
+                    })
+                    if (index === -1) {
+                        acc.push({trip_id: curr.trip_id, events: [curr.name]})
+                    }
+                    else {
+                        acc[index].events.push(curr.name)
+                    }
+                    return acc
+                }, [])
+                res.status(200).send(formattedEvents)
+            })
+
+        },
 }

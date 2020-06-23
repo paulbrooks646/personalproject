@@ -40,3 +40,16 @@
     width: 200px;
 }
 
+@mixin card($color) {
+
+        height: 50vh;
+        width: 50vw;
+        background-color: $color;
+        position: relative;
+        top: 200px;
+        @include center(center);
+        flex-direction: column;
+        border: solid 1px black;
+        box-shadow: 5px 5px 5px 5px;
+}
+

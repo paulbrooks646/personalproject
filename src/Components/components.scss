@@ -1,16 +1,12 @@
 * {
-    text-decoration: none; 
-    // box-sizing: inherit;   
+    text-decoration: none;    
 }
-
-// html {
-//     box-sizing: border-box;
-// }
 
 @import './functions';
 @import './mixins';
 @import './variables';
 @import './mapqueries';
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 
 //AUTH
 
@@ -173,24 +169,49 @@ width: 200px;
     }
 }
 
-.mapnavbar {
-    @include center(space-evenly);
-    position: fixed;
-    width: 100vw;
-    height: 160px;
-    top: 650px;
-    background-color: #FFFF33;
-    z-index: 2;
+.fantasy {
+    @include land($fantasy);
+    top: -1126px;
+    left: 205px;
 }
 
+.main {
+    @include land($main);
+    top: -555px;
+    left: 102px;
+}
 
+.critter {
+    @include land($critter);
+    top: -1200px;
+    left: 0px;
+}
+.new {
+    @include land($new);
+    top: -840px;
+    left: 0px;
+}
+.adventure {
+    @include land($adventure);
+    top: -1040px;
+    left: 0px;
+}
+.frontier {
+    @include land($frontier);
+    top: -1208px;
+left: 0px;
+}
+.toon {
+    @include land($toon);
+    top: -843px;
+    left: 0px;
+}
+.tomorrow {
+    @include land($tomorrow);
+    top: -1015px;
+    left: 205px;
+}
 
-
-// .container {
-//     width: 100%;
-//     height: 100%;
-//     position: absolute;
-// }
 
 
    

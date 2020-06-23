@@ -24,7 +24,19 @@
 }
 
 @mixin location($color) {
-    font-size: 20px;
+    font-size: 15px;
     color: $color;
     position: relative;
+    border: solid 1px black;
+    width: 200px;
 }
+
+@mixin land($color) {
+    color: $color;
+    font-family: $disney;
+    font-size: 15px;
+    position: relative;
+    border: solid 1px black;
+    width: 200px;
+}
+

@@ -29,10 +29,10 @@ const logout = () => {
     else if(pathname === "/Map") {
         return (
             <div className="mapnavbar">
-                <div className="imagediv">
+                <div className="mapimagediv">
                     <img className="image" src="https://cdn1.parksmedia.wdprapps.disney.com/media/blog/wp-content/uploads/2019/05/ksjfhury85ui11.jpg" alt="Disneyland Castle" />
                 </div>
-                <div className="greetingdiv">
+                <div className="mapgreetingdiv">
                     <h2 className="greeting">Welcome {props.user.user.username}</h2>
                 </div>
                 <div className="linkdiv">

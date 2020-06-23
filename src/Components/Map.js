@@ -13,7 +13,7 @@ function Map(props) {
 
     return (
         <div><div className="disneyland">
-            </div><div className="container">{attractionsArray}</div></div>        
+            </div><div className="container">{attractionsArray}</div><h2 className='fantasy'>Fantasyland</h2><h2 className="main">Main Street USA</h2><h2 className='critter'>Critter Country</h2><h2 className="new">New Orleans Square</h2><h2 className="adventure">Adventureland</h2><h2 className="frontier">Frontierland</h2><h2 className="toon">Toon Town</h2><h2 className="tomorrow">Tomorrowland</h2></div>        
     )
 }
 

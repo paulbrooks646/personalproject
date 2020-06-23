@@ -3,71 +3,104 @@
     
     .Alice {
         @include location($fantasy);
-        left: -200px;
+        left: 205px;
+        top: 70px;
         }
         
         .Astro {
         @include location($tomorrow);
+        left: 205px;
+        top: 405px;
         }
         
         .Astroblasters {
             @include location($tomorrow);
+            left: 205px;
+            top: 395px;
         }
         
         .Autopia {
             @include location($tomorrow);
+            left: 205px;
+            top: 385px;
         }
         
         .Big {
             @include location($frontier);
+            left: 0px;
+            top: 25px;
         }
         
         .Casey {
             @include location($fantasy);
+            left: 205px;
+            top: -88px;
         }
         
         .Disneyland {
             @include location($main);
+            left: 102px;
+            top: 460px;
         }
         
         .Dumbo {
             @include location($fantasy);
+            left: 205px;
+            top: -135px;
         }
         
         .Enchanted {
             @include location($adventure);
+            left: 0px;
+            top: 12px;
         }
         
         .Gadgets {
             @include location($toon);
+            left: 0px;
+            top: 247px;
         }
         
         .Haunted {
             @include location($new);
+            left: 0px;
+            top: 103px;
         }
         
         .Indiana {
             @include location($adventure);
+            left: 0px;
+            top: -70px;
         }
         
         .Its {
             @include location($fantasy);
+            left: 205px;
+            top: -293px;
         }
         
         .Jungle {
             @include location($adventure);
+            left: 0px;
+            top: -117px;
         }
         
         .King {
             @include location($fantasy);
+            left: 205px;
+            top: -340px;
         }
         
         .Mark {
             @include location($frontier);
+            left: 0px;
+            top: -350px;
         }
         
         .Matterhorn {
             @include location($fantasy);
+            left: 205px;
+            top: -935px;
         }
         
         .Millenium {
@@ -76,18 +109,26 @@
         
         .Mr {
             @include location($fantasy);
+            left: 205px;
+            top: -360px;
         }
         
         .Peter {
             @include location($fantasy);
+            left: 205px;
+            top: -370px;
         }
         
         .Pinocchio {
             @include location($fantasy);
+            left: 205px;
+            top: -380px;
         }
         
         .Pirates {
             @include location($new);
+            left: 0px;
+            top: -200px;
         }
         
         .Rise {
@@ -96,54 +137,90 @@
         
         .Roger {
             @include location($toon);
+            left: 0px;
+            top: -127px;
         }
         
         .Sailing {
             @include location($frontier);
+            left: 0px;
+            top: -872px;
         }
         
         .Snow {
             @include location($fantasy);
+            left: 205px;
+            top: -463px;
         }
         
         .Space {
             @include location($tomorrow);
+            left: 205px;
+            top: -283px;
         }
         
         .Splash {
             @include location($critter);
+            left: 0px;
+            top: -770px;
         }
         
         .Star {
             @include location($tomorrow);
+            left: 205px;
+            top: -330px;
         }
         
         .Storybookland {
             @include location($fantasy);
+            left: 205px;
+            top: -582px;
         }
         
         .Submarine {
             @include location($tomorrow);
+            left: 205px;
+            top: -375px;
         }
         
         .Tarzan {
             @include location($adventure);
+            left: 0px;
+            top: -601px;
         }
         
         .Teacups {
             @include location($fantasy);
+            left: 205px;
+            top: -665px;
         }
         
         .Winnie {
             @include location($critter);
+            left: 0px;
+        top: -965px;
             }
+
             .disneyland {
                 display: none
             }
-        .container {
-            position: relative;
-            top: -0px;
+
+        .mapnavbar {
+            @include center(flex-left);
+            position: fixed;
+            width: 100vw;
+            height: 50px;
+            top: 0px;
+            z-index: 2;
+            border: solid 1px black;
         }
+.mapimagediv {
+    display: none;
+}
+.mapgreetingdiv {
+    display: none;
+}
+
         }
         
 
@@ -289,8 +366,43 @@
         .Winnie {
             @include ride(-1770px, 30px);
             }
+        
+
+        .adventure {
+            display: none;
+        }
+        .new {
+            display: none;
+        }
+        .critter {
+            display: none;
+        }
+        .main {
+            display: none;
+        }
+        .toon {
+            display: none;
+        }
+        .tomorrow {
+            display: none;
+        }
+        .fantasy {
+            display: none;
+        }
+        .frontier {
+            display: none;
         }
 
+        .mapnavbar {
+            @include center(space-evenly);
+            position: fixed;
+            width: 100vw;
+            height: 160px;
+            top: 650px;
+            background-color: #FFFF33;
+            z-index: 2;
+        }
+    }
 
 @media (min-width: 850px) {
 

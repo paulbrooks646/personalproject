@@ -4,9 +4,8 @@ import { getAttractions } from '../ducks/attractionReducer'
 import axios from 'axios'
 import './components.scss'
 import { Link } from 'react-router-dom'
-//import Trip from './Trip'
 
-function Dashboard(props) {
+function Trip(props) {
 
     const [trip, setTrip] = useState([])
 
@@ -42,13 +41,13 @@ const tripArray = trip.map((e) => <div><h1>{e.name}</h1><button onClick={() => r
 
 
     const attractionsArray = props.attractions.attractions.map((e, index) => {
-        return <div className="dashboarddiv" key={index}><Link to={`/Attraction/${e.attraction_id}`}><h2 className="dashboardattraction">{e.name}</h2></Link><button className="dashboardbutton" onClick={() => newEvent(props.match.params.trip_id, e.attraction_id, props.user.user.id)}>Add to Trip</button></div>
+        return <div className="dashboarddiv" key={index}><Link to={`/Attraction/${e.attraction_id}`}><h2 className={`trip${e.name}`}>{e.name}</h2></Link><button className="dashboardbutton" onClick={() => newEvent(props.match.params.trip_id, e.attraction_id, props.user.user.id)}>Add to Trip</button></div>
     })
     return (
 
-        <div className="dashboardmain"><div className="dashboard">{attractionsArray}</div><div className="triptrip">{tripArray}</div></div>
+        <div className="tripmain"><div className="dashboard">{attractionsArray}</div><div className="triptrip">{tripArray}</div></div>
     )
 }
 
 const mapStateToProps = reduxState => reduxState
-export default connect(mapStateToProps, { getAttractions })(Dashboard) 
+export default connect(mapStateToProps, { getAttractions })(Trip) 

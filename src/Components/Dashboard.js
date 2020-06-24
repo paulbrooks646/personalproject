@@ -51,11 +51,10 @@ function Dashboard(props) {
     }
 
 
-    let i = 0
-    const currentTrip = trips.map((e, index) => {
-        i++
+    const currentTrip = days.map((e, index) => {
         return (
-    <div key={index}><Link to={`/Trip/${e.trip_id}`}><h1>Day {i}</h1></Link><button onClick={() => deleteDay(e.trip_id)}>Delete Day</button></div> )})
+    <div key={index}><Link to={`/Trip/${e.trip_id}`}><h1>Day {index+1}</h1></Link>{e.events.map((event) => <h3>{event}</h3>
+        )}<button onClick={() => deleteDay(e.trip_id)}>Delete Day</button></div> )})
 
         
 

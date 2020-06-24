@@ -12,14 +12,15 @@
 
 .authmain {
     width: 100vw;
-    height: 100vh;
+    height: 110vh;
     background: $background;
     margin-top: -54px;
 }
 
 .authtitle {
     color: $green;
-    font-size: 80px;
+    font-size: 60px;
+    font-family: $disney;
 }
 
 .authimage {
@@ -162,16 +163,29 @@ width: 200px;
 
 .radio {
     display: flex;
+    flex-direction: column;
     align-items: center;
     position: relative;
-    top: -15px;
-    margin-top: -25px;
+    justify-content: center;
+    top: 122px;
     border: solid 1px black;
 }
 .surveyattraction {
     margin-left: 20px;
     font-size: 15px;
     margin-right: 20px;
+}
+
+.surveycomments {
+    width: 70vw;
+    height: 25px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.surveybutton {
+    @include button;
+    margin-bottom: 5px;
 }
 
 //Trip

@@ -68,22 +68,22 @@ module.exports = {
                 res.sendStatus(404)}
             },
 
-        newSurvey: (req, res) => {
+        editRating: async (req, res) => {
             const db = req.app.get('db')
             const {attraction_id, user_id, rating, comments} = req.body
 
+            const existingRating = await db.check_rating([user_id, attraction_id])
+
+            if (existingRating[0]) {
+
+            db.edit_survey([user_id, attraction_id, rating, comments]).then( () => res.sendStatus(200))
+            }
+            else {
+
             db.new_survey([attraction_id, user_id, rating, comments])
             .then( () => res.sendStatus(200))
+            }
             },
-
-        editSurvey: (req, res) => {
-            const db = req.app.get('db')
-            const {id} = req.params
-            const {attraction_id, rating, comments} = req.body
-
-            db.edit_survey(id, attraction_id, rating, comments)
-            .then( () => res.sendStatus(200))
-        },
 
         retrieveTrips: (req, res) => {
             const db = req.app.get('db')

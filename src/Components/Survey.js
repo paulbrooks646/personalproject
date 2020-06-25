@@ -61,7 +61,7 @@ function newSurvey(attraction_id, user_id, survey){
    })   
 
     return (
-        <div>{attractionsArray}</div>
+        <div className="surveymain">{attractionsArray}</div>
     )
 }
 

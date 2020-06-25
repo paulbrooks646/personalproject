@@ -36,16 +36,31 @@ function Trip(props) {
         getTrip()
     }
     
-const tripArray = trip.map((e) => <div><h1>{e.name}</h1><button onClick={() => removeFromTrip(e.event_id)}>Remove From Trip</button></div>)
+const tripArray = trip.map((e) => 
+    <div className="currenttrip">
+        <h2 className={`trip${e.name}`}>{e.name}</h2>
+        <button className="tripbutton" onClick={() => removeFromTrip(e.event_id)}>Remove From Trip
+        </button>
+    </div>)
 
 
 
     const attractionsArray = props.attractions.attractions.map((e, index) => {
-        return <div className="dashboarddiv" key={index}><Link to={`/Attraction/${e.attraction_id}`}><h2 className={`trip${e.name}`}>{e.name}</h2></Link><button className="dashboardbutton" onClick={() => newEvent(props.match.params.trip_id, e.attraction_id, props.user.user.id)}>Add to Trip</button></div>
-    })
+        return (
+        <div className={`divtrip${e.name}`} key={index}>
+            <Link to={`/Attraction/${e.attraction_id}`}>
+                <h2 className={`trip${e.name}`} >{e.name}
+                </h2>
+            </Link>
+            <button 
+                className="tripbutton" 
+                onClick={() => newEvent(props.match.params.trip_id, e.attraction_id, props.user.user.id)}>Add to Trip
+                </button>
+        </div>
+    )})
     return (
 
-        <div className="tripmain"><div className="dashboard">{attractionsArray}</div><div className="triptrip">{tripArray}</div></div>
+        <div className="tripmain"><div className="trip">{attractionsArray}<h2 className="tripfantasy">Fantasyland</h2><h2 className="tripmains">Main Street USA</h2><h2 className="tripfrontier">Frontierland</h2><h2 className="tripcritter">Critter Country</h2><h2 className="tripnew">New Orleans Square</h2><h2 className="tripadventure">Adventureland</h2><h2 className="triptomorrow">Tomorrowland</h2><h2 className="triptoon">Toon Town</h2></div><div className="triptrip">{tripArray}</div></div>
     )
 }
 

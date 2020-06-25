@@ -71,7 +71,10 @@ const register = () => {
                     type="email"
                     value={newEmail} 
                     onChange={e => setNewEmail(e.target.value)}/>
-                <button className="authbutton"onClick={() => register()} >Register</button>
+                <button 
+                className="authbutton weasel" 
+                onClick={() => register()} >Register
+                </button>
             </div>
         </div>
     )

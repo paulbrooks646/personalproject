@@ -53,3 +53,14 @@
         box-shadow: 5px 5px 5px 5px;
 }
 
+@mixin tripdiv($top, $left) {
+    @include center(center);
+    height: 35px;
+    width: 300px;
+    position: relative;
+    border: solid 1px black;
+    top: $top;
+    left: $left;
+    margin-right: 0px;
+}
+

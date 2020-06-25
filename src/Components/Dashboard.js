@@ -52,22 +52,32 @@ function Dashboard(props) {
         getTrips()
     }
 
-
-    // for (let i = 0; i<trips.length; i++) 
     const currentTrip = days.map((e, index) => {
         
         return (
-    <div key={index}><Link to={`/Trip/${e.trip_id}`}><h1>Day {index+1}</h1></Link>{e.events.map((event) => <h3>{event}</h3>
-        )}<button onClick={() => deleteDay(e.trip_id)}>Delete Day</button></div> )})
+    <div key={index}><Link to={`/Trip/${e.trip_id}`}><h1>Day {index+1}</h1></Link>{e.events.map((event) => <h3 className="dashboardattraction">{event}</h3>
+        )}<button className="dashboarddelete" onClick={() => deleteDay(e.trip_id)}>Delete Day</button></div> )})
 
-    const tripsList = trips.map( (e, index) => <Link to={`/Trip/${e.trip_id}`}><h5 key={index}>Day {index+1}</h5></Link>)
+    const tripsList = trips.map( (e, index) => <Link to={`/Trip/${e.trip_id}`}><h6 key={index}>Day {index+1}</h6></Link>)
 
            
 
 
     return (
 
-    <div className="dashboardmain"><div className="dashboardupper"><h1 className="dashboardtitle">Your Trip</h1><button className="dashboardbutton" onClick={() => newlist()}>Add a Day</button><h2>Click on a day to edit it.</h2><h2>{tripsList}</h2></div><div className="dashboardlist">{currentTrip}</div></div>
+    <div className="dashboardmain">
+        <h1 className="dashboardtitle">Plan Your Trip</h1>
+        <div className="dashboarddays">
+            <h6>Click a day to edit</h6>
+            <h6 className="dashboardtest">{tripsList}</h6>
+            <h6>or</h6>
+            <button 
+                className="dashboardbutton" onClick={() => newlist()}>Add Day to Trip
+            </button>
+        </div>
+        <h2 className="dashboardsofar">Your trip so far:</h2>
+    <div className="dashboardlist">{currentTrip}</div>
+    </div>
     )
 }
 

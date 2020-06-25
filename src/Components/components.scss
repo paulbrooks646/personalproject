@@ -217,12 +217,17 @@ label {
 
 .tripmain {
     display: flex;
-
+    height: 1500px;
 }
 .currenttrip {
-    border: solid 1px black;
     position: relative;
     right: -680px;
+    border: solid 1px transparent;
+    margin-bottom: 5px;
+}
+.tripyourday {
+    position: relative;
+    right: -680px
 }
 
 .tripdiv {
@@ -864,9 +869,18 @@ left: 50px;
             }
 
             .currenttrip {
-                border: solid 1px black;
+                border: solid 1px transparent;
                 position: relative;
                 right: -350px;
+            }
+
+            .tripmain {
+                display: flex;
+                height: 1500px
+            }
+            .tripyourday {
+                position: relative;
+                right: -350px
             }
 }
 
@@ -916,8 +930,8 @@ left: 50px;
 
     .triptomorrow {
         @include land($tomorrow);
-        top: -915px;
-        left: 350px;
+        top: -49px;
+        left: 50px;
     }
 
     .divtripAlice {
@@ -925,16 +939,16 @@ left: 50px;
         }
         
         .divtripAstro {
-            @include tripdiv(488px, 300px);
+            @include tripdiv(1355px, 0px);
         }
         
         .divtripAstroblasters {
-            @include tripdiv(488px, 300px);
+            @include tripdiv(1355px, 0px);
         
         }
         
         .divtripAutopia {
-            @include tripdiv(488px, 300px);
+            @include tripdiv(1355px, 0px);
         }
         
         .divtripBig {
@@ -1015,11 +1029,11 @@ left: 50px;
         }
         
         .divtripSnow {
-            @include tripdiv(44px, 0px);
+            @include tripdiv(445px, 0px);
         }
         
         .divtripSpace {
-            @include tripdiv(-178px, 300px);
+            @include tripdiv(688px, 0px);
         }
         
         .divtripSplash {
@@ -1027,15 +1041,15 @@ left: 50px;
         }
         
         .divtripStar {
-            @include tripdiv(-215px, 300px);
+            @include tripdiv(651px, 0px);
         }
         
         .divtripStorybookland {
-            @include tripdiv(-532px, 300px);
+            @include tripdiv(333px, 0px);
         }
         
         .divtripSubmarine {
-            @include tripdiv(-252px, 300px);
+            @include tripdiv(613px, 0px);
         }
         
         .divtripTarzan {
@@ -1043,7 +1057,7 @@ left: 50px;
         }
         
         .divtripTeacups {
-            @include tripdiv(-606px, 300px);
+            @include tripdiv(259px, 0px);
         }
         
         .divtripWinnie {
@@ -1051,9 +1065,19 @@ left: 50px;
             }
 
             .currenttrip {
-                border: solid 1px black;
+                border: solid 1px transparent;
                 position: relative;
-                right: -350px;
+                right: -10px;
+            }
+
+            .tripmain {
+                display: flex;
+                height: 1700px
+            }
+
+            .tripyourday {
+                position: relative;
+                right: -10px
             }
 }
 

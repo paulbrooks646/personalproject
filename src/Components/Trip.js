@@ -60,7 +60,17 @@ const tripArray = trip.map((e) =>
     )})
     return (
 
-        <div className="tripmain"><div className="trip">{attractionsArray}<h2 className="tripfantasy">Fantasyland</h2><h2 className="tripmains">Main Street USA</h2><h2 className="tripfrontier">Frontierland</h2><h2 className="tripcritter">Critter Country</h2><h2 className="tripnew">New Orleans Square</h2><h2 className="tripadventure">Adventureland</h2><h2 className="triptomorrow">Tomorrowland</h2><h2 className="triptoon">Toon Town</h2></div><div className="triptrip">{tripArray}</div></div>
+        <div className="tripmain">
+            <div className="trip">{attractionsArray}<h2 className="tripfantasy">Fantasyland</h2>
+            <h2 className="tripmains">Main Street USA</h2>
+            <h2 className="tripfrontier">Frontierland</h2>
+            <h2 className="tripcritter">Critter Country</h2>
+            <h2 className="tripnew">New Orleans Square</h2>
+            <h2 className="tripadventure">Adventureland</h2>
+            <h2 className="triptomorrow">Tomorrowland</h2>
+            <h2 className="triptoon">Toon Town</h2></div>
+            <div className="triptrip"><h2 className="tripyourday">Your day:</h2>{tripArray}</div>
+        </div>
     )
 }
 

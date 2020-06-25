@@ -53,7 +53,15 @@ module.exports = {
             const {id} = req.params
 
             db.get_attraction(id)
-            .then ( attraction => res.status(200).send(attraction))            
+            .then ( attraction => {
+                let total = 0
+                let combined = {name: attraction[0].name, location: attraction[0].location, comments: [] }
+                attraction.forEach(element => {
+                    total += element.rating
+                    combined.comments.push(element.comments)   
+                });
+                combined.rating = (total/attraction.length).toFixed(1)
+                res.status(200).send(combined)})  
         },
 
         logout: async (req, res) => {
@@ -136,10 +144,11 @@ module.exports = {
                 res.sendStatus(200)
             )
         },
+
         getDays: (req, res) => {
             const db = req.app.get('db')
             const {id} = req.params
-            
+    
             db.get_days([id])
             .then(events => {
                 const formattedEvents = events.reduce((acc, curr) => {

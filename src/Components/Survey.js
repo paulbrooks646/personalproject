@@ -9,19 +9,13 @@ import axios from 'axios'
 
 function Survey(props) {
 
-const [comments, setComments] = useState("")
-const [rating, setRating] = useState(0)
 const [survey, setSurvey] = useState({'Alice in Wonderland': {rating: 0, comments: ""}})
 
 function handleChange(attractionName) {
     return (e) => setSurvey({...survey, [attractionName]: {...survey[attractionName], [e.target.name]: e.target.value}}) 
 
 }
-console.log(survey)
 function newSurvey(attraction_id, user_id, survey){
-    console.log(attraction_id)
-    console.log(user_id)
-    console.log(survey)
     const {rating, comments} = survey
     axios.put(`/api/survey`, {attraction_id, user_id, rating, comments})
 }

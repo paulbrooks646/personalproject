@@ -8,7 +8,7 @@ import './components.scss'
 function Map(props) {
     console.log("map", props)
     const attractionsArray = props.attractions.attractions.map( (e, index) => {
-        return <Link to={`/Attraction/${e.attraction_id}`}><h3 key={index} className={e.name}>{e.name}</h3></Link>
+        return <Link key={index} to={`/Attraction/${e.attraction_id}`}><h3 className={e.name}>{e.name}</h3></Link>
    })
 
     return (

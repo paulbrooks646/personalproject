@@ -17,7 +17,8 @@ function handleChange(attractionName) {
 }
 function newSurvey(attraction_id, user_id, survey){
     const {rating, comments} = survey
-    axios.put(`/api/survey`, {attraction_id, user_id, rating, comments})
+    axios.put(`/api/survey`, {attraction_id, user_id, rating, comments}).then(() => 
+    alert(`Thanks for you input!`))
 }
 
     const attractionsArray = props.attractions.attractions.map( (e, index) => {

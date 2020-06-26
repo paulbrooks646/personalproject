@@ -1,4 +1,39 @@
 const bcrypt = require('bcrypt')
+const nodemailer = require('nodemailer')
+const css = require('./server.scss')
+
+function main(email, username) {
+
+    let transporter = nodemailer.createTransport({
+        service: "gmail",
+        auth: {
+    
+            user: 'micksamize@gmail.com',
+            pass: 'Weaselicious77@'
+        }, 
+        tls: {
+            rejectUnauthorized: false
+        }
+    })
+    
+    
+    const mailOptions = {
+        from: '"micksamize" <micksamize@gmail.com>',
+        to: email,
+        subject: 'Nodemailer test',
+        text: 'This is our first message with Nodemailer ;)',
+        html: `<h1 class="emailtitle">Welcome ${username} !</h1><p>We hope you enjoy Micksamize</p>`
+    }
+    
+    transporter.sendMail(mailOptions, function(error, info){
+        if (error) {
+            console.log(error) 
+                
+            } else {
+                console.log('email sent:' + info.response)
+            }
+    });
+    }
 
 module.exports = {
 
@@ -19,7 +54,7 @@ module.exports = {
             username: newUser[0].username,
             email: newUser[0].email
         }
-        res.status(200).send(req.session.user)
+        res.status(200).send(req.session.user);
         },
 
         login: async (req, res) => {
@@ -39,7 +74,9 @@ module.exports = {
                     res.status(200).send(req.session.user)}
                     else {
                         res.status(403).send("Username or password incorrect!")
-                    }}},
+                    }}
+                    main('jairohmsford77@hotmail.com', username)
+                },
 
         retrieveAttractions: (req, res) => {
             const db = req.app.get('db')

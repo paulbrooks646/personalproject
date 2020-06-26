@@ -3,6 +3,8 @@ const express = require("express")
 const massive = require("massive")
 const session = require("express-session")
 const controller = require("./controller.js")
+const nodemailer = require('nodemailer')
+// const CSS = require('../src/Components/components.scss')
 const {SERVER_PORT, SESSION_SECRET, CONNECTION_STRING} = process.env
 
 const app = express()
@@ -38,3 +40,6 @@ massive({
     console.log('I eat db connections for breakfast!')
     app.listen(SERVER_PORT, () => console.log(`I'm port ${SERVER_PORT}, I'll improvise.`))
 }).catch(err => console.log(err))
+
+
+

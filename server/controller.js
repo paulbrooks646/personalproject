@@ -1,6 +1,5 @@
 const bcrypt = require('bcrypt')
 const nodemailer = require('nodemailer')
-const css = require('./server.scss')
 
 function main(email, username) {
 
@@ -22,7 +21,13 @@ function main(email, username) {
         to: email,
         subject: 'Nodemailer test',
         text: 'This is our first message with Nodemailer ;)',
-        html: `<h1 class="emailtitle">Welcome ${username} !</h1><p>We hope you enjoy Micksamize</p>`
+        html: `<body style="text-align: center;background-color:#ffff66">
+        <h1 style="color: blue;">Welcome ${username}!</h1>
+          <img style="background-color: transparent;width:200px;position:relative;top:10px;" src="https://img.pngio.com/filemickey-mouse-head-and-earspng-wikimedia-commons-mickey-head-transparent-background-450_371.png"/>
+        <h2 style="color:green; position:relative;top:0px;">Thank you for joining Micksamize!</h2>
+        <h3 style="color:red;position:relative;top:0px;">So you have decided to go to Disneyland? Great decision! We look forward to helping you make the most of your trip!</h3>
+        <img src="https://cdn1.parksmedia.wdprapps.disney.com/media/blog/wp-content/uploads/2019/05/ksjfhury85ui11.jpg" style="width:200px;height:200px; position:relative;top:0px;"/>
+         </body>`
     }
     
     transporter.sendMail(mailOptions, function(error, info){
@@ -55,6 +60,7 @@ module.exports = {
             email: newUser[0].email
         }
         res.status(200).send(req.session.user);
+        main(newEmail, newUsername)
         },
 
         login: async (req, res) => {
@@ -75,7 +81,7 @@ module.exports = {
                     else {
                         res.status(403).send("Username or password incorrect!")
                     }}
-                    main('jairohmsford77@hotmail.com', username)
+                    
                 },
 
         retrieveAttractions: (req, res) => {
@@ -204,4 +210,11 @@ module.exports = {
             })
 
         },
+
+        getRatings: (req, res) => {
+            const db = req.app.get('db')
+            
+            db.get_ratings()
+            .then ( ratings => res.status(200).send(ratings))
+        }
 }

@@ -1,3 +1,19 @@
+@media (min-width: 1400px) {
+    .currenttrip {
+        position: relative;
+        right: -890px;
+        border: solid 1px transparent;
+        margin-bottom: 5px;
+    }
+    .tripyourday {
+        position: relative;
+        right: -890px;
+    }
+}
+
+
+@media (max-width: 1400px) {
+
 .currenttrip {
     position: relative;
     right: -680px;
@@ -8,6 +24,7 @@
 .tripyourday {
     position: relative;
     right: -680px
+}
 }
 
 .tripAlice {
@@ -743,8 +760,10 @@
             
                         .tripyourday {
                             position: relative;
-                            right: -10px
+                            right: -10px;
                         }
+
+                       
             }
 
         

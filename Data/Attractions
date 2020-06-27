@@ -14,7 +14,6 @@ It's a Small World
 Jungle Cruise
 King Arthur Carousel
 Mark Twain River Boat
-Matterhorn Bobsleds
 Millenium Falcon
 Mr. Toad's Wild Ride
 Peter Pan
@@ -22,7 +21,6 @@ Pinocchio's Daring Journey
 Pirates of the Caribbean
 Rise of the Resistance
 Roger Rabbit's Cartoon Spin
-Sailing Ship Columbia
 Snow White's Scary Adventures
 Space Mountain
 Splash Mountain
@@ -32,6 +30,8 @@ Submarine Voyage
 Tarzan Treehouse
 Teacups
 Winnie the Pooh
+Sailing Ship Columbia
+Matterhorn Bobsleds
 
 insert into ratings (Alice_in_Wonderland, Astro_Orbitor, Astroblasters, Autopia, Big_Thunder_Mountain, Casey_JR_Train, Disneyland_Railroad, Dumbo, Enchanted_Tiki_Room, Gadgets_Go_Coaster, Haunted_Mansion, Indiana_Jones, Its_a_Small_World, Jungle_Cruise, King_Arthur_Carousel, Mark_Twain_River_Boat, Matterhorn_Bobsleds, Millenium_Falcon, Mr_Toads_Wild_Ride, Peter_Pan, Pinocchio, Pirates_of_the_Caribbean, Rise_of_the_Resistance, Roger_Rabbits_Car_Toon_Spin, Sailing_Ship_Columbia, Snow_White, Space_Mountain, Splash_Mountain, Star_Tours, Storybookland, Submarine_Voyage, Tarzan_Treehouse, Teacups, Winnie_the_Pooh)
 values ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22, $23, $24, $25, $26, $27, $28, $29, $30, $31, $32, $33 $34)

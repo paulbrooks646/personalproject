@@ -19,14 +19,14 @@ function main(email, username) {
     const mailOptions = {
         from: '"micksamize" <micksamize@gmail.com>',
         to: email,
-        subject: 'Nodemailer test',
+        subject: 'Welcome to Disneyland trip planner!',
         text: 'This is our first message with Nodemailer ;)',
         html: `<body style="text-align: center;background-color:#ffff66">
         <h1 style="color: blue;">Welcome ${username}!</h1>
           <img style="background-color: transparent;width:200px;position:relative;top:10px;" src="https://img.pngio.com/filemickey-mouse-head-and-earspng-wikimedia-commons-mickey-head-transparent-background-450_371.png"/>
-        <h2 style="color:green; position:relative;top:0px;">Thank you for joining Micksamize!</h2>
+        <h2 style="color:green; position:relative;top:0px;">Thank you for joining Disneyland Trip Planner!</h2>
         <h3 style="color:red;position:relative;top:0px;">So you have decided to go to Disneyland? Great decision! We look forward to helping you make the most of your trip!</h3>
-        <img src="https://cdn1.parksmedia.wdprapps.disney.com/media/blog/wp-content/uploads/2019/05/ksjfhury85ui11.jpg" style="width:200px;height:200px; position:relative;top:0px;"/>
+        <img src="https://cdn1.parksmedia.wdprapps.disney.com/media/blog/wp-content/uploads/2019/05/ksjfhury85ui11.jpg" style="width:200px;height:200px; position:relative;top:30px;"/>
          </body>`
     }
 
@@ -102,7 +102,7 @@ module.exports = {
         db.get_attraction(id)
             .then(attraction => {
                 let total = 0
-                let combined = { name: attraction[0].name, location: attraction[0].location, comments: [] }
+                let combined = { name: attraction[0].name, location: attraction[0].location, description: attraction[0].description, photo: attraction[0].photo, comments: [] }
                 attraction.forEach(element => {
                     total += element.rating
                     combined.comments.push(element.comments)

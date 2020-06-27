@@ -77,6 +77,12 @@ function Dashboard(props) {
         </div>
         <h2 className="dashboardsofar">Your trip so far:</h2>
     <div className="dashboardlist">{currentTrip}</div>
+    <div className="statsbuttondiv">
+        <h2 className="statsbuttonlink">Click here to see:</h2>
+        <Link to="/Statistics">
+            <button className="statsbutton">Attraction Statistics</button>
+        </Link>
+    </div>
     </div>
     )
 }

@@ -1,6 +1,6 @@
 @mixin button {
     height: 30px;
-    width: 90px;
+    width: 100px;
     background-color: black;
     color: $white; 
     margin-right: 10px;
@@ -14,11 +14,11 @@
 
 @mixin ride($top, $left) {
     position: relative;
-    color: black;
+    color: rgba(0,0,0,1);
     font-size: 12px;
     top: $top;
     left: $left;
-    border: solid 1px black;
+    border: solid 1px rgba(0,0,0,1);
     width: 85px;
   
 }

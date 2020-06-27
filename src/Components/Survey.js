@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import {getAttractions} from '../ducks/attractionReducer'
 import './components.scss'
 import axios from 'axios'
+import {Link} from 'react-router-dom'
 
 
 
@@ -15,10 +16,10 @@ function handleChange(attractionName) {
     return (e) => setSurvey({...survey, [attractionName]: {...survey[attractionName], [e.target.name]: e.target.value}}) 
 
 }
-function newSurvey(attraction_id, user_id, survey){
+function submitSurvey(attraction_id, user_id, survey, name){
     const {rating, comments} = survey
     axios.put(`/api/survey`, {attraction_id, user_id, rating, comments}).then(() => 
-    alert(`Thanks for you input!`))
+    alert(`Thanks for you input on ${name}!`))
 }
 
     const attractionsArray = props.attractions.attractions.map( (e, index) => {
@@ -56,13 +57,31 @@ function newSurvey(attraction_id, user_id, survey){
                 onChange={handleChange(e.name)}></input>
         </div> 
         <div>
-            <button className="surveybutton" onClick={() => newSurvey(e.attraction_id, props.user.user.id, survey[e.name])}>Submit</button>
+            <button className="surveybutton" onClick={() => submitSurvey(e.attraction_id, props.user.user.id, survey[e.name], e.name)}>Submit</button>
         </div>
     </div>)
    })   
 
     return (
-        <div className="surveymain">{attractionsArray}</div>
+        <div className="surveybody">
+            <div>
+            
+                    <h1 className="surveytitle">Disneyland Attraction Survey</h1>
+                
+                <h2 className="surveydescription">We strive to give our users the most accurate information. We would appreciate your input on any or all rides. If you have already given feedback but would like to change your opinion, simply submit again.</h2>
+                </div>
+                
+        
+        <div className="surveyarray">{attractionsArray}</div>
+        <div className="statsbuttondiv">
+            <h2 className="statsbuttonlink">Click here to see:</h2>
+            <Link to="/Statistics">
+                <button className="statsbutton">Attraction Statistics</button>
+            </Link>
+        </div>
+
+        </div>
+    
     )
 }
 

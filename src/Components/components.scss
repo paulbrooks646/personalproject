@@ -62,6 +62,7 @@ width: 200px;
     border: solid 1px black
 }
 
+
 .image{
     width: 100px;
     height: 100px;
@@ -180,14 +181,14 @@ a {
 .scroll {
     width: 100%
 }
+#attractionstatsbuttondiv {
+    position: relative;
+    top: 250px;
+}
 
 
 //SURVEY
 
-.surveymain {
-    @include center(center);
-    flex-direction: column;
-}
 
 .radio {
     display: flex;
@@ -195,7 +196,6 @@ a {
     align-items: center;
     position: relative;
     justify-content: center;
-    top: 122px;
     border: solid 3px black;
     width: 90%
 }
@@ -219,6 +219,30 @@ a {
 
 label {
     margin-left: 10px;
+}
+.surveybody {
+    position: relative;
+    top: 120px;
+}
+
+.surveytitlediv {
+    @include center(center)
+}
+.surveybody {
+    text-align: center;
+}
+
+.surveyarray {
+    @include center(center);
+    flex-direction: column;
+}
+
+.surveytitle {
+    color: $purple;
+}
+
+.surveydescription {
+    color: $toon;
 }
 
 //Trip
@@ -371,5 +395,37 @@ left: 50px;
     width: 750px;
     @include center(center);
 }
+
+.statsbutton {
+    border-radius: 50%;
+    height: 90px;
+    width: 90px;
+    font-size: 16px;
+    background-color: #ffff66;
+    color: $blue;
+    z-index: 3;
+    border: solid 3px black;
+    box-shadow: 4px 4px 7px 1px black;
+    text-decoration: underline;
+    position: relative;
+
+}
+.statsbuttondiv {
+    @include center(center);
+    position: relative;
+    top: 20px;
+
+    }
+
+.statsbuttonlink {
+    margin-right: 20px;
+}
+
+
+// div {
+//     border: solid 1px black;
+// }
+
+
 
 

@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react'
 import "./components.scss"
 import axios from 'axios'
 import ScrollArea from 'react-scrollbar'
+import {Link} from 'react-router-dom'
 
 function Attraction(props) {
 
@@ -25,7 +26,8 @@ function Attraction(props) {
 
 console.log(attraction)
     return (
-        <>
+        <div>
+        <div>
         { attraction.comments ?
         <div className="attractionmain"> 
         <div className={`attractioncard${attraction.location}`}>
@@ -42,7 +44,15 @@ console.log(attraction)
         </div>
         : null
         }
-        </>
+        
+        </div>
+        <div className="statsbuttondiv" id="attractionstatsbuttondiv">
+        <h2 className="statsbuttonlink">Click here to see:</h2>
+        <Link to="/Statistics">
+            <button className="statsbutton">Attraction Statistics</button>
+        </Link>
+    </div>
+    </div>
     )
 }
 

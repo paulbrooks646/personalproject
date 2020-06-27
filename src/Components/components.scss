@@ -70,7 +70,7 @@ width: 200px;
 
 .navbutton {
     @include button;
-    font-size: 11px;
+    font-size: 10px;
 }
 .greeting {
     font-family: $disney;
@@ -249,6 +249,7 @@ label {
     @include button;
    height: 20px;
    font-size: 10px;
+   width: 100px;
 }
 
 
@@ -353,7 +354,22 @@ left: 50px;
 
 .statsmain{
     position: relative;
+
     top: 200px;
+    @include center(center);
+    flex-direction: column;
+}
+
+.overallbarchart {
+    position: relative;
+    width: 750px;
+    @include center(center);
+}
+
+.userbarchart {
+    position: relative;
+    width: 750px;
+    @include center(center);
 }
 
 

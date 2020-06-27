@@ -257,8 +257,18 @@ module.exports = {
                     }
                   }
               }
-              newArr.sort((a,b) => (a.rating.length > b.rating.length) ? 1 : (a.rating > b.rating ? 1 : -1))
+              newArr.sort((a,b) => (a.rating.length > b.rating.length) ? -1 : (a.rating < b.rating ? 1 : -1))
               res.status(200).send(newArr)
             })
-            }
+            },
+
+            getUserRatings: (req, res) => {
+                const db = req.app.get('db')
+                const { id } = req.params
+        
+                db.get_user_ratings(id)
+                    .then(ratings => {
+                        ratings.sort((a,b) => (a.rating.length > b.rating.length) ? -1 : (a.rating < b.rating ? 1 : -1))
+                        res.status(200).send(ratings)})
+            },
 }

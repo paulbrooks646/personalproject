@@ -45,6 +45,9 @@ const logout = () => {
                    <Link to="/Survey">
                        <button className="navbutton">Survey</button>
                    </Link>
+                   <Link to="/Statistics">
+                       <button className="navbutton">Statistics</button>
+                   </Link>
                 </div>
                 <div className="logoutdiv">
                     <button className="navbutton" onClick={() => logout()}>Logout</button>
@@ -71,6 +74,9 @@ const logout = () => {
                <Link to="/Survey">
                    <button className="navbutton">Survey</button>
                </Link>
+               <Link to="/Statistics">
+                       <button className="navbutton">Statistics</button>
+                   </Link>
             </div>
             <div className="logoutdiv">
                 <button className="navbutton" onClick={() => logout()}>Logout</button>

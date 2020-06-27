@@ -1,16 +1,19 @@
 import React, {useEffect, useState} from 'react'
 import "./components.scss"
 import axios from 'axios'
-import {Bar, Pie, Donut, Line} from 'react-chartjs-2'
+import {Bar} from 'react-chartjs-2'
+import { connect } from 'react-redux'
+import { getAttractions } from '../ducks/attractionReducer'
 
 
-export default function Statistics() {
+function Statistics(props) {
 
     const [ratings, setRatings] = useState([])
-    
+    const [userratings, setUserRatings] = useState([])
 
     useEffect(() => {
         getRatings()
+        getUserRatings()
     }, [])
 
     function getRatings() {
@@ -18,31 +21,70 @@ export default function Statistics() {
             setRatings(res.data)
         )
     }
-    console.log(ratings)
-    // let first = ratings[0].name
-    let pig = {
+
+    function getUserRatings() {
+        const {id} = props.user.user
+        axios.get(`/api/ratings/${id}`).then( res => setUserRatings(res.data))
+    }
+
+
+
+
+
+    let attractionArr = ratings.map((e) => {
+        return e.name
+   })
+   let ratingArr = ratings.map((e) => {
+    return e.rating
+})
+let userAttractionArr = userratings.map((e) => {
+    return e.name
+})
+let userRatingArr = userratings.map((e) => {
+return e.rating
+})
+
+let userRatings = {
         
-        labels: ['first', "cow", "duck"],
+    labels: userAttractionArr,
+    datasets: [
+        {
+            label: "Rating",
+            backgroundColor: "red",
+            borderColor: "black",
+            borderWidth: 2,
+            data: userRatingArr
+        }
+    ]
+}
+
+
+    let overallRatings = {
+        
+        labels: attractionArr,
         datasets: [
             {
-                label: "animals",
+                label: "Rating",
                 backgroundColor: "blue",
                 borderColor: "black",
                 borderWidth: 2,
-                data: [5, 3, 7]
+                data: ratingArr
             }
         ]
     }
 
-    return (
     
-        <div>
-            <Bar
-                data={pig}
+
+    
+    return (
+        <div className="statsmain">
+            <div className="overallbarchart">
+                <Bar
+                data={overallRatings}
                 options={{
                     title:{
                         display: true,
-                        text: "animals",
+                        text: "Overall Attraction Ratings",
                         fontSize: 20
                     },
                     legend:{
@@ -51,5 +93,25 @@ export default function Statistics() {
                     }
                 }}
                 />
+            </div>
+            <div className="userbarchart">
+            <Bar
+                data={userRatings}
+                options={{
+                    title:{
+                        display: true,
+                        text: "Your Attraction Ratings",
+                        fontSize: 20
+                    },
+                    legend:{
+                        display:true,
+                        position:"right"
+                    }
+                }}
+                />
+                </div>
         </div>)
 }
+
+const mapStateToProps = reduxState => reduxState
+export default connect(mapStateToProps, { getAttractions })(Statistics) 

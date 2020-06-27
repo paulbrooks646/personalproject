@@ -1,13 +1,13 @@
 import React, {useEffect, useState} from 'react'
 import "./components.scss"
 import axios from 'axios'
-import {Bar, Pie, Donut, Line} from 'chart.js'
+import {Bar, Pie, Donut, Line} from 'react-chartjs-2'
 
 
 export default function Statistics() {
 
-    let [ratings, setRatings] = useState([])
-    let [sorted, setSorted] = useState([])
+    const [ratings, setRatings] = useState([])
+    
 
     useEffect(() => {
         getRatings()
@@ -18,18 +18,38 @@ export default function Statistics() {
             setRatings(res.data)
         )
     }
-
-    ratings.map((e, index) => {
+    console.log(ratings)
+    // let first = ratings[0].name
+    let pig = {
         
-    })
-
-
-
-console.log(ratings)
-  
+        labels: ['first', "cow", "duck"],
+        datasets: [
+            {
+                label: "animals",
+                backgroundColor: "blue",
+                borderColor: "black",
+                borderWidth: 2,
+                data: [5, 3, 7]
+            }
+        ]
+    }
 
     return (
     
         <div>
-    <div className="statsmain"><h1>Statistics</h1></div></div>)
+            <Bar
+                data={pig}
+                options={{
+                    title:{
+                        display: true,
+                        text: "animals",
+                        fontSize: 20
+                    },
+                    legend:{
+                        display:true,
+                        position:"right"
+                    }
+                }}
+                />
+        </div>)
 }

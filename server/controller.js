@@ -257,6 +257,7 @@ module.exports = {
                     }
                   }
               }
+              newArr.sort((a,b) => (a.rating.length > b.rating.length) ? 1 : (a.rating > b.rating ? 1 : -1))
               res.status(200).send(newArr)
             })
             }

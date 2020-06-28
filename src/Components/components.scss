@@ -90,7 +90,6 @@ width: 200px;
     @include center(center);
     font-size: 80px;
     font-family: $disney;
-    border: solid 1px black;
     color: $purple;
 }
 
@@ -178,17 +177,49 @@ a {
 .attractionmain {
     @include center(center)
 }
-.scroll {
-    width: 100%
-}
+
 #attractionstatsbuttondiv {
     position: relative;
     top: 250px;
 }
 
 .attractionphoto {
-    width: 250px;
+    width: 280px;
+    height: 170px;
+    position: relative;
+    top: -25px;
 }
+.attractionname {
+    font-family: $disney;
+}
+
+.attractiondescription {
+    width: 90%;
+    position: relative;
+    top: -25px;
+}
+
+.attractionratingdiv {
+    position: relative;
+    top: -25px;
+    width: 60%;
+    display: flex;
+    @include center(space-evenly);
+}
+.attractionrating {
+    color: green
+}
+.attractionlocation {
+    position: relative;
+    top: -55px;
+}
+.scroll {
+    width: 100%;
+    position: relative;
+    top: -60px;
+}
+
+
 
 
 //SURVEY

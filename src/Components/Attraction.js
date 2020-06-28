@@ -31,16 +31,19 @@ console.log(attraction)
         { attraction.comments ?
         <div className="attractionmain"> 
         <div className={`attractioncard${attraction.location}`}>
-            <h1>{attraction.name}</h1>
+            <h1 className="attractionname">{attraction.name}</h1>
             <p className="attractiondescription">{attraction.description}</p>
             <img className="attractionphoto" src={attraction.photo}/>
-            <h2>Rating: {attraction.rating}</h2>
-            <h2>{attraction.location}</h2>
+            <div className="attractionratingdiv">
+            <h3>Rating:</h3>
+            <h1 className="attractionrating">     {attraction.rating}</h1>
+            </div>
+            <h3 className="attractionlocation">Location: {attraction.location}</h3>            
             <ScrollArea
             speed={.8}
             className="scroll"
             horizontal={false}>
-            {attraction.comments.map((e) => <h1>{e}</h1>)}
+            {attraction.comments.map((e) => <h2>{e}</h2>)}
             </ScrollArea>
         </div>
         </div>

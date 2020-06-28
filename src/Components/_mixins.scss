@@ -42,11 +42,11 @@
 
 @mixin card($color) {
 
-        height: 50vh;
-        width: 50vw;
+        height: 70vh;
+        width: 60vw;
         background-color: $color;
         position: relative;
-        top: 200px;
+        top: 150px;
         @include center(center);
         flex-direction: column;
         border: solid 1px black;

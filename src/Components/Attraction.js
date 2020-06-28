@@ -32,6 +32,8 @@ console.log(attraction)
         <div className="attractionmain"> 
         <div className={`attractioncard${attraction.location}`}>
             <h1>{attraction.name}</h1>
+            <p className="attractiondescription">{attraction.description}</p>
+            <img className="attractionphoto" src={attraction.photo}/>
             <h2>Rating: {attraction.rating}</h2>
             <h2>{attraction.location}</h2>
             <ScrollArea

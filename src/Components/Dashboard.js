@@ -5,6 +5,7 @@ import axios from 'axios'
 import './components.scss'
 import { Link } from 'react-router-dom'
 import Countdown from './Countdown.js'
+import {getUser} from '../ducks/userReducer'
 
 
 function Dashboard(props) {
@@ -22,7 +23,7 @@ function Dashboard(props) {
 
     const [trips, setTrips] = useState([])
     const [days, setDays] = useState([])
-    const [date, setDate] = useState([])
+    const [date, setDate] = useState('2030-10-30')
 
 
     function getDays() {
@@ -54,6 +55,16 @@ function Dashboard(props) {
         getTrips()
     }
 
+    function selectDate() {
+        console.log(date)
+        const {id} = props.user.user
+        axios.put(`/api/date/${id}`, {date})
+        .then(()=> {
+            props.getUser()
+        }
+        )
+    }
+
     const currentTrip = days.map((e, index) => {
         
         return (
@@ -75,8 +86,9 @@ console.log(date)
         <input 
             className="dashboardinput" 
             type="date"
+            value={date}
             onChange={e => setDate(e.target.value)}/>
-        <button className="dashboardbutton">Submit</button>
+        <button className="dashboardbutton" onClick={() => selectDate()}>Submit</button>
         </div>
         </div>
         <h1 className="dashboardtitle">Plan Your Trip</h1>
@@ -102,4 +114,4 @@ console.log(date)
 }
 
 const mapStateToProps = reduxState => reduxState
-export default connect(mapStateToProps, { getAttractions })(Dashboard) 
+export default connect(mapStateToProps, { getAttractions, getUser })(Dashboard) 

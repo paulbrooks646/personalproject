@@ -33,6 +33,7 @@ app.delete('/api/day/:id', controller.deleteDay)
 app.get('/api/days/:id', controller.getDays)
 app.get('/api/ratings', controller.getRatings)
 app.get('/api/ratings/:id', controller.getUserRatings)
+app.put('/api/date/:id', controller.tripDate)
 
 massive({
     connectionString: CONNECTION_STRING,

@@ -1,14 +1,17 @@
 import React, {useState, useEffect} from 'react'
+import {connect} from 'react-redux'
+import {getAttractions} from '../ducks/attractionReducer.js'
 
 
-
-export default function CountdownTimer() {
+function Countdown(props) {
 
 
 
 
 const calculateTimeLeft = () => {
-    const difference = +new Date("2020-11-12") - +new Date();
+
+    const difference = +new Date(props.user.user.date) - +new Date();
+
 
     let timeLeft = {};
 
@@ -16,8 +19,13 @@ const calculateTimeLeft = () => {
         timeLeft = {
             days: Math.floor(difference / (1000 * 60 * 60 * 24)),
         };
+    } else {
+        timeLeft = {
+            days: "???"
+        }
     }
     return timeLeft;
+
 };
 
 const [timeLeft, setTimeLeft] = useState(calculateTimeLeft())
@@ -46,8 +54,12 @@ Object.keys(timeLeft).forEach(interval => {
 
 return (
     <div>
-        <h1 className="countertitle">Day's left until your trip:</h1>
-        {timerComponents.length ? timerComponents : <span>Disneyland!!!</span>}
+        <h1 className="countertitle">Days until your trip:</h1>
+        {timerComponents.length ? timerComponents : <span></span>}
     </div>
 )
 }
+
+
+const mapStateToProps = reduxState => reduxState
+export default connect(mapStateToProps, { getAttractions })(Countdown)

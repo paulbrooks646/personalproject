@@ -2,8 +2,6 @@
     text-decoration: none;    
 }
 
-
-@import './functions';
 @import './mixins';
 @import './variables';
 @import './mapqueries';
@@ -119,7 +117,7 @@ margin-bottom: 15px;
     font-family: $disney;
     color: $purple;
     position: relative;
-    top: -130px;
+    top: -120px;
 }
 
 .countdowndiv {

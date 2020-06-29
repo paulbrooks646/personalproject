@@ -57,7 +57,8 @@ module.exports = {
         req.session.user = {
             id: newUser[0].user_id,
             username: newUser[0].username,
-            email: newUser[0].email
+            email: newUser[0].email,
+            date: user[0].trip_date
         }
         res.status(200).send(req.session.user);
         main(newEmail, newUsername)
@@ -77,7 +78,8 @@ module.exports = {
                 req.session.user = {
                     id: user[0].user_id,
                     username: user[0].username,
-                    email: user[0].email
+                    email: user[0].email,
+                    date: user[0].trip_date
                 }
                 res.status(200).send(req.session.user)
             }
@@ -222,11 +224,9 @@ module.exports = {
 
         db.get_ratings()
             .then(ratings => {
-                // console.log(ratings)
                 let newArr = []
 
                 for (let i = 1; i < ratings.length; i++) {
-                // console.log('iteration count')
                   let total = 0
                   let avg = 0
                   let combined = { 
@@ -271,4 +271,23 @@ module.exports = {
                         ratings.sort((a,b) => (a.rating.length > b.rating.length) ? -1 : (a.rating < b.rating ? 1 : -1))
                         res.status(200).send(ratings)})
             },
-}
+
+            tripDate: async (req, res) => {
+                const db = req.app.get('db')
+                console.log(req.params)
+                console.log(req.body)
+                const {id} = req.params
+                const {date} = req.body
+
+                db.edit_trip_date([id, date])
+                .then(user => {
+                    req.session.user = {
+                        id: user[0].user_id,
+                        username: user[0].username,
+                        email: user[0].email,
+                        date: user[0].trip_date
+                    }
+                    res.sendStatus(200)})
+                
+            }
+        }

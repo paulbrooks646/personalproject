@@ -17,36 +17,37 @@
     height: 125vh;
     background: $background;
     margin-top: -54px;
-}
 
-.authtitle {
-    color: $green;
-    font-size: 60px;
-    font-family: $disney;
-}
 
-.authimage {
-    width: 300px;
-    height: 200px;
-}
+    h1 {
+         color: $green;
+        font-size: 60px;
+        font-family: $disney;
+    }
 
-.authh2 {
-    font-size: 35px;
-    margin-top: 40px;
-}
+    img {
+        width: 300px;
+        height: 200px;
+    }
 
-.authinputdiv {
-    margin-top: 50px;
-}
+    h2 {
+        font-size: 35px;
+        margin-top: 40px;
+    }
 
-.authinput {
-margin-right: 20px;
-height: 25px;
-width: 200px;
-}
+    div {
+        margin-top: 50px;
+    }
 
-.authbutton {
-    @include button
+    input {
+        margin-right: 20px;
+        height: 25px;
+        width: 200px;
+    }
+
+    button {
+        @include button
+    }
 }
 
 //NAV
@@ -82,8 +83,34 @@ width: 200px;
 
 .dashboardmain {
     position: relative;
-    top: 61px;
-    height: 330px;
+    top: 120px;
+    height: 100%;
+}
+
+.titletimer {
+@include center(space-evenly)
+}
+
+.timer {
+    @include center(center)
+}
+.countertitle {
+    color: $main;
+    position: relative;
+    top: -10px;
+}
+
+.dashboardinput {
+margin-right: 15px;
+margin-bottom: 15px;
+}
+
+.counter {
+    @include center(center);
+    color: blue;
+    font-size: 60px;
+    position: relative;
+    top: -50px;
 }
 
 .dashboardtitle {
@@ -91,6 +118,12 @@ width: 200px;
     font-size: 80px;
     font-family: $disney;
     color: $purple;
+    position: relative;
+    top: -130px;
+}
+
+.countdowndiv {
+    @include center(space-evenly)
 }
 
 .dashboardbutton {
@@ -98,9 +131,15 @@ width: 200px;
     font-size: 12px;
    position: relative;
 }
+
+.dateselector {
+    position: relative;
+    top: -62px;
+}
+
 .dashboardsofar {
     position: relative;
-    top: -65px;
+    top: -185px;
     color: $purple;
 }
 
@@ -109,13 +148,13 @@ width: 200px;
     align-items: flex-start;
     width: 100vw;
     position: relative;
-    top: -69px;
+    top: -179px;
 }
 
 .dashboarddays {
     @include center(center);
     position: relative;
-    top: -54px;
+    top: -190px;
     height: 100px;
 
 }
@@ -139,6 +178,10 @@ h6 {
 
 a {
     color: $main
+}
+
+.dashboardCritter {
+    color: $critter
 }
 //ATTRACTION
 

@@ -36,8 +36,8 @@ function Trip(props) {
         getTrip()
     }
     
-const tripArray = trip.map((e) => 
-    <div className="currenttrip">
+const tripArray = trip.map((e, index) => 
+    <div className="currenttrip" key={index}>
         <h2 className={`trip${e.name}`}>{e.name}</h2>
         <button className="tripbutton" onClick={() => removeFromTrip(e.event_id)}>Remove From Trip
         </button>

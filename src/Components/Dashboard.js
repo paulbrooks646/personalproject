@@ -4,6 +4,7 @@ import { getAttractions } from '../ducks/attractionReducer'
 import axios from 'axios'
 import './components.scss'
 import { Link } from 'react-router-dom'
+import Countdown from './Countdown.js'
 
 
 function Dashboard(props) {
@@ -21,6 +22,7 @@ function Dashboard(props) {
 
     const [trips, setTrips] = useState([])
     const [days, setDays] = useState([])
+    const [date, setDate] = useState([])
 
 
     function getDays() {
@@ -61,11 +63,22 @@ function Dashboard(props) {
     const tripsList = trips.map( (e, index) => <Link to={`/Trip/${e.trip_id}`} key={index}><h6>Day {index+1}</h6></Link>)
 
            
-
+console.log(date)
 
     return (
 
     <div className="dashboardmain">
+        <div className="countdowndiv">
+        <Countdown className="countdown"/>
+        <div className="dateselector">
+        <h2>Add Trip Date:</h2>
+        <input 
+            className="dashboardinput" 
+            type="date"
+            onChange={e => setDate(e.target.value)}/>
+        <button className="dashboardbutton">Submit</button>
+        </div>
+        </div>
         <h1 className="dashboardtitle">Plan Your Trip</h1>
         <div className="dashboarddays">
             <h6>Click a day to edit</h6>
@@ -83,6 +96,7 @@ function Dashboard(props) {
             <button className="statsbutton">Attraction Statistics</button>
         </Link>
     </div>
+    
     </div>
     )
 }

@@ -3,11 +3,10 @@ const express = require("express")
 const massive = require("massive")
 const session = require("express-session")
 const controller = require("./controller.js")
-const nodemailer = require('nodemailer')
-// const CSS = require('../src/Components/components.scss')
 const {SERVER_PORT, SESSION_SECRET, CONNECTION_STRING} = process.env
 
 const app = express()
+app.use(express.static(`${__dirname}/../build`))
 
 app.use(express.json())
 app.use(session({

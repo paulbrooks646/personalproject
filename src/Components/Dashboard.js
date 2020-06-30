@@ -103,7 +103,7 @@ function Dashboard(props) {
         <h3>Your trip so far:</h3>
         <div className="dashboardlist">{filledDays}</div>
         <div className="statsbuttondiv">
-            <h4 className="statsbuttonlink">Click here to see:</h4>
+            <h4 id="dashstat">Click here to see:</h4>
             <Link to="/Statistics">
                 <button className="statsbutton">Attraction Statistics</button>
             </Link>

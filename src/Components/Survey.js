@@ -71,7 +71,7 @@ const attractionsArray = props.attractions.attractions.map( (e, index) => {
             </div>
             <div className="surveyarray">{attractionsArray}</div>
             <div className="statsbuttondiv">
-                <h2 className="statsbuttonlink">Click here to see:</h2>
+                <h2>Click here to see:</h2>
                 <Link to="/Statistics">
                     <button className="statsbutton">Attraction Statistics</button>
                 </Link>

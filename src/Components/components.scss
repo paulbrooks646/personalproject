@@ -219,10 +219,13 @@
             }
 
             button {
-                @include button
+                @include button;
             }
     }
+}
 
+#dashstat {
+    margin-right: 20px;
 }
 
 h6 {
@@ -252,77 +255,80 @@ a {
 
 //ATTRACTION
 
-.attractioncardTomorrowland {
-    @include card($tomorrow)
-}
-
-.attractioncardMain {
-    @include card($main)
-}
-
-.attractioncardAdventureland {
-    @include card($adventure)
-}
-
-.attractioncardCritter {
-    @include card($critter)
-}
-
-.attractioncardNew {
-    @include card($new)
-}
-
-.attractioncardToon {
-    @include card($toon)
-}
-
-.attractioncardFrontierland {
-    @include card($frontier)
-}
-
-.attractioncardFantasyland {
-    @include card($fantasy)
-}
-
 .attractionmain {
-    @include center(center)
+    @include center(center);
+
+    .attractioncardTomorrowland {
+        @include card($tomorrow)
+    }
+    
+    .attractioncardMain {
+        @include card($main)
+    }
+    
+    .attractioncardAdventureland {
+        @include card($adventure)
+    }
+    
+    .attractioncardCritter {
+        @include card($critter)
+    }
+    
+    .attractioncardNew {
+        @include card($new)
+    }
+    
+    .attractioncardToon {
+        @include card($toon)
+    }
+    
+    .attractioncardFrontierland {
+        @include card($frontier)
+    }
+    
+    .attractioncardFantasyland {
+        @include card($fantasy);
+    }
+
+    h1 {
+        font-family: $disney;
+    }
+
+    p {
+        width: 90%;
+        position: relative;
+        top: -25px;
+    }
+
+    img {
+        width: 280px;
+        height: 170px;
+        position: relative;
+        top: -25px;
+    }
+
+    .attractionratingdiv {
+        position: relative;
+        top: -25px;
+        width: 60%;
+        display: flex;
+        @include center(space-evenly);
+
+        .attractionrating {
+            color: green;
+            font-family: none;
+        }    
+}
+    h3 {
+        position: relative;
+        top: -55px;
+    }
 }
 
 #attractionstatsbuttondiv {
-    position: relative;
     top: 250px;
 }
 
-.attractionphoto {
-    width: 280px;
-    height: 170px;
-    position: relative;
-    top: -25px;
-}
-.attractionname {
-    font-family: $disney;
-}
-
-.attractiondescription {
-    width: 90%;
-    position: relative;
-    top: -25px;
-}
-
-.attractionratingdiv {
-    position: relative;
-    top: -25px;
-    width: 60%;
-    display: flex;
-    @include center(space-evenly);
-}
-.attractionrating {
-    color: green
-}
-.attractionlocation {
-    position: relative;
-    top: -55px;
-}
 .scroll {
     width: 100%;
     position: relative;

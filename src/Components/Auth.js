@@ -22,7 +22,6 @@ const login = () => {
 }
 
 const register = () => {
-    console.log({newUsername, newPassword, newEmail})
     axios.post('/api/register', {newUsername, newPassword, newEmail})
     .then( res => {
         props.registerUser(res.data)
@@ -32,47 +31,44 @@ const register = () => {
 }
 
     return (
+        
         <div className="authmain">
-            <h1 className="authtitle">Disneyland Trip Planner</h1>
-            <img className="authimage" src="https://cdn1.parksmedia.wdprapps.disney.com/media/blog/wp-content/uploads/2019/05/ksjfhury85ui11.jpg" alt="Disneyland Castle" />
-            <h2 className="authh2">If you already have an account, login here:</h2>
-            <div className="authinputdiv">
-                <input
-                    className="authinput" 
+            <h1>Disneyland Trip Planner</h1>
+            <img 
+                src="https://cdn1.parksmedia.wdprapps.disney.com/media/blog/wp-content/uploads/2019/05/ksjfhury85ui11.jpg" alt="Disneyland Castle" />
+            <h2>If you already have an account, login here:</h2>
+            <div>
+                <input 
                     placeholder="username"
                     type="text"
                     value={username} 
                     onChange={e => setUsername(e.target.value)}/>
-                <input
-                    className="authinput" 
+                <input 
                     placeholder="password"
                     type="password"
                     value={password} 
                     onChange={e => setPassword(e.target.value)}/>
-                <button className="authbutton" onClick={() => login()}>Login</button>
+                <button 
+                    onClick={() => login()}>Login</button>
             </div>
-            <h2 className="authh2">If you are new to Disneyland Trip Planner, register here:</h2>
-            <div className="authinputdiv">
-                <input
-                    className="authinput" 
+            <h2>If you are new to Disneyland Trip Planner, register here:</h2>
+            <div>
+                <input 
                     placeholder="username"
                     type="text"
                     value={newUsername} 
                     onChange={e => setNewUsername(e.target.value)}/>
-                <input
-                    className="authinput" 
+                <input 
                     placeholder="password"
                     type="password"
                     value={newPassword} 
                     onChange={e => setNewPassword(e.target.value)}/>
-                <input
-                    className="authinput" 
+                <input 
                     placeholder="email"
                     type="email"
                     value={newEmail} 
                     onChange={e => setNewEmail(e.target.value)}/>
                 <button 
-                className="authbutton weasel" 
                 onClick={() => register()} >Register
                 </button>
             </div>

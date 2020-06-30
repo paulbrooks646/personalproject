@@ -1,8 +1,4 @@
    
-
-
-
-
 @media (min-width: 750px) {
 
     .Alice {
@@ -160,15 +156,8 @@
             display: none;
         }
 
-        .mapnavbar {
-            @include center(space-evenly);
-            position: fixed;
-            width: 100vw;
-            height: 160px;
+        .mapnav {
             top: 650px;
-            background-color: #FFFF66;
-            z-index: 2;
-            border: solid 1px black;
         }
     }
 
@@ -1948,22 +1937,6 @@
                                             .disneyland {
                                                 display: none
                                             }
-                                
-                                        .mapnavbar {
-                                            @include center(flex-left);
-                                            position: fixed;
-                                            width: 100vw;
-                                            height: 50px;
-                                            top: 0px;
-                                            z-index: 2;
-                                            margin-left: 35px;
-                                        }
-                                .mapimagediv {
-                                    display: none;
-                                }
-                                .mapgreetingdiv {
-                                    display: none;
-                                }
                                 
                                         }
                                         

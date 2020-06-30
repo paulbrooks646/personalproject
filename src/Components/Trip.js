@@ -37,25 +37,25 @@ function Trip(props) {
     }
     
 const tripArray = trip.map((e, index) => 
+
     <div className="currenttrip" key={index}>
         <h2 className={`trip${e.name}`}>{e.name}</h2>
-        <button className="tripbutton" onClick={() => removeFromTrip(e.event_id)}>Remove From Trip
+        <button onClick={() => removeFromTrip(e.event_id)}>Remove From Trip
         </button>
     </div>)
 
-
-
     const attractionsArray = props.attractions.attractions.map((e, index) => {
+
         return (
+
         <div className={`divtrip${e.name}`} key={index}>
             <Link to={`/Attraction/${e.attraction_id}`}>
                 <h2 className={`trip${e.name}`} >{e.name}
                 </h2>
             </Link>
             <button 
-                className="tripbutton" 
                 onClick={() => newEvent(props.match.params.trip_id, e.attraction_id, props.user.user.id)}>Add to Trip
-                </button>
+            </button>
         </div>
     )})
     return (

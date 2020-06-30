@@ -27,24 +27,23 @@ function Statistics(props) {
         axios.get(`/api/ratings/${id}`).then( res => setUserRatings(res.data))
     }
 
-
-
-
-
     let attractionArr = ratings.map((e) => {
         return e.name
    })
+
    let ratingArr = ratings.map((e) => {
     return e.rating
-})
-let userAttractionArr = userratings.map((e) => {
-    return e.name
-})
-let userRatingArr = userratings.map((e) => {
-return e.rating
-})
+    })
 
-let userRatings = {
+    let userAttractionArr = userratings.map((e) => {
+    return e.name
+    })
+
+    let userRatingArr = userratings.map((e) => {
+    return e.rating
+    })
+
+    let userRatings = {
         
     labels: userAttractionArr,
     datasets: [
@@ -57,7 +56,6 @@ let userRatings = {
         }
     ]
 }
-
 
     let overallRatings = {
         
@@ -73,43 +71,40 @@ let userRatings = {
         ]
     }
 
-    
-
-    
     return (
         <div className="statsmain">
             <div className="overallbarchart">
                 <Bar
-                data={overallRatings}
-                options={{
-                    title:{
-                        display: true,
-                        text: "Overall Attraction Ratings",
-                        fontSize: 20
+                    data={overallRatings}
+                    options={{
+                        title:{
+                            display: true,
+                            text: "Overall Attraction Ratings",
+                            fontSize: 20
                     },
-                    legend:{
-                        display:true,
-                        position:"right"
+                        legend:{
+                            display:true,
+                            position:"right"
                     }
                 }}
                 />
             </div>
             <div className="userbarchart">
-            <Bar
-                data={userRatings}
-                options={{
-                    title:{
-                        display: true,
-                        text: "Your Attraction Ratings",
-                        fontSize: 20
+                <Bar
+                    data={userRatings}
+                    options={{
+                        title:{
+                            display: true,
+                            text: "Your Attraction Ratings",
+                            fontSize: 20
                     },
-                    legend:{
-                        display:true,
-                        position:"right"
+                        legend:{
+                            display:true,
+                            position:"right"
                     }
                 }}
                 />
-                </div>
+            </div>
         </div>)
 }
 

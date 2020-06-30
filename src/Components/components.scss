@@ -16,7 +16,6 @@
     background: $background;
     margin-top: -54px;
 
-
     h1 {
          color: $green;
         font-size: 60px;
@@ -48,6 +47,15 @@
     }
 }
 
+@media (max-width: 900px) {
+    .authmain {
+
+        button {
+            margin-top: 20px;
+        }    
+    }
+}
+
 //NAV
 
 .navbar {
@@ -55,26 +63,87 @@
     position: fixed;
     width: 100vw;
     height: 120px;
-    top: 0px;
     background-color: #FFFF66;
     z-index: 2;
-    border: solid 1px black
-}
-
-
-.image{
-    width: 100px;
-    height: 100px;
     border: solid 1px black;
+
+    img {
+        width: 100px;
+        height: 100px;
+        border: solid 1px black;
+    }
+
+    button {
+        @include button;
+        font-size: 10px;
+    }
+
+    h3 {
+        font-family: $disney;
+        color: $purple;
+    }
 }
 
-.navbutton {
-    @include button;
-    font-size: 10px;
+#mapnav {
+    top: 660px;
 }
-.greeting {
-    font-family: $disney;
-    color: $purple;
+
+@media (max-height: 775px) {
+    #mapnav {
+
+    top: 630px;
+    }
+}
+
+@media (max-height: 725px) {
+    #mapnav {
+
+    top: 580px;
+    }
+}
+
+@media (max-height: 675px) {
+    #mapnav {
+
+    top: 540px;
+    }
+}
+
+@media (max-height: 625px) {
+    #mapnav {
+
+    height: 80px;
+
+        img {
+            display: none;
+        }
+
+        h3 {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 750px) {
+    .navbar {
+
+        justify-content: center;
+
+        img {
+            display: none;
+        }
+        h3 {
+            display: none;
+        }
+    }
+
+    #mapnav {
+        background-color: rgba(0, 0, 0, 0);
+        border: none;
+        top: -30px;
+        justify-content: start;
+        left: 65px;
+    }
 }
 
 //DASHBOARD
@@ -83,90 +152,77 @@
     position: relative;
     top: 120px;
     height: 100%;
-}
 
-.titletimer {
-@include center(space-evenly)
-}
+    .countdowndiv {
+        @include center(space-evenly);
 
-.timer {
-    @include center(center)
-}
-.countertitle {
-    color: $main;
-    position: relative;
-    top: -10px;
-}
+        .dateselector {
+            position: relative;
+            top: -62px;
 
-.dashboardinput {
-margin-right: 15px;
-margin-bottom: 15px;
-}
+            input {
+                margin-right: 15px;
+                margin-bottom: 15px;
+                }
 
-.counter {
-    @include center(center);
-    color: blue;
-    font-size: 60px;
-    position: relative;
-    top: -50px;
-}
+                button {
+                    @include button;
+                    font-size: 12px;
+                    position: relative;
+                    }
+        }
+    }
 
-.dashboardtitle {
-    @include center(center);
-    font-size: 80px;
-    font-family: $disney;
-    color: $purple;
-    position: relative;
-    top: -120px;
-}
+    .dashboardtitle {
+        @include center(center);
+        font-size: 80px;
+        font-family: $disney;
+        color: $purple;
+        position: relative;
+        top: -120px;
+    }
 
-.countdowndiv {
-    @include center(space-evenly)
-}
+    .dashboarddays {
+        @include center(center);
+        position: relative;
+        top: -190px;
+        height: 100px;
 
-.dashboardbutton {
-    @include button;
-    font-size: 12px;
-   position: relative;
-}
+        .dayslist {
+            @include center(center)
+        }
 
-.dateselector {
-    position: relative;
-    top: -62px;
-}
+        button {
+            @include button;
+            font-size: 12px;
+            position: relative;
+        }
+    
+    }
 
-.dashboardsofar {
-    position: relative;
-    top: -185px;
-    color: $purple;
-}
+    h3 {
+        position: relative;
+        top: -185px;
+        color: $purple;
+    }
 
-.dashboardlist {
-    @include center(space-evenly);
-    align-items: flex-start;
-    width: 100vw;
-    position: relative;
-    top: -179px;
-}
+    .dashboardlist {
+        @include center(space-evenly);
+        align-items: flex-start;
+        width: 100vw;
+        position: relative;
+        top: -179px;
 
-.dashboarddays {
-    @include center(center);
-    position: relative;
-    top: -190px;
-    height: 100px;
+            .dashboardattraction {
+                color:$blue;
+                top: 0px;
+            }
 
-}
+            button {
+                @include button
+            }
+    }
 
-.dashboardtest {
-    @include center(center);
-}
-
-.dashboarddelete {
-    @include button
-}
-
-.dashboardattraction {
-    color:$blue;
 }
 
 h6 {
@@ -178,9 +234,22 @@ a {
     color: $main
 }
 
-.dashboardCritter {
-    color: $critter
+//COUNTDOWN
+
+.countertitle {
+    color: $main;
+    position: relative;
+    top: -10px;
 }
+
+.counter {
+    @include center(center);
+    color: blue;
+    font-size: 60px;
+    position: relative;
+    top: -50px;
+}
+
 //ATTRACTION
 
 .attractioncardTomorrowland {
@@ -260,65 +329,50 @@ a {
     top: -60px;
 }
 
-
-
-
 //SURVEY
 
-
-.radio {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    justify-content: center;
-    border: solid 3px black;
-    width: 90%
-}
-.surveyattraction {
-    margin-left: 20px;
-    font-size: 15px;
-    margin-right: 20px;
-}
-
-.surveycomments {
-    width: 70vw;
-    height: 25px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-
-.surveybutton {
-    @include button;
-    margin-bottom: 5px;
-}
-
-label {
-    margin-left: 10px;
-}
-.surveybody {
+.surveymain {
     position: relative;
     top: 120px;
-}
 
-.surveytitlediv {
-    @include center(center)
-}
-.surveybody {
-    text-align: center;
-}
+    h1 {
+        color: $purple;
+    }
 
-.surveyarray {
-    @include center(center);
-    flex-direction: column;
-}
+    h2 {
+        color: $toon;
+    }
 
-.surveytitle {
-    color: $purple;
-}
+    .surveyarray {
+        @include center(center);
+        flex-direction: column;
 
-.surveydescription {
-    color: $toon;
+        .radio {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            justify-content: center;
+            border: solid 3px black;
+            width: 90%;
+
+            label {
+                margin-left: 10px;
+            }
+
+            .surveycomments {
+                width: 70vw;
+                height: 25px;
+                margin-top: 5px;
+                margin-bottom: 5px;
+            }
+
+            button {
+                @include button;
+                margin-bottom: 5px;
+            }
+        }
+    }
 }
 
 //Trip
@@ -326,33 +380,30 @@ label {
 .tripmain {
     display: flex;
     height: 1500px;
+
+    .trip {
+        position: relative;
+        top: 120px;
+    }
+
+        button {
+            @include button;
+            height: 20px;
+            font-size: 10px;
+            width: 100px;
+    }
 }
 
 .tripdiv {
     @include center(center);
     height: 35px;
     width: 50vw;
-  
-}
-
-.trip {
-    position: relative;
-    top: 120px;
 }
 
 .triptrip {
     margin-top: 150px;
     margin-right: 150px;
 }
-
-.tripbutton {
-    @include button;
-   height: 20px;
-   font-size: 10px;
-   width: 100px;
-}
-
-
 
 //MAP
 
@@ -433,8 +484,7 @@ left: 50px;
     .greetingdiv {
         display: none;
     }
-
-    }
+}
 
     @media (max-width: 800px) {
 
@@ -444,64 +494,48 @@ left: 50px;
         }    
     }
 
-
-#relative {
-    position: relative;
-    border: solid 1px black;
-}
-
 //STATS
 
-.statsmain{
-    position: relative;
+.statsmain {
 
+    position: relative;
     top: 200px;
     @include center(center);
     flex-direction: column;
+
+    .overallbarchart {
+        position: relative;
+        width: 750px;
+        @include center(center);
+    }
+
+    .userbarchart {
+        position: relative;
+        width: 750px;
+        @include center(center);
+    }
 }
 
-.overallbarchart {
-    position: relative;
-    width: 750px;
-    @include center(center);
-}
-
-.userbarchart {
-    position: relative;
-    width: 750px;
-    @include center(center);
-}
-
-.statsbutton {
-    border-radius: 50%;
-    height: 90px;
-    width: 90px;
-    font-size: 16px;
-    background-color: #ffff66;
-    color: $blue;
-    z-index: 3;
-    border: solid 3px black;
-    box-shadow: 4px 4px 7px 1px black;
-    text-decoration: underline;
-    position: relative;
-
-}
 .statsbuttondiv {
     @include center(center);
     position: relative;
     top: 20px;
 
+    h2 {
+        margin-right: 20px;
     }
 
-.statsbuttonlink {
-    margin-right: 20px;
-}
-
-
-// div {
-//     border: solid 1px black;
-// }
-
-
-
-
+    .statsbutton {
+        border-radius: 50%;
+        height: 90px;
+        width: 90px;
+        font-size: 16px;
+        background-color: #ffff66;
+        color: $blue;
+        z-index: 3;
+        border: solid 3px black;
+        box-shadow: 4px 4px 7px 1px black;
+        text-decoration: underline;
+        position: relative;
+    }
+ }

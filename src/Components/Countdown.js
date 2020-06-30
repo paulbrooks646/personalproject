@@ -5,13 +5,9 @@ import {getAttractions} from '../ducks/attractionReducer.js'
 
 function Countdown(props) {
 
-
-
-
 const calculateTimeLeft = () => {
 
     const difference = +new Date(props.user.user.date) - +new Date();
-
 
     let timeLeft = {};
 
@@ -25,7 +21,6 @@ const calculateTimeLeft = () => {
         }
     }
     return timeLeft;
-
 };
 
 const [timeLeft, setTimeLeft] = useState(calculateTimeLeft())
@@ -35,7 +30,6 @@ useEffect(() => {
         setTimeLeft(calculateTimeLeft())
     }, 1000)
 })
-
 
 const timerComponents = []
 

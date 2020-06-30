@@ -6,8 +6,6 @@ import axios from 'axios'
 import {Link} from 'react-router-dom'
 
 
-
-
 function Survey(props) {
 
 const [survey, setSurvey] = useState({'Alice in Wonderland': {rating: 0, comments: ""}})
@@ -22,8 +20,10 @@ function submitSurvey(attraction_id, user_id, survey, name){
     alert(`Thanks for you input on ${name}!`))
 }
 
-    const attractionsArray = props.attractions.attractions.map( (e, index) => {
+const attractionsArray = props.attractions.attractions.map( (e, index) => {
+
     return (
+
     <div key={index} className="radio">
         <div>
             <h3 className={`trip${e.name}`}>{e.name}</h3>
@@ -57,31 +57,26 @@ function submitSurvey(attraction_id, user_id, survey, name){
                 onChange={handleChange(e.name)}></input>
         </div> 
         <div>
-            <button className="surveybutton" onClick={() => submitSurvey(e.attraction_id, props.user.user.id, survey[e.name], e.name)}>Submit</button>
+            <button onClick={() => submitSurvey(e.attraction_id, props.user.user.id, survey[e.name], e.name)}>Submit</button>
         </div>
     </div>)
    })   
 
     return (
-        <div className="surveybody">
-            <div>
-            
-                    <h1 className="surveytitle">Disneyland Attraction Survey</h1>
-                
-                <h2 className="surveydescription">We strive to give our users the most accurate information. We would appreciate your input on any or all rides. If you have already given feedback but would like to change your opinion, simply submit again.</h2>
-                </div>
-                
-        
-        <div className="surveyarray">{attractionsArray}</div>
-        <div className="statsbuttondiv">
-            <h2 className="statsbuttonlink">Click here to see:</h2>
-            <Link to="/Statistics">
-                <button className="statsbutton">Attraction Statistics</button>
-            </Link>
-        </div>
 
+        <div className="surveymain">
+            <div>
+                <h1>Disneyland Attraction Survey</h1>
+                <h2>We strive to give our users the most accurate information. We would appreciate your input on any or all rides. If you have already given feedback but would like to change your opinion, simply submit again.</h2>
+            </div>
+            <div className="surveyarray">{attractionsArray}</div>
+            <div className="statsbuttondiv">
+                <h2 className="statsbuttonlink">Click here to see:</h2>
+                <Link to="/Statistics">
+                    <button className="statsbutton">Attraction Statistics</button>
+                </Link>
+            </div>
         </div>
-    
     )
 }
 

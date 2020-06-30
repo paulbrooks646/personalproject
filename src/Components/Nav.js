@@ -12,72 +12,72 @@ function Nav(props) {
         getUser()
     }, [])
 
-const logout = () => {
+    const logout = () => {
     axios.delete('/api/logout')
     .then( () => {
         props.logoutUser()
         props.history.push('/')
-    })
-}
+    })}
 
     const pathname = props.location.pathname
     if (pathname === "/") {
     return (
         <div></div>
-    )
-    } 
-    else if(pathname === "/Map") {
+    )}
+
+    else if (pathname === "/Map") {
+
         return (
-            <div className="mapnavbar">
-                <div className="mapimagediv">
-                    <img className="image" src="https://cdn1.parksmedia.wdprapps.disney.com/media/blog/wp-content/uploads/2019/05/ksjfhury85ui11.jpg" alt="Disneyland Castle" />
+            <div className="navbar" id="mapnav">
+                <div>
+                    <img src="https://cdn1.parksmedia.wdprapps.disney.com/media/blog/wp-content/uploads/2019/05/ksjfhury85ui11.jpg" alt="Disneyland Castle" />
                 </div>
-                <div className="mapgreetingdiv">
-                    <h2 className="greeting">Welcome {props.user.user.username}</h2>
+                <div>
+                    <h3>Welcome {props.user.user.username}</h3>
                 </div>
-                <div className="linkdiv">
+                <div>
                    <Link to="/Dashboard">
-                       <button className="navbutton">Trip Builder</button>
+                       <button>Trip Builder</button>
                    </Link>
                    <Link to="/Map">
-                       <button className="navbutton">Disneyland Map</button>
+                       <button>Disneyland Map</button>
                    </Link>
                    <Link to="/Survey">
-                       <button className="navbutton">Survey</button>
+                       <button>Survey</button>
                    </Link>
                 </div>
-                <div className="logoutdiv">
-                    <button className="navbutton" onClick={() => logout()}>Logout</button>
+                <div>
+                    <button onClick={() => logout()}>Logout</button>
                 </div>
             </div>            
         )}    
     
     else {
+
     return (
         <div className="navbar">
             <div className="imagediv">
-                <img className="image" src="https://cdn1.parksmedia.wdprapps.disney.com/media/blog/wp-content/uploads/2019/05/ksjfhury85ui11.jpg" alt="Disneyland Castle" />
+                <img src="https://cdn1.parksmedia.wdprapps.disney.com/media/blog/wp-content/uploads/2019/05/ksjfhury85ui11.jpg" alt="Disneyland Castle" />
             </div>
-            <div className="greetingdiv">
-                <h2 className="greeting">Welcome {props.user.user.username}</h2>
+            <div>
+                <h3>Welcome {props.user.user.username}</h3>
             </div>
             <div className="linkdiv">
                <Link to="/Dashboard">
-                   <button className="navbutton">Trip Builder</button>
+                   <button>Trip Builder</button>
                </Link>
                <Link to="/Map">
-                   <button className="navbutton">Disneyland Map</button>
+                   <button>Disneyland Map</button>
                </Link>
                <Link to="/Survey">
-                   <button className="navbutton">Survey</button>
+                   <button>Survey</button>
                </Link>
             </div>
-            <div className="logoutdiv">
-                <button className="navbutton" onClick={() => logout()}>Logout</button>
+            <div>
+                <button onClick={() => logout()}>Logout</button>
             </div>
         </div>            
-    )}
-}
+    )}}
 
 const mapStateToProps = reduxState => reduxState
 

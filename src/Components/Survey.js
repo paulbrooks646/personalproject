@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import {connect} from 'react-redux'
 import {getAttractions} from '../ducks/attractionReducer'
 import './components.scss'
@@ -7,6 +7,13 @@ import {Link} from 'react-router-dom'
 
 
 function Survey(props) {
+
+    useEffect(() => {
+        axios.get('/api/attractions')
+            .then(res => {
+                props.getAttractions(res.data)
+            })
+    }, [props.user.user])
 
 const [survey, setSurvey] = useState({'Alice in Wonderland': {rating: 0, comments: ""}})
 

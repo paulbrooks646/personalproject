@@ -16,7 +16,7 @@ function Trip(props) {
             })
 
         getTrip();
-    }, [props.getAttractions])
+    }, [props.getAttractions, props.user.user])
 
 
     function getTrip() {

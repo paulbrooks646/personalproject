@@ -1,11 +1,19 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import {connect} from 'react-redux'
 import {getAttractions} from '../ducks/attractionReducer'
 import {Link} from 'react-router-dom'
 import './components.scss'
+import axios from 'axios'
 
 
 function Map(props) {
+
+    useEffect(() => {
+        axios.get('/api/attractions')
+            .then(res => {
+                props.getAttractions(res.data)
+            })
+    }, [props.getAttractions, props.user.user])
 
     const attractionsArray = props.attractions.attractions.map( (e, index) => {
         return <Link key={index} to={`/Attraction/${e.attraction_id}`}><h3 className={e.name}>{e.name}</h3></Link>

@@ -17,7 +17,7 @@ function Dashboard(props) {
             })
             getDayLinks()
             getDays()
-    }, [props.getAttractions])
+    }, [props.getAttractions, props.user.user])
 
     const [dayLinks, setDayLinks] = useState([])
     const [days, setDays] = useState([])
@@ -61,7 +61,7 @@ function Dashboard(props) {
     const filledDays = days.map((e, index) => {
         
         return (
-            <div key={e.name}>
+            <div key={index}>
                 <Link to={`/Trip/${e.trip_id}`}>
                     <h1>Day {index+1}</h1>
                 </Link>

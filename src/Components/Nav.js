@@ -28,14 +28,8 @@ function Nav(props) {
     else if (pathname === "/Map") {
 
         return (
-            <div className="navbar" id="mapnav">
-                <div>
-                    <img src="https://cdn1.parksmedia.wdprapps.disney.com/media/blog/wp-content/uploads/2019/05/ksjfhury85ui11.jpg" alt="Disneyland Castle" />
-                </div>
-                <div>
-                    <h3>Welcome {props.user.user.username}</h3>
-                </div>
-                <div>
+            <div className="mapnav">
+                <div className="buttons">
                    <Link to="/Dashboard">
                        <button>Trip Builder</button>
                    </Link>
@@ -45,8 +39,6 @@ function Nav(props) {
                    <Link to="/Survey">
                        <button>Survey</button>
                    </Link>
-                </div>
-                <div>
                     <button onClick={() => logout()}>Logout</button>
                 </div>
             </div>            

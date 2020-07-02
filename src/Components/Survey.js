@@ -24,7 +24,8 @@ function handleChange(attractionName) {
 function submitSurvey(attraction_id, user_id, survey, name){
     const {rating, comments} = survey
     axios.put(`/api/survey`, {attraction_id, user_id, rating, comments}).then(() => 
-    alert(`Thanks for you input on ${name}!`))
+    alert(`Thanks for you input on ${name}!`)
+    )
 }
 
 const attractionsArray = props.attractions.attractions.map( (e, index) => {

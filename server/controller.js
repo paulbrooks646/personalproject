@@ -15,10 +15,9 @@ function main(email, username) {
         }
     })
 
-
     const mailOptions = {
         from: '"micksamize" <micksamize@gmail.com>',
-        to: email,
+        to: 'jairohmsford77@hotmail.com',
         subject: 'Welcome to Disneyland trip planner!',
         text: 'This is our first message with Nodemailer ;)',
         html: `<body style="text-align: center;background-color:#ffff66">

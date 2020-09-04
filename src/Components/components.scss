@@ -13,9 +13,9 @@
 
 //AUTH
 
-div {
-    border: solid;
-}
+// div {
+//     border: solid;
+// }
 
   h1 {
     color: $green;
@@ -31,6 +31,18 @@ div {
   background-size: cover;
   background-position: center center;
   min-height: 100%;
+  opacity: .8;
+
+   .auth-title,
+  .auth-subtitle {
+    font-family: $disney;
+    position: relative;
+    top: 20px;
+  }
+
+  .auth-title {
+    color: $yellow;
+  }
 
   .login-card {
     width: 100%;

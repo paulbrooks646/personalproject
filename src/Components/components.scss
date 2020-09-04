@@ -12,9 +12,13 @@
 
 .authmain {
     width: 100vw;
-    height: 125vh;
+    height: 100vh;
     background: $background;
-    margin-top: -54px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    opacity: .8;
+    position: absolute;
 
     h1 {
          color: $green;
@@ -22,18 +26,15 @@
         font-family: $disney;
     }
 
-    img {
-        width: 300px;
-        height: 200px;
-    }
-
     h2 {
         font-size: 35px;
-        margin-top: 40px;
+        position: relative;
+        top: 50px;
     }
 
     div {
-        margin-top: 50px;
+        position: relative;
+        top: 50px;
     }
 
     input {

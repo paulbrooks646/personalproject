@@ -34,8 +34,6 @@ const register = () => {
         
         <div className="authmain">
             <h1>Disneyland Trip Planner</h1>
-            <img 
-                src="https://cdn1.parksmedia.wdprapps.disney.com/media/blog/wp-content/uploads/2019/05/ksjfhury85ui11.jpg" alt="Disneyland Castle" />
             <h2>If you already have an account, login here:</h2>
             <div>
                 <input 

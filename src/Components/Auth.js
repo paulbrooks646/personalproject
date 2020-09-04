@@ -58,7 +58,7 @@ function Auth(props) {
   };
 
   return (
-    <div className="authmain">
+    <div className="auth-main">
       <h1>Disneyland Trip Planner</h1>
       <div className={`${account ? "login-card" : "login-card-closed"}`}>
         <Card variant="outlined" className="auth-card">

@@ -1,5 +1,8 @@
 * {
   text-decoration: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 @import "./mixins";
@@ -10,31 +13,20 @@
 
 //AUTH
 
-.authmain {
-  width: 100vw;
-  height: 100vh;
-  background: $background;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  opacity: 0.8;
-  position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+div {
+    border: solid;
+}
 
   h1 {
     color: $green;
     font-size: 60px;
     font-family: $disney;
   }
-}
 
 .auth-main {
   width: 100vw;
   height: 100vh;
-  background-image: url("https://ideaexchange.org/sites/default/files/styles/original/public/iStock-483883392_0517_ADULTsimpsons.jpg?itok=CqcjLnqI");
+  background-image: url("https://cdn1.parksmedia.wdprapps.disney.com/media/blog/wp-content/uploads/2019/05/ksjfhury85ui11.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;

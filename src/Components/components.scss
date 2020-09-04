@@ -1,523 +1,583 @@
 * {
-    text-decoration: none;    
+  text-decoration: none;
 }
 
-@import './mixins';
-@import './variables';
-@import './mapqueries';
-@import './tripqueries';
-@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import "./mixins";
+@import "./variables";
+@import "./mapqueries";
+@import "./tripqueries";
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
 
 //AUTH
 
 .authmain {
-    width: 100vw;
-    height: 100vh;
-    background: $background;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    opacity: .8;
-    position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background: $background;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.8;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 
-    h1 {
-         color: $green;
-        font-size: 60px;
-        font-family: $disney;
-    }
-
-    h2 {
-        font-size: 35px;
-        position: relative;
-        top: 50px;
-    }
-
-    div {
-        position: relative;
-        top: 50px;
-    }
-
-    input {
-        margin-right: 20px;
-        height: 25px;
-        width: 200px;
-    }
-
-    button {
-        @include button
-    }
+  h1 {
+    color: $green;
+    font-size: 60px;
+    font-family: $disney;
+  }
 }
 
-@media (max-width: 900px) {
-    .authmain {
+.auth-main {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("https://ideaexchange.org/sites/default/files/styles/original/public/iStock-483883392_0517_ADULTsimpsons.jpg?itok=CqcjLnqI");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  min-height: 100%;
 
-        button {
-            margin-top: 20px;
-        }    
+  .login-card {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .auth-card {
+      width: 500px;
+      height: 500px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+      position: relative;
+      top: 100px;
+
+      .login-form {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        height: 60%;
+      }
     }
+  }
+}
+
+.register-card {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  .auth-card {
+    width: 500px;
+    height: 500px;
+    position: relative;
+    top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+
+    .register-form {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      height: 70%;
+    }
+  }
+}
+
+.register-card-closed {
+  display: none;
+}
+
+.login-card-closed {
+  display: none;
+}
+
+@media (max-width: 665px) {
+  .auth-main {
+    .auth-title {
+      font-size: 25px;
+    }
+
+    .auth-subtitle {
+      font-size: 20px;
+    }
+
+    .login-card {
+      .auth-card {
+        width: 300px;
+        height: 400px;
+      }
+    }
+  }
+
+  .register-card {
+    .auth-card {
+      width: 300px;
+      height: 400px;
+    }
+    .register-text {
+      font-size: 15px;
+    }
+  }
 }
 
 //NAV
 
 .navbar {
-    @include center(space-evenly);
-    position: fixed;
-    width: 100vw;
-    height: 120px;
-    background-color: #FFFF66;
-    z-index: 2;
+  @include center(space-evenly);
+  position: fixed;
+  width: 100vw;
+  height: 120px;
+  background-color: #ffff66;
+  z-index: 2;
+  border: solid 1px black;
+
+  img {
+    width: 100px;
+    height: 100px;
     border: solid 1px black;
+  }
 
-    img {
-        width: 100px;
-        height: 100px;
-        border: solid 1px black;
-    }
+  button {
+    @include button;
+    font-size: 10px;
+  }
 
-    button {
-        @include button;
-        font-size: 10px;
-    }
-
-    h3 {
-        font-family: $disney;
-        color: $purple;
-    }
+  h3 {
+    font-family: $disney;
+    color: $purple;
+  }
 }
 
 .mapnav {
-    @include center(center);
+  @include center(center);
 
-    .buttons {
-        @include center(space-evenly);
-        width: 50vw;
+  .buttons {
+    @include center(space-evenly);
+    width: 50vw;
 
-        button {
-            @include button;
-            font-size: 10px;
-        }
+    button {
+      @include button;
+      font-size: 10px;
     }
+  }
 }
 
 @media (max-width: 825px) {
-
-.mapnav {
-
+  .mapnav {
     .buttons {
-        width: 70vw;
+      width: 70vw;
     }
-}
+  }
 }
 
 @media (max-width: 775px) {
+  .mapnav {
+    justify-content: start;
+    align-items: center;
+    margin-left: 65px;
 
-    .mapnav {
-
-        justify-content: start;
-        align-items: center;
-        margin-left: 65px;
-    
-        .buttons {
-            width: 70vw;
-        }
+    .buttons {
+      width: 70vw;
     }
+  }
 }
 
 //DASHBOARD
 
 .dashboardmain {
+  position: relative;
+  top: 120px;
+  height: 100%;
+
+  .countdowndiv {
+    @include center(space-evenly);
+
+    .dateselector {
+      position: relative;
+      top: -62px;
+
+      input {
+        margin-right: 15px;
+        margin-bottom: 15px;
+      }
+
+      button {
+        @include button;
+        font-size: 12px;
+        position: relative;
+      }
+    }
+  }
+
+  .dashboardtitle {
+    @include center(center);
+    font-size: 80px;
+    font-family: $disney;
+    color: $purple;
     position: relative;
-    top: 120px;
-    height: 100%;
+    top: -120px;
+  }
 
-    .countdowndiv {
-        @include center(space-evenly);
+  .dashboarddays {
+    @include center(center);
+    position: relative;
+    top: -190px;
+    height: 100px;
 
-        .dateselector {
-            position: relative;
-            top: -62px;
-
-            input {
-                margin-right: 15px;
-                margin-bottom: 15px;
-                }
-
-                button {
-                    @include button;
-                    font-size: 12px;
-                    position: relative;
-                    }
-        }
+    .dayslist {
+      @include center(center);
     }
 
-    .dashboardtitle {
-        @include center(center);
-        font-size: 80px;
-        font-family: $disney;
-        color: $purple;
-        position: relative;
-        top: -120px;
+    button {
+      @include button;
+      font-size: 12px;
+      position: relative;
+    }
+  }
+
+  h3 {
+    position: relative;
+    top: -185px;
+    color: $purple;
+  }
+
+  .dashboardlist {
+    @include center(space-evenly);
+    align-items: flex-start;
+    width: 100vw;
+    position: relative;
+    top: -179px;
+
+    .dashboardattraction {
+      color: $blue;
+      top: 0px;
     }
 
-    .dashboarddays {
-        @include center(center);
-        position: relative;
-        top: -190px;
-        height: 100px;
-
-        .dayslist {
-            @include center(center)
-        }
-
-        button {
-            @include button;
-            font-size: 12px;
-            position: relative;
-        }
-    
+    button {
+      @include button;
     }
-
-    h3 {
-        position: relative;
-        top: -185px;
-        color: $purple;
-    }
-
-    .dashboardlist {
-        @include center(space-evenly);
-        align-items: flex-start;
-        width: 100vw;
-        position: relative;
-        top: -179px;
-
-            .dashboardattraction {
-                color:$blue;
-                top: 0px;
-            }
-
-            button {
-                @include button;
-            }
-    }
+  }
 }
 
 #dashstat {
-    margin-right: 20px;
+  margin-right: 20px;
 }
 
 h6 {
-    margin-right: 20px;
-    font-size: 20px;
+  margin-right: 20px;
+  font-size: 20px;
 }
 
 a {
-    color: $main
+  color: $main;
 }
 
 //COUNTDOWN
 
 .countertitle {
-    color: $main;
-    position: relative;
-    top: -10px;
+  color: $main;
+  position: relative;
+  top: -10px;
 }
 
 .counter {
-    @include center(center);
-    color: blue;
-    font-size: 60px;
-    position: relative;
-    top: -50px;
+  @include center(center);
+  color: blue;
+  font-size: 60px;
+  position: relative;
+  top: -50px;
 }
 
 //ATTRACTION
 
 .attractionmain {
-    @include center(center);
+  @include center(center);
 
-    .attractioncardTomorrowland {
-        @include card($tomorrow)
-    }
-    
-    .attractioncardMain {
-        @include card($main)
-    }
-    
-    .attractioncardAdventureland {
-        @include card($adventure)
-    }
-    
-    .attractioncardCritter {
-        @include card($critter)
-    }
-    
-    .attractioncardNew {
-        @include card($new)
-    }
-    
-    .attractioncardToon {
-        @include card($toon)
-    }
-    
-    .attractioncardFrontierland {
-        @include card($frontier)
-    }
-    
-    .attractioncardFantasyland {
-        @include card($fantasy);
-    }
+  .attractioncardTomorrowland {
+    @include card($tomorrow);
+  }
 
-    h1 {
-        font-family: $disney;
+  .attractioncardMain {
+    @include card($main);
+  }
+
+  .attractioncardAdventureland {
+    @include card($adventure);
+  }
+
+  .attractioncardCritter {
+    @include card($critter);
+  }
+
+  .attractioncardNew {
+    @include card($new);
+  }
+
+  .attractioncardToon {
+    @include card($toon);
+  }
+
+  .attractioncardFrontierland {
+    @include card($frontier);
+  }
+
+  .attractioncardFantasyland {
+    @include card($fantasy);
+  }
+
+  h1 {
+    font-family: $disney;
+  }
+
+  p {
+    width: 90%;
+    position: relative;
+    top: -25px;
+  }
+
+  img {
+    width: 280px;
+    height: 170px;
+    position: relative;
+    top: -25px;
+  }
+
+  .attractionratingdiv {
+    position: relative;
+    top: -25px;
+    width: 60%;
+    @include center(space-evenly);
+
+    .attractionrating {
+      color: green;
+      font-family: none;
     }
+  }
 
-    p {
-        width: 90%;
-        position: relative;
-        top: -25px;
-    }
-
-    img {
-        width: 280px;
-        height: 170px;
-        position: relative;
-        top: -25px;
-    }
-
-    .attractionratingdiv {
-        position: relative;
-        top: -25px;
-        width: 60%;
-        @include center(space-evenly);
-
-        .attractionrating {
-            color: green;
-            font-family: none;
-        }    
-}
-
-    h3 {
-        position: relative;
-        top: -55px;
-    }
+  h3 {
+    position: relative;
+    top: -55px;
+  }
 }
 
 #attractionstatsbuttondiv {
-    top: 250px;
+  top: 250px;
 }
 
 .scroll {
-    width: 100%;
-    position: relative;
-    top: -60px;
+  width: 100%;
+  position: relative;
+  top: -60px;
 }
 
 //SURVEY
 
 .surveymain {
-    position: relative;
-    top: 130px;
+  position: relative;
+  top: 130px;
 
-    h1 {
-        color: $purple;
-        margin-top: 0px;
+  h1 {
+    color: $purple;
+    margin-top: 0px;
+  }
+
+  h2 {
+    color: $toon;
+  }
+
+  .surveyarray {
+    @include center(center);
+    flex-direction: column;
+
+    .radio {
+      @include center(center);
+      flex-direction: column;
+      position: relative;
+      border: solid 3px black;
+      width: 90%;
+
+      label {
+        margin-left: 10px;
+      }
+
+      .surveycomments {
+        width: 70vw;
+        height: 25px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+      }
+
+      button {
+        @include button;
+        margin-bottom: 5px;
+      }
     }
-
-    h2 {
-        color: $toon;
-    }
-
-    .surveyarray {
-        @include center(center);
-        flex-direction: column;
-
-        .radio {
-            @include center(center);
-            flex-direction: column;
-            position: relative;
-            border: solid 3px black;
-            width: 90%;
-
-            label {
-                margin-left: 10px;
-            }
-
-            .surveycomments {
-                width: 70vw;
-                height: 25px;
-                margin-top: 5px;
-                margin-bottom: 5px;
-            }
-
-            button {
-                @include button;
-                margin-bottom: 5px;
-            }
-        }
-    }
+  }
 }
 
 //Trip
 
 .tripmain {
-    display: flex;
-    height: 1500px;
+  display: flex;
+  height: 1500px;
 
-    .trip {
-        position: relative;
-        top: 120px;
-    }
+  .trip {
+    position: relative;
+    top: 120px;
+  }
 
-        button {
-            @include button;
-            height: 20px;
-            font-size: 10px;
-            width: 100px;
-    }
+  button {
+    @include button;
+    height: 20px;
+    font-size: 10px;
+    width: 100px;
+  }
 }
 
 .tripdiv {
-    @include center(center);
-    height: 35px;
-    width: 50vw;
+  @include center(center);
+  height: 35px;
+  width: 50vw;
 }
 
 .triptrip {
-    margin-top: 150px;
-    margin-right: 150px;
+  margin-top: 150px;
+  margin-right: 150px;
 }
 
 //MAP
 
 .disneyland {
-    opacity: .75;
-    width: 100vw;
-    height: 100vh;
-    background-repeat: no-repeat;
-    background-size: 960px 800px;
-    background-image: url($map);
-    background-position: center;
-    background-attachment: local;
-    
+  opacity: 0.75;
+  width: 100vw;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: 960px 800px;
+  background-image: url($map);
+  background-position: center;
+  background-attachment: local;
 }
 
 @media (max-width: 900px) {
-    .disneyland {
-        opacity: .75;
-        width: 100vw;
-        height: 100vh;
-        background-repeat: no-repeat;
-        background-size: 860px 800px;
-        background-image: url($map);
-        background-position: center;
-        background-attachment: local;
-        
-    }
+  .disneyland {
+    opacity: 0.75;
+    width: 100vw;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: 860px 800px;
+    background-image: url($map);
+    background-position: center;
+    background-attachment: local;
+  }
 }
 
 .fantasy {
-    @include land($fantasy);
-    top: -1126px;
-    left: 255px;
+  @include land($fantasy);
+  top: -1126px;
+  left: 255px;
 }
 
 .main {
-    @include land($main);
-    top: -555px;
-    left: 152px;
+  @include land($main);
+  top: -555px;
+  left: 152px;
 }
 
 .critter {
-    @include land($critter);
-    top: -1200px;
-    left: 50px;
+  @include land($critter);
+  top: -1200px;
+  left: 50px;
 }
 .new {
-    @include land($new);
-    top: -840px;
-    left: 50px;
+  @include land($new);
+  top: -840px;
+  left: 50px;
 }
 .adventure {
-    @include land($adventure);
-    top: -1040px;
-    left: 50px;
+  @include land($adventure);
+  top: -1040px;
+  left: 50px;
 }
 .frontier {
-    @include land($frontier);
-    top: -1208px;
-left: 50px;
+  @include land($frontier);
+  top: -1208px;
+  left: 50px;
 }
 .toon {
-    @include land($toon);
-    top: -843px;
-    left: 50px;
+  @include land($toon);
+  top: -843px;
+  left: 50px;
 }
 .tomorrow {
-    @include land($tomorrow);
-    top: -1015px;
-    left: 255px;
+  @include land($tomorrow);
+  top: -1015px;
+  left: 255px;
 }
 
 @media (max-width: 700px) {
-    .imagediv {
-        display: none;
-    }
+  .imagediv {
+    display: none;
+  }
 
-    .greetingdiv {
-        display: none;
-    }
+  .greetingdiv {
+    display: none;
+  }
 }
 
-    @media (max-width: 800px) {
-
-        .authbutton {
-            @include button;
-            margin-top: 20px;
-        }    
-    }
+@media (max-width: 800px) {
+  .authbutton {
+    @include button;
+    margin-top: 20px;
+  }
+}
 
 //STATS
 
 .statsmain {
+  position: relative;
+  top: 200px;
+  @include center(center);
+  flex-direction: column;
 
+  .overallbarchart {
     position: relative;
-    top: 200px;
+    width: 750px;
     @include center(center);
-    flex-direction: column;
+  }
 
-    .overallbarchart {
-        position: relative;
-        width: 750px;
-        @include center(center);
-    }
-
-    .userbarchart {
-        position: relative;
-        width: 750px;
-        @include center(center);
-    }
+  .userbarchart {
+    position: relative;
+    width: 750px;
+    @include center(center);
+  }
 }
 
 .statsbuttondiv {
-    @include center(center);
+  @include center(center);
+  position: relative;
+  top: 20px;
+
+  h2 {
+    margin-right: 20px;
+  }
+
+  .statsbutton {
+    border-radius: 50%;
+    height: 90px;
+    width: 90px;
+    font-size: 16px;
+    background-color: #ffff66;
+    color: $blue;
+    z-index: 3;
+    border: solid 3px black;
+    box-shadow: 4px 4px 7px 1px black;
+    text-decoration: underline;
     position: relative;
-    top: 20px;
-
-    h2 {
-        margin-right: 20px;
-    }
-
-    .statsbutton {
-        border-radius: 50%;
-        height: 90px;
-        width: 90px;
-        font-size: 16px;
-        background-color: #ffff66;
-        color: $blue;
-        z-index: 3;
-        border: solid 3px black;
-        box-shadow: 4px 4px 7px 1px black;
-        text-decoration: underline;
-        position: relative;
-    }
- }
+  }
+}

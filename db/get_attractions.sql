@@ -1,1 +1,2 @@
-select * from attractions;
+select * from attractions
+order by location, name;

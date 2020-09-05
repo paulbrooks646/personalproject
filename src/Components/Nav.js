@@ -19,33 +19,7 @@ function Nav(props) {
         props.history.push('/')
     })}
 
-    const pathname = props.location.pathname
-    if (pathname === "/") {
-    return (
-        <div></div>
-    )}
-
-    else if (pathname === "/Map") {
-
-        return (
-            <div className="mapnav">
-                <div className="buttons">
-                   <Link to="/Dashboard">
-                       <button>Trip Builder</button>
-                   </Link>
-                   <Link to="/Map">
-                       <button>Disneyland Map</button>
-                   </Link>
-                   <Link to="/Survey">
-                       <button>Survey</button>
-                   </Link>
-                    <button onClick={() => logout()}>Logout</button>
-                </div>
-            </div>            
-        )}    
     
-    else {
-
     return (
         <div className="navbar">
             <div className="imagediv">
@@ -69,7 +43,7 @@ function Nav(props) {
                 <button onClick={() => logout()}>Logout</button>
             </div>
         </div>            
-    )}}
+    )}
 
 const mapStateToProps = reduxState => reduxState
 

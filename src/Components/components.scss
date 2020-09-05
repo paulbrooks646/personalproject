@@ -563,6 +563,14 @@ a {
     @include ride(0px, 0px)
 }
 
+.Haunted {
+    @include ride(0px, 0px)
+}
+
+.Pirates {
+    @include ride(0px, 0px)
+}
+
 
 .fantasy {
   @include land($fantasy);

@@ -571,6 +571,34 @@ a {
     @include ride(0px, 0px)
 }
 
+.Astroblasters {
+    @include ride(0px, 0px)
+}
+
+.Astro {
+    @include ride(0px, 0px)
+}
+
+.Autopia {
+    @include ride(0px, 0px)
+}
+
+.Space {
+    @include ride(0px, 0px)
+}
+
+.Star {
+    @include ride(0px, 0px)
+}
+
+.Submarine {
+    @include ride(0px, 0px)
+}
+
+.land-div {
+    position: relative;
+    left: 200px;
+}
 
 .fantasy {
   @include land($fantasy);

@@ -559,6 +559,10 @@ a {
     @include ride(0px, 0px)
 }
 
+.Disneyland {
+    @include ride(0px, 0px)
+}
+
 
 .fantasy {
   @include land($fantasy);

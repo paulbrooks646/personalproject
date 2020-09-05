@@ -483,6 +483,22 @@ a {
     @include ride(0px, 0px)
 }
 
+.Enchanted {
+    @include ride(0px, 0px)
+}
+
+.Indiana {
+    @include ride(0px, 0px)
+}
+
+.Jungle {
+    @include ride(0px, 0px)
+}
+
+.Tarzan {
+    @include ride(0px, 0px)
+}
+
 .fantasy {
   @include land($fantasy);
 }

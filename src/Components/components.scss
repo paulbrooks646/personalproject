@@ -547,6 +547,19 @@ a {
     @include ride(0px, 0px)
 }
 
+.Big {
+    @include ride(0px, 0px)
+}
+
+.Mark {
+    @include ride(0px, 0px)
+}
+
+.Sailing {
+    @include ride(0px, 0px)
+}
+
+
 .fantasy {
   @include land($fantasy);
 }

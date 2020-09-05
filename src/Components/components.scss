@@ -7,7 +7,6 @@
 
 @import "./mixins";
 @import "./variables";
-@import "./mapqueries";
 @import "./tripqueries";
 @import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
 
@@ -457,28 +456,18 @@ a {
 
 //MAP
 
+.map-main {
+    @include center(center);
+}
+
 .disneyland {
   opacity: 0.75;
   width: 100vw;
   height: 100vh;
   background-repeat: no-repeat;
-  background-size: 960px 800px;
+  background-size: 100% 100%;
   background-image: url($map);
-  background-position: center;
-  background-attachment: local;
-}
-
-@media (max-width: 900px) {
-  .disneyland {
-    opacity: 0.75;
-    width: 100vw;
-    height: 100vh;
-    background-repeat: no-repeat;
-    background-size: 860px 800px;
-    background-image: url($map);
-    background-position: center;
-    background-attachment: local;
-  }
+  background-position: 0px 100px;
 }
 
 .fantasy {

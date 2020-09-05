@@ -4,6 +4,7 @@ import {getAttractions} from '../ducks/attractionReducer'
 import {Link} from 'react-router-dom'
 import './components.scss'
 import axios from 'axios'
+import Nav from './Nav'
 
 
 function Map(props) {
@@ -20,6 +21,8 @@ function Map(props) {
    })
 
     return (
+        <>
+            <Nav/>
         <div>
             <div className="disneyland">
             </div>
@@ -32,7 +35,8 @@ function Map(props) {
             <h2 className="frontier">Frontierland</h2>
             <h2 className="toon">Toon Town</h2>
             <h2 className="tomorrow">Tomorrowland</h2>
-        </div>        
+            </div>   
+        </>    
     )
 }
 

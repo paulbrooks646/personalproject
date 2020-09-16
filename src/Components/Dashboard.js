@@ -78,7 +78,7 @@ function Dashboard(props) {
       <div className="countdowndiv">
         <Countdown />
         <div className="dateselector">
-          <h2>Add Trip Date:</h2>
+          <h2>Add Date To Trip:</h2>
           <input
             type="date"
             value={date}

@@ -213,6 +213,7 @@ module.exports = {
     const db = req.app.get("db");
 
     db.get_ratings().then((ratings) => {
+      console.log(ratings)
       let newArr = [];
 
       for (let i = 1; i < ratings.length; i++) {

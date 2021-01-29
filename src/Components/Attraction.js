@@ -2,7 +2,8 @@ import React, {useEffect, useState} from 'react'
 import "./components.scss"
 import axios from 'axios'
 import ScrollArea from 'react-scrollbar'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import Nav from "./Nav.js"
 
 function Attraction(props) {
 
@@ -18,17 +19,18 @@ function Attraction(props) {
 
     return (
         <div>
+            <Nav/>
             { attraction.comments ?
             <div className="attractionmain"> 
                 <div className={`attractioncard${attraction.location}`}>
-                    <h1>{attraction.name}</h1>
-                    <p>{attraction.description}</p>
-                    <img src={attraction.photo} alt="Attraction"/>
+                    <h1 className="attraction-name">{attraction.name}</h1>
+                    <p className="attraction-description">{attraction.description}</p>
+                    <img className="attraction-image" src={attraction.photo} alt="Attraction"/>
                     <div className="attractionratingdiv">
-                        <h4>Rating:</h4>
+                        <h4 className="attraction-rating-subtitle">Rating:</h4>
                         <h1 className="attractionrating">     {attraction.rating}</h1>
                     </div>            
-                    <h3>Location: {attraction.location}</h3>            
+                    <h3 className="attraction-location">Location: {attraction.location}</h3>            
                     <ScrollArea
                         speed={.8}
                         className="scroll"

@@ -142,7 +142,7 @@ function Survey(props) {
     <>
       <Nav />
       <div className="surveymain">
-        <div>
+        <div className="survey-introduction">
           <h1>Disneyland Attraction Survey</h1>
           <h2>
             We strive to give our users the most accurate information. We would

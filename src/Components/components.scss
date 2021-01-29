@@ -16,11 +16,11 @@
 //     border: solid;
 // }
 
-  h1 {
-    color: $green;
-    font-size: 60px;
-    font-family: $disney;
-  }
+h1 {
+  color: $green;
+  font-size: 60px;
+  font-family: $disney;
+}
 
 .auth-main {
   width: 100vw;
@@ -30,9 +30,9 @@
   background-size: cover;
   background-position: center center;
   min-height: 100%;
-  opacity: .8;
+  opacity: 0.8;
 
-   .auth-title,
+  .auth-title,
   .auth-subtitle {
     font-family: $disney;
     position: relative;
@@ -201,7 +201,6 @@
   .countdowndiv {
     @include center(space-evenly);
 
-
     .dateselector {
       position: relative;
 
@@ -209,7 +208,6 @@
       flex-direction: column;
       align-items: center;
       justify-content: space-evenly;
-
 
       input {
         margin-right: 15px;
@@ -230,14 +228,12 @@
     font-family: $disney;
     color: $purple;
     position: relative;
- 
   }
 
   .dashboarddays {
     @include center(center);
     position: relative;
     height: 100px;
-
 
     .dayslist {
       @include center(center);
@@ -247,15 +243,14 @@
       @include button;
       font-size: 12px;
       position: relative;
-
     }
   }
 
-.trip-so-far {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
+  .trip-so-far {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
 
   .dashboardlist {
     @include center(space-evenly);
@@ -290,16 +285,14 @@ a {
 //COUNTDOWN
 
 .countdown-div {
-
- display: flex;
- flex-direction: column;
- justify-content: space-evenly;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
 .countertitle {
   color: $main;
   position: relative;
-
 }
 
 .counter {
@@ -312,7 +305,13 @@ a {
 //ATTRACTION
 
 .attractionmain {
-  @include center(center);
+  @include center(space-evenly);
+  text-align: center;
+
+  .attraction-name {
+    font-size: 20px;
+    color: black;
+  }
 
   .attractioncardTomorrowland {
     @include card($tomorrow);
@@ -353,31 +352,28 @@ a {
   p {
     width: 90%;
     position: relative;
-    top: -25px;
   }
 
   img {
     width: 280px;
     height: 170px;
     position: relative;
-    top: -25px;
   }
 
   .attractionratingdiv {
     position: relative;
-    top: -25px;
     width: 60%;
     @include center(space-evenly);
 
     .attractionrating {
       color: green;
       font-family: none;
+      font-size: 40px;
     }
   }
 
   h3 {
     position: relative;
-    top: -55px;
   }
 }
 
@@ -388,7 +384,7 @@ a {
 .scroll {
   width: 100%;
   position: relative;
-  top: -60px;
+  height: 60px;
 }
 
 //SURVEY
@@ -397,13 +393,21 @@ a {
   position: relative;
   top: 130px;
 
-  h1 {
-    color: $purple;
-    margin-top: 0px;
-  }
+  .survey-introduction {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 
-  h2 {
-    color: $toon;
+    h1 {
+      color: $purple;
+      margin-top: 0px;
+    }
+
+    h2 {
+      color: $toon;
+      width: 90%;
+    }
   }
 
   .surveyarray {
@@ -469,7 +473,7 @@ a {
 //MAP
 
 .map-main {
-    @include center(center);
+  @include center(center);
 }
 
 .disneyland {
@@ -483,141 +487,141 @@ a {
 }
 
 .container {
-    position: relative;
-    top: 120px;
+  position: relative;
+  top: 120px;
 }
 
 .Winnie {
-    @include ride(0px, 0px) 
+  @include ride(0px, 0px);
 }
 
 .Splash {
-    @include ride(0px, 0px)
+  @include ride(0px, 0px);
 }
 
 .Enchanted {
-    @include ride(0px, 0px)
+  @include ride(0px, 0px);
 }
 
 .Indiana {
-    @include ride(0px, 0px)
+  @include ride(0px, 0px);
 }
 
 .Jungle {
-    @include ride(0px, 0px)
+  @include ride(0px, 0px);
 }
 
 .Tarzan {
-    @include ride(0px, 0px)
+  @include ride(0px, 0px);
 }
 
 .Alice {
-    @include ride(0px, 0px)
+  @include ride(0px, 0px);
 }
 
 .Casey {
-    @include ride(0px, 0px)
+  @include ride(0px, 0px);
 }
 
 .Dumbo {
-    @include ride(0px, 0px)
+  @include ride(0px, 0px);
 }
 
 .Its {
-    @include ride(0px, 0px)
+  @include ride(0px, 0px);
 }
 
 .King {
-    @include ride(0px, 0px)
+  @include ride(0px, 0px);
 }
 
 .Matterhorn {
-    @include ride(0px, 0px)
+  @include ride(0px, 0px);
 }
 
 .Mr {
-    @include ride(0px, 0px)
+  @include ride(0px, 0px);
 }
 
 .Peter {
-    @include ride(0px, 0px)
+  @include ride(0px, 0px);
 }
 
 .Pinocchio {
-    @include ride(0px, 0px)
+  @include ride(0px, 0px);
 }
 
 .Snow {
-    @include ride(0px, 0px)
+  @include ride(0px, 0px);
 }
 
 .Storybookland {
-    @include ride(0px, 0px)
+  @include ride(0px, 0px);
 }
 
 .Teacups {
-    @include ride(0px, 0px)
+  @include ride(0px, 0px);
 }
 
 .Big {
-    @include ride(0px, 0px)
+  @include ride(0px, 0px);
 }
 
 .Mark {
-    @include ride(0px, 0px)
+  @include ride(0px, 0px);
 }
 
 .Sailing {
-    @include ride(0px, 0px)
+  @include ride(0px, 0px);
 }
 
 .Disneyland {
-    @include ride(0px, 0px)
+  @include ride(0px, 0px);
 }
 
 .Haunted {
-    @include ride(0px, 0px)
+  @include ride(0px, 0px);
 }
 
 .Pirates {
-    @include ride(0px, 0px)
+  @include ride(0px, 0px);
 }
 
 .Astroblasters {
-    @include ride(0px, 0px)
+  @include ride(0px, 0px);
 }
 
 .Astro {
-    @include ride(0px, 0px)
+  @include ride(0px, 0px);
 }
 
 .Autopia {
-    @include ride(0px, 0px)
+  @include ride(0px, 0px);
 }
 
 .Space {
-    @include ride(0px, 0px)
+  @include ride(0px, 0px);
 }
 
 .Star {
-    @include ride(0px, 0px)
+  @include ride(0px, 0px);
 }
 
 .Submarine {
-    @include ride(0px, 0px)
+  @include ride(0px, 0px);
 }
 
 .Gadgets {
-    @include ride(0px, 0px)
+  @include ride(0px, 0px);
 }
 
 .Roger {
-    @include ride(0px, 0px)
+  @include ride(0px, 0px);
 }
 
 .land-div {
-    position: relative;
-    left: 200px;
+  position: relative;
+  left: 200px;
 }
 
 .fantasy {
@@ -640,17 +644,14 @@ a {
 }
 .frontier {
   @include land($frontier);
-
 }
 
 .toon {
   @include land($toon);
-
 }
 
 .tomorrow {
   @include land($tomorrow);
-
 }
 
 @media (max-width: 700px) {

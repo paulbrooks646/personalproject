@@ -47,7 +47,7 @@
         background-color: $color;
         position: relative;
         top: 150px;
-        @include center(center);
+        @include center(space-evenly);
         flex-direction: column;
         border: solid 1px black;
         box-shadow: 5px 5px 5px 5px;

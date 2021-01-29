@@ -201,9 +201,15 @@
   .countdowndiv {
     @include center(space-evenly);
 
+
     .dateselector {
       position: relative;
-      top: -62px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+
 
       input {
         margin-right: 15px;
@@ -224,14 +230,14 @@
     font-family: $disney;
     color: $purple;
     position: relative;
-    top: -120px;
+ 
   }
 
   .dashboarddays {
     @include center(center);
     position: relative;
-    top: -190px;
     height: 100px;
+
 
     .dayslist {
       @include center(center);
@@ -241,21 +247,21 @@
       @include button;
       font-size: 12px;
       position: relative;
+
     }
   }
 
-  h3 {
-    position: relative;
-    top: -185px;
-    color: $purple;
-  }
+.trip-so-far {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
 
   .dashboardlist {
     @include center(space-evenly);
     align-items: flex-start;
     width: 100vw;
     position: relative;
-    top: -179px;
 
     .dashboardattraction {
       color: $blue;
@@ -283,10 +289,17 @@ a {
 
 //COUNTDOWN
 
+.countdown-div {
+
+ display: flex;
+ flex-direction: column;
+ justify-content: space-evenly;
+}
+
 .countertitle {
   color: $main;
   position: relative;
-  top: -10px;
+
 }
 
 .counter {
@@ -294,7 +307,6 @@ a {
   color: blue;
   font-size: 60px;
   position: relative;
-  top: -50px;
 }
 
 //ATTRACTION

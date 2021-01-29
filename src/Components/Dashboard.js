@@ -73,38 +73,41 @@ function Dashboard(props) {
 
     return (
       <>
-      <Nav />
-    <div className="dashboardmain">
-      <div className="countdowndiv">
-        <Countdown />
-        <div className="dateselector">
-          <h2>Add Date To Trip:</h2>
-          <input
-            type="date"
-            value={date}
-            onChange={(e) => setDate(e.target.value)}
-          />
-          <button onClick={() => selectDate()}>Submit</button>
-        </div>
-      </div>
-      <h1 className="dashboardtitle">Plan Your Trip</h1>
-      <div className="dashboarddays">
-        <h6>Click day to edit</h6>
-        <h6 className="dayslist">{emptyDays}</h6>
-        <h6>or</h6>
-        <button onClick={() => newlist()}>Add Day to Trip</button>
-      </div>
-      <h3>Your trip so far:</h3>
-      <div className="dashboardlist">{filledDays}</div>
-      <div className="statsbuttondiv">
-        <h4 id="dashstat">Click here to see:</h4>
-        <Link to="/Statistics">
-          <button className="statsbutton">Attraction Statistics</button>
-        </Link>
-      </div>
+        <Nav />
+        <div className="dashboardmain">
+          <div className="countdowndiv">
+            <Countdown />
+            <div className="dateselector">
+              <h2>Add Date To Trip:</h2>
+              <input
+                type="date"
+                value={date}
+                onChange={(e) => setDate(e.target.value)}
+              />
+              <button onClick={() => selectDate()}>Submit</button>
             </div>
-            </>
-  );
+          </div>
+          <h1 className="dashboardtitle">Plan Your Trip</h1>
+          <div className="dashboarddays">
+            <h6>Click day to edit</h6>
+            <h6 className="dayslist">{emptyDays}</h6>
+            <h6>or</h6>
+            <button onClick={() => newlist()}>Add Day to Trip</button>
+          </div>
+          <div className="trip-so-far">
+            <h3>Your trip so far:</h3>
+          </div>
+
+          <div className="dashboardlist">{filledDays}</div>
+          <div className="statsbuttondiv">
+            <h4 id="dashstat">Click here to see:</h4>
+            <Link to="/Statistics">
+              <button className="statsbutton">Attraction Statistics</button>
+            </Link>
+          </div>
+        </div>
+      </>
+    );
 }
 
 const mapStateToProps = (reduxState) => reduxState;

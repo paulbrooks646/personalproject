@@ -47,7 +47,7 @@ Object.keys(timeLeft).forEach(interval => {
 })
 
 return (
-    <div>
+    <div className="countdown-div">
         <h1 className="countertitle">Days until your trip:</h1>
         {timerComponents.length ? timerComponents : <span></span>}
     </div>

@@ -45,7 +45,7 @@ function Trip(props) {
 
   const attractionsArray = props.attractions.attractions.map((e, index) => {
     return (
-      <div className={`divtrip${e.name}`} key={index}>
+      <div className={`divtrip${e.name}`} key={index} style={{border: "solid"}}>
         <Link to={`/Attraction/${e.attraction_id}`}>
           <h2 className={`trip${e.name}`}>{e.name}</h2>
         </Link>

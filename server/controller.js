@@ -40,18 +40,16 @@ module.exports = {
   register: async (req, res) => {
     const db = req.app.get("db");
     const { newUsername, newPassword, newEmail } = req.body;
-    console.log("a");
+
 
     const existingUser = await db.check_user(newUsername);
     if (existingUser[0]) {
       return res.status(409).send("User already exists!");
     }
-    console.log("b");
     const salt = bcrypt.genSaltSync(10);
     const hash = bcrypt.hashSync(newPassword, salt);
 
     const newUser = await db.register_user([newUsername, hash, newEmail]);
-    console.log("c");
     req.session.user = {
       id: newUser[0].user_id,
       username: newUser[0].username,
@@ -59,7 +57,7 @@ module.exports = {
       date: newUser[0].trip_date,
     };
     res.status(200).send(req.session.user);
-    console.log("d");
+ 
     main(newEmail, newUsername);
   },
 
@@ -155,7 +153,6 @@ module.exports = {
 
   addTrip: (req, res) => {
     const db = req.app.get("db");
-    console.log(req.body);
     const { id } = req.body;
 
     db.add_trip(id).then(res.sendStatus(200));
@@ -213,7 +210,6 @@ module.exports = {
     const db = req.app.get("db");
 
     db.get_ratings().then((ratings) => {
-      console.log(ratings)
       let newArr = [];
 
       for (let i = 1; i < ratings.length; i++) {
@@ -266,8 +262,6 @@ module.exports = {
 
   tripDate: async (req, res) => {
     const db = req.app.get("db");
-    console.log(req.params);
-    console.log(req.body);
     const { id } = req.params;
     const { date } = req.body;
 

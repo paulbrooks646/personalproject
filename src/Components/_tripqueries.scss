@@ -1,770 +1,749 @@
 @media (min-width: 1400px) {
-    .currenttrip {
-        position: relative;
-        right: -890px;
-        border: solid 1px transparent;
-        margin-bottom: 5px;
-    }
-    .tripyourday {
-        position: relative;
-        right: -890px;
-    }
+  .currenttrip {
+    position: relative;
+    right: -890px;
+    border: solid 1px transparent;
+    margin-bottom: 5px;
+  }
+  .tripyourday {
+    position: relative;
+    right: -890px;
+  }
 }
 
-
 @media (max-width: 1400px) {
-
-.currenttrip {
+  .currenttrip {
     position: relative;
     right: -680px;
     border: solid 1px transparent;
     margin-bottom: 5px;
-}
+  }
 
-.tripyourday {
+  .tripyourday {
     position: relative;
-    right: -680px
-}
+    right: -680px;
+  }
 }
 
 .tripAlice {
-    @include location($fantasy);
-    border: none;
-    }
-    
-    .tripAstro {
-    @include location($tomorrow);
-    border: none;
-    }
-    
-    .tripAstroblasters {
-        @include location($tomorrow);
-        border: none;
-    
-    }
-    
-    .tripAutopia {
-        @include location($tomorrow);
-        border: none;
-    }
-    
-    .tripBig {
-        @include location($frontier);
-        border: none;
-    }
-    
-    .tripCasey {
-        @include location($fantasy);
-        border: none;
-    }
-    
-    .tripDisneyland {
-        @include location($main);
-        border: none;
+  @include location($fantasy);
+  border: none;
+}
 
-    }
-    
-    .tripDumbo {
-        @include location($fantasy);
-        border: none;
-    }
-    
-    .tripEnchanted {
-        @include location($adventure);
-        border: none;
-    }
-    
-    .tripGadgets {
-        @include location($toon);
-        border: none;
-    }
-    
-    .tripHaunted {
-        @include location($new);
-        border: none;
-    }
-    
-    .tripIndiana {
-        @include location($adventure);
-        border: none;
-    }
-    
-    .tripIts {
-        @include location($fantasy);
-        border: none;
-    }
-    
-    .tripJungle {
-        @include location($adventure);
-        border: none;
-    }
-    
-    .tripKing {
-        @include location($fantasy);
-        border: none;
-    }
-    
-    .tripMark {
-        @include location($frontier);
-        border: none;
-    }
-    
-    .tripMatterhorn {
-        @include location($fantasy);
-        border: none;
-    }
-    
-    .tripMr {
-        @include location($fantasy);
-        border: none;
-    }
-    
-    .tripPeter {
-        @include location($fantasy);
-        border: none;
-    }
-    
-    .tripPinocchio {
-        @include location($fantasy);
-        border: none;
-    }
-    
-    .tripPirates {
-        @include location($new);
-        border: none;
-    }
-    
-    .tripRoger {
-        @include location($toon);
-        border: none;
-    }
-    
-    .tripSailing {
-        @include location($frontier);
-        border: none;
-    }
-    
-    .tripSnow {
-        @include location($fantasy);
-        border: none;
-    }
-    
-    .tripSpace {
-        @include location($tomorrow);
-        border: none;
-    }
-    
-    .tripSplash {
-        @include location($critter);
-        border: none;
-    }
-    
-    .tripStar {
-        @include location($tomorrow);
-        border: none;
-    }
-    
-    .tripStorybookland {
-        @include location($fantasy);
-        border: none;
-    }
-    
-    .tripSubmarine {
-        @include location($tomorrow);
-        border: none;
-    }
-    
-    .tripTarzan {
-        @include location($adventure);
-        border: none;
-    }
-    
-    .tripTeacups {
-        @include location($fantasy);
-        border: none;
-    }
-    
-    .tripWinnie {
-        @include location($critter);
-        border: none;
-        }
-    
-    .tripfantasy {
-        @include land($fantasy);
-        top: -1230px;
-        left: 350px;
-    }
+.tripAstro {
+  @include location($tomorrow);
+  border: none;
+}
 
-    .tripmains {
-        @include land($main);
-        top: -950px;
-        left: 650px;  
+.tripAstroblasters {
+  @include location($tomorrow);
+  border: none;
+}
 
-    }
+.tripAutopia {
+  @include location($tomorrow);
+  border: none;
+}
 
-    .tripcritter {
-        @include land($critter);
-        top: -1303px;
-        left: 50px;
-    }
+.tripBig {
+  @include location($frontier);
+  border: none;
+}
 
-    .tripfrontier {
-        @include land($frontier);
-        top: -1145px;
-        left: 50px;
-    }
+.tripCasey {
+  @include location($fantasy);
+  border: none;
+}
 
-    .tripnew {
-        @include land($new);
-        top: -834px;
-        left: 50px;
-    }
+.tripDisneyland {
+  @include location($main);
+  border: none;
+}
 
-    .tripadventure {
-        @include land($adventure);
-        top: -1060px;
-        left: 50px;
-    }
+.tripDumbo {
+  @include location($fantasy);
+  border: none;
+}
 
-    .triptoon {
-        @include land($toon);
-        top: -930px;
-        left: 350px;
-    }
+.tripEnchanted {
+  @include location($adventure);
+  border: none;
+}
 
-    .triptomorrow {
-        @include land($tomorrow);
-        top: -1375px;
-        left: 650px;
-    }
+.tripGadgets {
+  @include location($toon);
+  border: none;
+}
 
-    .divtripAlice {
-        @include tripdiv(-296px, 300px);
-        }
-        
-        .divtripAstro {
-            @include tripdiv(-961px, 600px);
-        }
-        
-        .divtripAstroblasters {
-            @include tripdiv(-893px, 600px);
-        
-        }
-        
-        .divtripAutopia {
-            @include tripdiv(-931px, 600px);
-        }
-        
-        .divtripBig {
-            @include tripdiv(-583px, 0px);
-        }
-        
-        .divtripCasey {
-            @include tripdiv(-296px, 300px);
-        }
-        
-        .divtripDisneyland {
-            @include tripdiv(-516px, 600px);
-    
-        }
-        
-        .divtripDumbo {
-            @include tripdiv(-296px, 300px);
-        }
-        
-        .divtripEnchanted {
-            @include tripdiv(205px, 0px);
-        }
-        
-        .divtripGadgets {
-            @include tripdiv(-666px, 300px);
-        }
-        
-        .divtripHaunted {
-            @include tripdiv(-363px, 0px);
-        }
-        
-        .divtripIndiana {
-            @include tripdiv(205px, 0px);
-        }
-        
-        .divtripIts {
-            @include tripdiv(-296px, 300px);
-        }
-        
-        .divtripJungle {
-            @include tripdiv(205px, 0px);
-        }
-        
-        .divtripKing {
-            @include tripdiv(-296px, 300px);
-        }
-        
-        .divtripMark {
-            @include tripdiv(-583px, 0px);
-        }
-        
-        .divtripMatterhorn {
-            @include tripdiv(-296px, 300px);
-        }
-        
-        .divtripMr {
-            @include tripdiv(-296px, 300px);
-        }
-        
-        .divtripPeter {
-            @include tripdiv(-296px, 300px);
-        }
-        
-        .divtripPinocchio {
-            @include tripdiv(-296px, 300px);
-        }
-        
-        .divtripPirates {
-            @include tripdiv(-364px, 0px);
-        }
-        
-        .divtripRoger {
-            @include tripdiv(-666px, 300px);
-        }
-        
-        .divtripSailing {
-            @include tripdiv(-583px, 0px);
-        }
-        
-        .divtripSnow {
-            @include tripdiv(-296px, 300px);
-        }
-        
-        .divtripSpace {
-            @include tripdiv(-931px, 600px);
-        }
-        
-        .divtripSplash {
-            @include tripdiv(-226px, 0px);
-        }
-        
-        .divtripStar {
-            @include tripdiv(-931px, 600px);
-        }
-        
-        .divtripStorybookland {
-            @include tripdiv(-296px, 300px);
-        }
-        
-        .divtripSubmarine {
-            @include tripdiv(-931px, 600px);
-        }
-        
-        .divtripTarzan {
-            @include tripdiv(205px, 0px);
-        }
-        
-        .divtripTeacups {
-            @include tripdiv(-296px, 300px);
-        }
-        
-        .divtripWinnie {
-            @include tripdiv(-226px, 0px);
-            }
+.tripHaunted {
+  @include location($new);
+  border: none;
+}
 
+.tripIndiana {
+  @include location($adventure);
+  border: none;
+}
 
+.tripIts {
+  @include location($fantasy);
+  border: none;
+}
 
+.tripJungle {
+  @include location($adventure);
+  border: none;
+}
 
-            @media (max-width: 1200px) {
-                .tripfantasy {
-                    @include land($fantasy);
-                    top: -1230px;
-                    left: 350px;
-                }
-            
-                .tripmains {
-                    @include land($main);
-                    top: -713px;
-                    left: 50px;  
-            
-                }
-            
-                .tripcritter {
-                    @include land($critter);
-                    top: -1303px;
-                    left: 50px;
-                }
-            
-                .tripfrontier {
-                    @include land($frontier);
-                    top: -1184px;
-                    left: 50px;
-                }
-            
-                .tripnew {
-                    @include land($new);
-                    top: -974px;
-                    left: 50px;
-                }
-            
-                .tripadventure {
-                    @include land($adventure);
-                    top: -1127px;
-                    left: 50px;
-                }
-            
-                .triptoon {
-                    @include land($toon);
-                    top: -953px;
-                    left: 50px;
-                }
-            
-                .triptomorrow {
-                    @include land($tomorrow);
-                    top: -941px;
-                    left: 350px;
-                }
-            
-                .divtripAlice {
-                    @include tripdiv(-297px, 300px);
-                    }
-                    
-                    .divtripAstro {
-                        @include tripdiv(-491px, 300px);
-                    }
-                    
-                    .divtripAstroblasters {
-                        @include tripdiv(-490px, 300px);
-                    
-                    }
-                    
-                    .divtripAutopia {
-                        @include tripdiv(-492px, 300px);
-                    }
-                    
-                    .divtripBig {
-                        @include tripdiv(-621px, 0px);
-                    }
-                    
-                    .divtripCasey {
-                        @include tripdiv(-298px, 300px);
-                    }
-                    
-                    .divtripDisneyland {
-                        @include tripdiv(-280px, 0px);
-                
-                    }
-                    
-                    .divtripDumbo {
-                        @include tripdiv(-299px, 300px);
-                    }
-                    
-                    .divtripEnchanted {
-                        @include tripdiv(138px, 0px);
-                    }
-                    
-                    .divtripGadgets {
-                        @include tripdiv(-689px, 0px);
-                    }
-                    
-                    .divtripHaunted {
-                        @include tripdiv(-503px, 0px);
-                    }
-                    
-                    .divtripIndiana {
-                        @include tripdiv(138px, 0px);
-                    }
-                    
-                    .divtripIts {
-                        @include tripdiv(-300px, 300px);
-                    }
-                    
-                    .divtripJungle {
-                        @include tripdiv(138px, 0px);
-                    }
-                    
-                    .divtripKing {
-                        @include tripdiv(-301px, 300px);
-                    }
-                    
-                    .divtripMark {
-                        @include tripdiv(-621px, 0px);
-                    }
-                    
-                    .divtripMatterhorn {
-                        @include tripdiv(-302px, 300px);
-                    }
-                    
-                    .divtripMr {
-                        @include tripdiv(-303px, 300px);
-                    }
-                    
-                    .divtripPeter {
-                        @include tripdiv(-304px, 300px);
-                    }
-                    
-                    .divtripPinocchio {
-                        @include tripdiv(-305px, 300px);
-                    }
-                    
-                    .divtripPirates {
-                        @include tripdiv(-503px, 0px);
-                    }
-                    
-                    .divtripRoger {
-                        @include tripdiv(-689px, 0px);
-                    }
-                    
-                    .divtripSailing {
-                        @include tripdiv(-621px, 0px);
-                    }
-                    
-                    .divtripSnow {
-                        @include tripdiv(-306px, 300px);
-                    }
-                    
-                    .divtripSpace {
-                        @include tripdiv(-493px, 300px);
-                    }
-                    
-                    .divtripSplash {
-                        @include tripdiv(-226px, 0px);
-                    }
-                    
-                    .divtripStar {
-                        @include tripdiv(-494px, 300px);
-                    }
-                    
-                    .divtripStorybookland {
-                        @include tripdiv(-307px, 300px);
-                    }
-                    
-                    .divtripSubmarine {
-                        @include tripdiv(-495px, 300px);
-                    }
-                    
-                    .divtripTarzan {
-                        @include tripdiv(-561px, 0px);
-                    }
-                    
-                    .divtripTeacups {
-                        @include tripdiv(-308px, 300px);
-                    }
-                    
-                    .divtripWinnie {
-                        @include tripdiv(-226px, 0px);
-                        }
-            
-                        .currenttrip {
-                            border: solid 1px transparent;
-                            position: relative;
-                            right: -350px;
-                        }
-            
-                        .tripmain {
-                            display: flex;
-                            height: 1500px
-                        }
-                        .tripyourday {
-                            position: relative;
-                            right: -350px
-                        }
-            }
-            
-            @media (max-width: 900px) {
-                .tripfantasy {
-                    @include land($fantasy);
-                    top: -454px;
-                    left: 50px;
-                }
-            
-                .tripmains {
-                    @include land($main);
-                    top: -570px;
-                    left: 50px;  
-            
-                }
-            
-                .tripcritter {
-                    @include land($critter);
-                    top: -1305px;
-                    left: 50px;
-                }
-            
-                .tripfrontier {
-                    @include land($frontier);
-                    top: -1160px;
-                    left: 50px;
-                }
-            
-                .tripnew {
-                    @include land($new);
-                    top: -894px;
-                    left: 50px;
-                }
-            
-                .tripadventure {
-                    @include land($adventure);
-                    top: -1076px;
-                    left: 50px;
-                }
-            
-                .triptoon {
-                    @include land($toon);
-                    top: -842px;
-                    left: 50px;
-                }
-            
-                .triptomorrow {
-                    @include land($tomorrow);
-                    top: -119px;
-                    left: 50px;
-                }
-            
-                .divtripAlice {
-                    @include tripdiv(480px, 0px);
-                    }
-                    
-                    .divtripAstro {
-                        @include tripdiv(331px, 0px);
-                    }
-                    
-                    .divtripAstroblasters {
-                        @include tripdiv(331px, 0px);
-                    
-                    }
-                    
-                    .divtripAutopia {
-                        @include tripdiv(331px, 0px);
-                    }
-                    
-                    .divtripBig {
-                        @include tripdiv(-597px, 0px);
-                    }
-                    
-                    .divtripCasey {
-                        @include tripdiv(480px, 0px);
-                    }
-                    
-                    .divtripDisneyland {
-                        @include tripdiv(-137px, 0px);
-                
-                    }
-                    
-                    .divtripDumbo {
-                        @include tripdiv(480px, 0px);
-                    }
-                    
-                    .divtripEnchanted {
-                        @include tripdiv(189px, 0px);
-                    }
-                    
-                    .divtripGadgets {
-                        @include tripdiv(-578px, 0px);
-                    }
-                    
-                    .divtripHaunted {
-                        @include tripdiv(-423px, 0px);
-                    }
-                    
-                    .divtripIndiana {
-                        @include tripdiv(189px, 0px);
-                    }
-                    
-                    .divtripIts {
-                        @include tripdiv(480px, 0px);
-                    }
-                    
-                    .divtripJungle {
-                        @include tripdiv(189px, 0px);
-                    }
-                    
-                    .divtripKing {
-                        @include tripdiv(480px, 0px);
-                    }
-                    
-                    .divtripMark {
-                        @include tripdiv(-597px, 0px);
-                    }
-                    
-                    .divtripMatterhorn {
-                        @include tripdiv(480px, 0px);
-                    }
-                    
-                    .divtripMr {
-                        @include tripdiv(480px, 0px);
-                    }
-                    
-                    .divtripPeter {
-                        @include tripdiv(480px, 0px);
-                    }
-                    
-                    .divtripPinocchio {
-                        @include tripdiv(480px, 0px);
-                    }
-                    
-                    .divtripPirates {
-                        @include tripdiv(-423px, 0px);
-                    }
-                    
-                    .divtripRoger {
-                        @include tripdiv(-578px, 0px);
-                    }
-                    
-                    .divtripSailing {
-                        @include tripdiv(-597px, 0px);
-                    }
-                    
-                    .divtripSnow {
-                        @include tripdiv(480px, 0px);
-                    }
-                    
-                    .divtripSpace {
-                        @include tripdiv(331px, 0px);
-                    }
-                    
-                    .divtripSplash {
-                        @include tripdiv(-228px, 0px);
-                    }
-                    
-                    .divtripStar {
-                        @include tripdiv(331px, 0px);
-                    }
-                    
-                    .divtripStorybookland {
-                        @include tripdiv(480px, 0px);
-                    }
-                    
-                    .divtripSubmarine {
-                        @include tripdiv(331px, 0px);
-                    }
-                    
-                    .divtripTarzan {
-                        @include tripdiv(-561px, 0px);
-                    }
-                    
-                    .divtripTeacups {
-                        @include tripdiv(480px, 0px);
-                    }
-                    
-                    .divtripWinnie {
-                        @include tripdiv(-228px, 0px);
-                        }
-            
-                        .currenttrip {
-                            border: solid 1px transparent;
-                            position: relative;
-                            right: -10px;
-                        }
-            
-                        .tripmain {
-                            display: flex;
-                            height: 1700px
-                        }
-            
-                        .tripyourday {
-                            position: relative;
-                            right: -10px;
-                        }
+.tripKing {
+  @include location($fantasy);
+  border: none;
+}
 
-                       
-            }
+.tripMark {
+  @include location($frontier);
+  border: none;
+}
 
+.tripMatterhorn {
+  @include location($fantasy);
+  border: none;
+}
 
-        
+.tripMr {
+  @include location($fantasy);
+  border: none;
+}
+
+.tripPeter {
+  @include location($fantasy);
+  border: none;
+}
+
+.tripPinocchio {
+  @include location($fantasy);
+  border: none;
+}
+
+.tripPirates {
+  @include location($new);
+  border: none;
+}
+
+.tripRoger {
+  @include location($toon);
+  border: none;
+}
+
+.tripSailing {
+  @include location($frontier);
+  border: none;
+}
+
+.tripSnow {
+  @include location($fantasy);
+  border: none;
+}
+
+.tripSpace {
+  @include location($tomorrow);
+  border: none;
+}
+
+.tripSplash {
+  @include location($critter);
+  border: none;
+}
+
+.tripStar {
+  @include location($tomorrow);
+  border: none;
+}
+
+.tripStorybookland {
+  @include location($fantasy);
+  border: none;
+}
+
+.tripSubmarine {
+  @include location($tomorrow);
+  border: none;
+}
+
+.tripTarzan {
+  @include location($adventure);
+  border: none;
+}
+
+.tripTeacups {
+  @include location($fantasy);
+  border: none;
+}
+
+.tripWinnie {
+  @include location($critter);
+  border: none;
+}
+
+.tripfantasy {
+  @include land($fantasy);
+  top: -1230px;
+  left: 350px;
+}
+
+.tripmains {
+  @include land($main);
+  top: -950px;
+  left: 650px;
+}
+
+.tripcritter {
+  @include land($critter);
+  top: -1303px;
+  left: 50px;
+}
+
+.tripfrontier {
+  @include land($frontier);
+  top: -1145px;
+  left: 50px;
+}
+
+.tripnew {
+  @include land($new);
+  top: -834px;
+  left: 50px;
+}
+
+.tripadventure {
+  @include land($adventure);
+  top: -1060px;
+  left: 50px;
+}
+
+.triptoon {
+  @include land($toon);
+  top: -930px;
+  left: 350px;
+}
+
+.triptomorrow {
+  @include land($tomorrow);
+  top: -1375px;
+  left: 650px;
+}
+
+.divtripAlice {
+  @include tripdiv(-296px, 300px);
+}
+
+.divtripAstro {
+  @include tripdiv(-961px, 600px);
+}
+
+.divtripAstroblasters {
+  @include tripdiv(-893px, 600px);
+}
+
+.divtripAutopia {
+  @include tripdiv(-931px, 600px);
+}
+
+.divtripBig {
+  @include tripdiv(-583px, 0px);
+}
+
+.divtripCasey {
+  @include tripdiv(-296px, 300px);
+}
+
+.divtripDisneyland {
+  @include tripdiv(-516px, 600px);
+}
+
+.divtripDumbo {
+  @include tripdiv(-296px, 300px);
+}
+
+.divtripEnchanted {
+  @include tripdiv(205px, 0px);
+}
+
+.divtripGadgets {
+  @include tripdiv(-666px, 300px);
+}
+
+.divtripHaunted {
+  @include tripdiv(-363px, 0px);
+}
+
+.divtripIndiana {
+  @include tripdiv(205px, 0px);
+}
+
+.divtripIts {
+  @include tripdiv(-296px, 300px);
+}
+
+.divtripJungle {
+  @include tripdiv(205px, 0px);
+}
+
+.divtripKing {
+  @include tripdiv(-296px, 300px);
+}
+
+.divtripMark {
+  @include tripdiv(-583px, 0px);
+}
+
+.divtripMatterhorn {
+  @include tripdiv(-296px, 300px);
+}
+
+.divtripMr {
+  @include tripdiv(-296px, 300px);
+}
+
+.divtripPeter {
+  @include tripdiv(-296px, 300px);
+}
+
+.divtripPinocchio {
+  @include tripdiv(-296px, 300px);
+}
+
+.divtripPirates {
+  @include tripdiv(-364px, 0px);
+}
+
+.divtripRoger {
+  @include tripdiv(-666px, 300px);
+}
+
+.divtripSailing {
+  @include tripdiv(-583px, 0px);
+}
+
+.divtripSnow {
+  @include tripdiv(-296px, 300px);
+}
+
+.divtripSpace {
+  @include tripdiv(-931px, 600px);
+}
+
+.divtripSplash {
+  @include tripdiv(-226px, 0px);
+}
+
+.divtripStar {
+  @include tripdiv(-931px, 600px);
+}
+
+.divtripStorybookland {
+  @include tripdiv(-296px, 300px);
+}
+
+.divtripSubmarine {
+  @include tripdiv(-931px, 600px);
+}
+
+.divtripTarzan {
+  @include tripdiv(205px, 0px);
+}
+
+.divtripTeacups {
+  @include tripdiv(-296px, 300px);
+}
+
+.divtripWinnie {
+  @include tripdiv(-226px, 0px);
+}
+
+@media (max-width: 1200px) {
+  .tripfantasy {
+    @include land($fantasy);
+    top: -1230px;
+    left: 350px;
+  }
+
+  .tripmains {
+    @include land($main);
+    top: -713px;
+    left: 50px;
+  }
+
+  .tripcritter {
+    @include land($critter);
+    top: -1303px;
+    left: 50px;
+  }
+
+  .tripfrontier {
+    @include land($frontier);
+    top: -1184px;
+    left: 50px;
+  }
+
+  .tripnew {
+    @include land($new);
+    top: -974px;
+    left: 50px;
+  }
+
+  .tripadventure {
+    @include land($adventure);
+    top: -1127px;
+    left: 50px;
+  }
+
+  .triptoon {
+    @include land($toon);
+    top: -953px;
+    left: 50px;
+  }
+
+  .triptomorrow {
+    @include land($tomorrow);
+    top: -941px;
+    left: 350px;
+  }
+
+  .divtripAlice {
+    @include tripdiv(-297px, 300px);
+  }
+
+  .divtripAstro {
+    @include tripdiv(-491px, 300px);
+  }
+
+  .divtripAstroblasters {
+    @include tripdiv(-490px, 300px);
+  }
+
+  .divtripAutopia {
+    @include tripdiv(-492px, 300px);
+  }
+
+  .divtripBig {
+    @include tripdiv(-621px, 0px);
+  }
+
+  .divtripCasey {
+    @include tripdiv(-298px, 300px);
+  }
+
+  .divtripDisneyland {
+    @include tripdiv(-280px, 0px);
+  }
+
+  .divtripDumbo {
+    @include tripdiv(-299px, 300px);
+  }
+
+  .divtripEnchanted {
+    @include tripdiv(138px, 0px);
+  }
+
+  .divtripGadgets {
+    @include tripdiv(-689px, 0px);
+  }
+
+  .divtripHaunted {
+    @include tripdiv(-503px, 0px);
+  }
+
+  .divtripIndiana {
+    @include tripdiv(138px, 0px);
+  }
+
+  .divtripIts {
+    @include tripdiv(-300px, 300px);
+  }
+
+  .divtripJungle {
+    @include tripdiv(138px, 0px);
+  }
+
+  .divtripKing {
+    @include tripdiv(-301px, 300px);
+  }
+
+  .divtripMark {
+    @include tripdiv(-621px, 0px);
+  }
+
+  .divtripMatterhorn {
+    @include tripdiv(-302px, 300px);
+  }
+
+  .divtripMr {
+    @include tripdiv(-303px, 300px);
+  }
+
+  .divtripPeter {
+    @include tripdiv(-304px, 300px);
+  }
+
+  .divtripPinocchio {
+    @include tripdiv(-305px, 300px);
+  }
+
+  .divtripPirates {
+    @include tripdiv(-503px, 0px);
+  }
+
+  .divtripRoger {
+    @include tripdiv(-689px, 0px);
+  }
+
+  .divtripSailing {
+    @include tripdiv(-621px, 0px);
+  }
+
+  .divtripSnow {
+    @include tripdiv(-306px, 300px);
+  }
+
+  .divtripSpace {
+    @include tripdiv(-493px, 300px);
+  }
+
+  .divtripSplash {
+    @include tripdiv(-226px, 0px);
+  }
+
+  .divtripStar {
+    @include tripdiv(-494px, 300px);
+  }
+
+  .divtripStorybookland {
+    @include tripdiv(-307px, 300px);
+  }
+
+  .divtripSubmarine {
+    @include tripdiv(-495px, 300px);
+  }
+
+  .divtripTarzan {
+    @include tripdiv(-561px, 0px);
+  }
+
+  .divtripTeacups {
+    @include tripdiv(-308px, 300px);
+  }
+
+  .divtripWinnie {
+    @include tripdiv(-226px, 0px);
+  }
+
+  .currenttrip {
+    border: solid 1px transparent;
+    position: relative;
+    right: -350px;
+  }
+
+  .tripmain {
+    display: flex;
+    height: 1500px;
+  }
+  .tripyourday {
+    position: relative;
+    right: -350px;
+  }
+}
+
+@media (max-width: 900px) {
+  .tripfantasy {
+    @include land($fantasy);
+    top: -454px;
+    left: 50px;
+  }
+
+  .tripmains {
+    @include land($main);
+    top: -570px;
+    left: 50px;
+  }
+
+  .tripcritter {
+    @include land($critter);
+    top: -1305px;
+    left: 50px;
+  }
+
+  .tripfrontier {
+    @include land($frontier);
+    top: -1160px;
+    left: 50px;
+  }
+
+  .tripnew {
+    @include land($new);
+    top: -894px;
+    left: 50px;
+  }
+
+  .tripadventure {
+    @include land($adventure);
+    top: -1076px;
+    left: 50px;
+  }
+
+  .triptoon {
+    @include land($toon);
+    top: -842px;
+    left: 50px;
+  }
+
+  .triptomorrow {
+    @include land($tomorrow);
+    top: -119px;
+    left: 50px;
+  }
+
+  .divtripAlice {
+    @include tripdiv(480px, 0px);
+  }
+
+  .divtripAstro {
+    @include tripdiv(331px, 0px);
+  }
+
+  .divtripAstroblasters {
+    @include tripdiv(331px, 0px);
+  }
+
+  .divtripAutopia {
+    @include tripdiv(331px, 0px);
+  }
+
+  .divtripBig {
+    @include tripdiv(-597px, 0px);
+  }
+
+  .divtripCasey {
+    @include tripdiv(480px, 0px);
+  }
+
+  .divtripDisneyland {
+    @include tripdiv(-137px, 0px);
+  }
+
+  .divtripDumbo {
+    @include tripdiv(480px, 0px);
+  }
+
+  .divtripEnchanted {
+    @include tripdiv(189px, 0px);
+  }
+
+  .divtripGadgets {
+    @include tripdiv(-578px, 0px);
+  }
+
+  .divtripHaunted {
+    @include tripdiv(-423px, 0px);
+  }
+
+  .divtripIndiana {
+    @include tripdiv(189px, 0px);
+  }
+
+  .divtripIts {
+    @include tripdiv(480px, 0px);
+  }
+
+  .divtripJungle {
+    @include tripdiv(189px, 0px);
+  }
+
+  .divtripKing {
+    @include tripdiv(480px, 0px);
+  }
+
+  .divtripMark {
+    @include tripdiv(-597px, 0px);
+  }
+
+  .divtripMatterhorn {
+    @include tripdiv(480px, 0px);
+  }
+
+  .divtripMr {
+    @include tripdiv(480px, 0px);
+  }
+
+  .divtripPeter {
+    @include tripdiv(480px, 0px);
+  }
+
+  .divtripPinocchio {
+    @include tripdiv(480px, 0px);
+  }
+
+  .divtripPirates {
+    @include tripdiv(-423px, 0px);
+  }
+
+  .divtripRoger {
+    @include tripdiv(-578px, 0px);
+  }
+
+  .divtripSailing {
+    @include tripdiv(-597px, 0px);
+  }
+
+  .divtripSnow {
+    @include tripdiv(480px, 0px);
+  }
+
+  .divtripSpace {
+    @include tripdiv(331px, 0px);
+  }
+
+  .divtripSplash {
+    @include tripdiv(-228px, 0px);
+  }
+
+  .divtripStar {
+    @include tripdiv(331px, 0px);
+  }
+
+  .divtripStorybookland {
+    @include tripdiv(480px, 0px);
+  }
+
+  .divtripSubmarine {
+    @include tripdiv(331px, 0px);
+  }
+
+  .divtripTarzan {
+    @include tripdiv(-561px, 0px);
+  }
+
+  .divtripTeacups {
+    @include tripdiv(480px, 0px);
+  }
+
+  .divtripWinnie {
+    @include tripdiv(-228px, 0px);
+  }
+
+  .currenttrip {
+    border: solid 1px transparent;
+    position: relative;
+    right: -10px;
+  }
+
+  .tripmain {
+    display: flex;
+    height: 1700px;
+  }
+
+  .tripyourday {
+    position: relative;
+    right: -10px;
+  }
+}

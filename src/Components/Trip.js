@@ -4,7 +4,7 @@ import { getAttractions } from "../ducks/attractionReducer";
 import axios from "axios";
 import "./components.scss";
 import { Link } from "react-router-dom";
-import Nav from './Nav'
+import Nav from "./Nav";
 
 function Trip(props) {
   const [trip, setTrip] = useState([]);
@@ -45,7 +45,7 @@ function Trip(props) {
 
   const attractionsArray = props.attractions.attractions.map((e, index) => {
     return (
-      <div className={`divtrip${e.name}`} key={index} style={{border: "solid"}}>
+      <div className={`divtrip${e.name}`} key={index}>
         <Link to={`/Attraction/${e.attraction_id}`}>
           <h2 className={`trip${e.name}`}>{e.name}</h2>
         </Link>

@@ -3,15 +3,21 @@ const express = require("express")
 const massive = require("massive")
 const session = require("express-session")
 const controller = require("./controller.js")
-const {SERVER_PORT, SESSION_SECRET, CONNECTION_STRING} = process.env
+const { SERVER_PORT, SESSION_SECRET, CONNECTION_STRING } = process.env
+const path = require("path");
 
 const app = express()
 
 app.use(express.static(`${__dirname}/../build`))
 
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "../build/index.html"))
+})
+
 app.use(express.json())
 app.use(session({
     resave: false,
+    
     saveUninitialized: true,
     cookie: {maxAge: 1000 * 60 * 60 * 24 * 30},
     secret: SESSION_SECRET

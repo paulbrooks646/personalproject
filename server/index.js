@@ -4,10 +4,16 @@ const massive = require("massive")
 const session = require("express-session")
 const controller = require("./controller.js")
 const { SERVER_PORT, SESSION_SECRET, CONNECTION_STRING } = process.env
+const path = require("path")
 
 const app = express()
 
-app.use(express.static(`${__dirname}/../build`))
+app.use(express.static(__dirname + "/../build"))
+
+app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "../build/index.html"))
+})
+
 
 app.use(express.json())
 app.use(session({
@@ -41,8 +47,8 @@ massive({
     ssl: {rejectUnauthorized: false}
 }).then( db => {
     app.set("db", db)
-    console.log('I eat db connections for breakfast!')
-    app.listen(SERVER_PORT, () => console.log(`I'm port ${SERVER_PORT}, I'll improvise.`))
+    console.log('DB connected')
+    app.listen(SERVER_PORT, () => console.log(`Running on port ${SERVER_PORT}`))
 }).catch(err => console.log(err))
 
 

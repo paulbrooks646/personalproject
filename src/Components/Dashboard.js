@@ -59,8 +59,8 @@ function Dashboard(props) {
         <Link to={`/Trip/${e.trip_id}`}>
           <h1>Day {index + 1}</h1>
         </Link>
-        {e.events.map((event) => (
-          <h3 className="dashboardattraction">{event}</h3>
+        {e.events.map((event, index) => (
+          <h3 key={index} className="dashboardattraction">{event}</h3>
         ))}
         <button onClick={() => deleteDay(e.trip_id)}>Delete Day</button>
       </div>

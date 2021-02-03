@@ -1,5 +1,5 @@
 const bcrypt = require("bcrypt");
-const nodemailer = require("nodemailer");
+// const nodemailer = require("nodemailer");
 
 // function main(email, username) {
 //   let transporter = nodemailer.createTransport({
@@ -63,6 +63,7 @@ module.exports = {
 
   login: async (req, res) => {
     const db = req.app.get("db");
+    console.log(req.body)
     const { username, password } = req.body;
     const user = await db.check_user(username);
 
@@ -71,6 +72,7 @@ module.exports = {
     } else {
       const authenticated = bcrypt.compareSync(password, user[0].password);
       if (authenticated) {
+        console.log(user)
         req.session.user = {
           id: user[0].user_id,
           username: user[0].username,

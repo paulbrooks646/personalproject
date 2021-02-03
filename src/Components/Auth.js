@@ -29,9 +29,11 @@ function Auth(props) {
   const [passwordsMatch, setPasswordsMatch] = useState(true);
 
   const login = () => {
+    console.log("login")
     axios
       .post("/api/login", { username, password })
       .then((res) => {
+        console.log(res.data)
         props.loginUser(res.data);
         props.history.push("/Dashboard");
       })

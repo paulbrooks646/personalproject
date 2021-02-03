@@ -1,40 +1,40 @@
 const bcrypt = require("bcrypt");
 const nodemailer = require("nodemailer");
 
-function main(email, username) {
-  let transporter = nodemailer.createTransport({
-    service: "gmail",
-    auth: {
-      user: "micksamize@gmail.com",
-      pass: "Weaselicious77@",
-    },
-    tls: {
-      rejectUnauthorized: false,
-    },
-  });
+// function main(email, username) {
+//   let transporter = nodemailer.createTransport({
+//     service: "gmail",
+//     auth: {
+//       user: "micksamize@gmail.com",
+//       pass: "Weaselicious77@",
+//     },
+//     tls: {
+//       rejectUnauthorized: false,
+//     },
+//   });
 
-  const mailOptions = {
-    from: '"micksamize" <micksamize@gmail.com>',
-    to: "jairohmsford77@hotmail.com",
-    subject: "Welcome to Disneyland trip planner!",
-    text: "This is our first message with Nodemailer ;)",
-    html: `<body style="text-align: center;background-color:#ffff66">
-        <h1 style="color: blue;">Welcome ${username}!</h1>
-          <img style="background-color: transparent;width:200px;position:relative;top:10px;" src="https://img.pngio.com/filemickey-mouse-head-and-earspng-wikimedia-commons-mickey-head-transparent-background-450_371.png"/>
-        <h2 style="color:green; position:relative;top:0px;">Thank you for joining Disneyland Trip Planner!</h2>
-        <h3 style="color:red;position:relative;top:0px;">So you have decided to go to Disneyland? Great decision! We look forward to helping you make the most of your trip!</h3>
-        <img src="https://cdn1.parksmedia.wdprapps.disney.com/media/blog/wp-content/uploads/2019/05/ksjfhury85ui11.jpg" style="width:200px;height:200px; position:relative;top:30px;"/>
-         </body>`,
-  };
+//   const mailOptions = {
+//     from: '"micksamize" <micksamize@gmail.com>',
+//     to: "jairohmsford77@hotmail.com",
+//     subject: "Welcome to Disneyland trip planner!",
+//     text: "This is our first message with Nodemailer ;)",
+//     html: `<body style="text-align: center;background-color:#ffff66">
+//         <h1 style="color: blue;">Welcome ${username}!</h1>
+//           <img style="background-color: transparent;width:200px;position:relative;top:10px;" src="https://img.pngio.com/filemickey-mouse-head-and-earspng-wikimedia-commons-mickey-head-transparent-background-450_371.png"/>
+//         <h2 style="color:green; position:relative;top:0px;">Thank you for joining Disneyland Trip Planner!</h2>
+//         <h3 style="color:red;position:relative;top:0px;">So you have decided to go to Disneyland? Great decision! We look forward to helping you make the most of your trip!</h3>
+//         <img src="https://cdn1.parksmedia.wdprapps.disney.com/media/blog/wp-content/uploads/2019/05/ksjfhury85ui11.jpg" style="width:200px;height:200px; position:relative;top:30px;"/>
+//          </body>`,
+//   };
 
-  transporter.sendMail(mailOptions, function (error, info) {
-    if (error) {
-      console.log(error);
-    } else {
-      console.log("email sent:" + info.response);
-    }
-  });
-}
+//   transporter.sendMail(mailOptions, function (error, info) {
+//     if (error) {
+//       console.log(error);
+//     } else {
+//       console.log("email sent:" + info.response);
+//     }
+//   });
+// }
 
 module.exports = {
   register: async (req, res) => {
@@ -58,7 +58,7 @@ module.exports = {
     };
     res.status(200).send(req.session.user);
  
-    main(newEmail, newUsername);
+    // main(newEmail, newUsername);
   },
 
   login: async (req, res) => {
@@ -188,6 +188,7 @@ module.exports = {
 
   getDays: (req, res) => {
     const db = req.app.get("db");
+    console.log(req.params)
     const { id } = req.params;
 
     db.get_days([id]).then((events) => {

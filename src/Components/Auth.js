@@ -29,7 +29,7 @@ function Auth(props) {
   const [confirmPassword, setConfirmPassword] = useState("");
   const passwordsMatch = true;
 
-  const login = () => {
+  const login = (event) => {
     console.log("login");
     axios
       .post("/api/login", { username, password })
@@ -41,6 +41,8 @@ function Auth(props) {
       .catch((err) => {
         alert("Username or password incorrect");
       });
+    
+    event.preventDefault()
   };
 
   function toggleAccount(event) {
@@ -48,7 +50,7 @@ function Auth(props) {
     setAccount(!account);
   }
 
-  const register = () => {
+  const register = (event) => {
     axios
       .post("/api/register", { newUsername, newPassword, newEmail })
       .then((res) => {
@@ -58,6 +60,8 @@ function Auth(props) {
       .catch((err) => {
         alert("Could not register");
       });
+    
+    event.preventDefault()
   };
 
   return (

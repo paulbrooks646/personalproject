@@ -11,7 +11,7 @@ function Map(props) {
     axios.get("/api/attractions").then((res) => {
       props.getAttractions(res.data);
     });
-  }, [props.getAttractions, props.user.user]);
+  });
 
   const adventureArray = props.attractions.attractions.map((e, index) => {
     if (e.location === "Adventureland") {

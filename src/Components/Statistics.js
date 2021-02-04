@@ -13,7 +13,7 @@ function Statistics(props) {
   useEffect(() => {
     getRatings();
     getUserRatings();
-  }, [props.user.user]);
+  });
 
   function getRatings() {
     axios.get("/api/ratings").then((res) => setRatings(res.data));

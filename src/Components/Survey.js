@@ -7,11 +7,13 @@ import { Link } from "react-router-dom";
 import Nav from "./Nav";
 
 function Survey(props) {
+
+
   useEffect(() => {
     axios.get("/api/attractions").then((res) => {
       props.getAttractions(res.data);
     });
-  }, [props.user.user]);
+  }, [props]);
 
   const [survey, setSurvey] = useState({
     "Alice in Wonderland": { rating: 0, comments: "" },

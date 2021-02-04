@@ -26,7 +26,7 @@ function Auth(props) {
   const [newEmail, setNewEmail] = useState("");
   const [account, setAccount] = useState(true);
   const [confirmPassword, setConfirmPassword] = useState("");
-  const [passwordsMatch, setPasswordsMatch] = useState(true);
+  const passwordsMatch = true;
 
   const login = () => {
     console.log("login")

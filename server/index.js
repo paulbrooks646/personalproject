@@ -4,15 +4,15 @@ const massive = require("massive")
 const session = require("express-session")
 const controller = require("./controller.js")
 const { SERVER_PORT, SESSION_SECRET, CONNECTION_STRING } = process.env
-const path = require("path")
+// const path = require("path")
 
 const app = express()
 
 app.use(express.static(__dirname + "/../build"))
 
-app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "../build/index.html"))
-})
+// app.get("*", (req, res) => {
+//     res.sendFile(path.join(__dirname, "../build/index.html"))
+// })
 
 
 app.use(express.json())

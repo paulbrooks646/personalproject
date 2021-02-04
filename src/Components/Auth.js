@@ -17,6 +17,7 @@ import FormHelperText from "@material-ui/core/FormHelperText";
 import Typography from "@material-ui/core/Typography";
 import Card from "@material-ui/core/Card";
 import Link from "@material-ui/core/Link";
+import { withRouter } from "react-router-dom";
 
 function Auth(props) {
   const [username, setUsername] = useState("");
@@ -29,11 +30,11 @@ function Auth(props) {
   const passwordsMatch = true;
 
   const login = () => {
-    console.log("login")
+    console.log("login");
     axios
       .post("/api/login", { username, password })
       .then((res) => {
-        console.log(res.data)
+        console.log(res.data);
         props.loginUser(res.data);
         props.history.push("/Dashboard");
       })
@@ -217,4 +218,4 @@ const mapStateToProps = (reduxState) => reduxState;
 
 const mapDispatchToProps = { loginUser, registerUser };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Auth);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Auth));

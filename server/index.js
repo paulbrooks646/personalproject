@@ -4,7 +4,7 @@ const massive = require("massive")
 const session = require("express-session")
 const controller = require("./controller.js")
 const { SERVER_PORT, SESSION_SECRET, CONNECTION_STRING } = process.env
-// const path = require("path")
+const path = require("path")
 
 const app = express()
 

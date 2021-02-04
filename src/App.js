@@ -4,6 +4,7 @@ import Routes from "./routes.js";
 import axios from "axios";
 import { loginUser } from "./ducks/userReducer.js";
 import { connect } from "react-redux";
+import {withRouter} from "react-router-dom"
 
 function App(props) {
   useEffect(() => {
@@ -19,4 +20,4 @@ function App(props) {
 }
 const mapStateToProps = (reduxState) => reduxState;
 
-export default connect(mapStateToProps, { loginUser })(App);
+export default withRouter(connect(mapStateToProps, { loginUser })(App));

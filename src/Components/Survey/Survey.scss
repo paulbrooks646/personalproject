@@ -1,3 +1,54 @@
 @import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
 @import "../mixins";
 @import "../variables";
+
+.surveymain {
+  position: relative;
+  top: 130px;
+
+  .survey-introduction {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    h1 {
+      color: $purple;
+      margin-top: 0px;
+    }
+
+    h2 {
+      color: $toon;
+      width: 90%;
+    }
+  }
+
+  .surveyarray {
+    @include center(center);
+    flex-direction: column;
+
+    .radio {
+      @include center(center);
+      flex-direction: column;
+      position: relative;
+      border: solid 3px black;
+      width: 90%;
+
+      label {
+        margin-left: 10px;
+      }
+
+      .surveycomments {
+        width: 70vw;
+        height: 25px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+      }
+
+      button {
+        @include button;
+        margin-bottom: 5px;
+      }
+    }
+  }
+}

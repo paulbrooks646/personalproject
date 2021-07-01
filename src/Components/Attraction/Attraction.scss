@@ -1,3 +1,86 @@
 @import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
 @import "../mixins";
 @import "../variables";
+
+.attractionmain {
+  @include center(space-evenly);
+  text-align: center;
+
+  .attraction-name {
+    font-size: 20px;
+    color: black;
+  }
+
+  .attractioncardTomorrowland {
+    @include card($tomorrow);
+  }
+
+  .attractioncardMain {
+    @include card($main);
+  }
+
+  .attractioncardAdventureland {
+    @include card($adventure);
+  }
+
+  .attractioncardCritter {
+    @include card($critter);
+  }
+
+  .attractioncardNew {
+    @include card($new);
+  }
+
+  .attractioncardToon {
+    @include card($toon);
+  }
+
+  .attractioncardFrontierland {
+    @include card($frontier);
+  }
+
+  .attractioncardFantasyland {
+    @include card($fantasy);
+  }
+
+  h1 {
+    font-family: $disney;
+  }
+
+  p {
+    width: 90%;
+    position: relative;
+  }
+
+  img {
+    width: 280px;
+    height: 170px;
+    position: relative;
+  }
+
+  .attractionratingdiv {
+    position: relative;
+    width: 60%;
+    @include center(space-evenly);
+
+    .attractionrating {
+      color: green;
+      font-family: none;
+      font-size: 40px;
+    }
+  }
+
+  h3 {
+    position: relative;
+  }
+}
+
+#attractionstatsbuttondiv {
+  top: 250px;
+}
+
+.scroll {
+  width: 100%;
+  position: relative;
+  height: 60px;
+}

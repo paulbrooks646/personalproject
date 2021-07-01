@@ -1,3 +1,30 @@
 @import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
 @import "../mixins";
 @import "../variables";
+
+.tripmain {
+  display: flex;
+
+  .trip {
+    position: relative;
+    top: 230px;
+  }
+
+  button {
+    @include button;
+    height: 20px;
+    font-size: 10px;
+    width: 100px;
+  }
+}
+
+.tripdiv {
+  @include center(center);
+  height: 35px;
+  width: 50vw;
+}
+
+.triptrip {
+  margin-top: 150px;
+  margin-right: 150px;
+}

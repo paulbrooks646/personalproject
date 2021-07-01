@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { connect } from "react-redux";
-import { loginUser, registerUser } from "../ducks/userReducer";
-import "./components.scss";
+import { loginUser, registerUser } from "../../ducks/userReducer";
+import "./Auth.scss";
 import Button from "@material-ui/core/Button";
 import Input from "@material-ui/core/Input";
 import FormControl from "@material-ui/core/FormControl";

@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import {connect} from 'react-redux'
-import {getAttractions} from '../ducks/attractionReducer.js'
+import { getAttractions } from '../../ducks/attractionReducer.js'
+import "./Countdown.scss"
 
 
 function Countdown(props) {

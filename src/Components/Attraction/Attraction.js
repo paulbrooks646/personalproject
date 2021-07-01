@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from 'react'
-import "./components.scss"
+import "./Attraction.scss"
 import axios from 'axios'
 import ScrollArea from 'react-scrollbar'
 import { Link } from 'react-router-dom'
-import Nav from "./Nav.js"
+import Nav from "../Nav/Nav"
 
 function Attraction(props) {
 

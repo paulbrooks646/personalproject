@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
-import { getAttractions } from "../ducks/attractionReducer";
+import { getAttractions } from "../../ducks/attractionReducer";
 import axios from "axios";
-import "./components.scss";
+import "./Trip.scss";
 import { Link } from "react-router-dom";
-import Nav from "./Nav";
+import Nav from "../Nav/Nav";
 
 function Trip(props) {
   const [trip, setTrip] = useState([]);

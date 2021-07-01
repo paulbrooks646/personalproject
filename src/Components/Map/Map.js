@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import { getAttractions } from "../ducks/attractionReducer";
+import { getAttractions } from "../../ducks/attractionReducer";
 import { Link } from "react-router-dom";
-import "./components.scss";
+import "./Map.scss";
 import axios from "axios";
-import Nav from "./Nav";
+import Nav from "../Nav/Nav";
 
 function Map(props) {
   useEffect(() => {

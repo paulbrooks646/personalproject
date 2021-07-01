@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
-import { getAttractions } from "../ducks/attractionReducer";
-import "./components.scss";
+import { getAttractions } from "../../ducks/attractionReducer";
+import "./Survey.scss";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import Nav from "./Nav";
+import Nav from "../Nav/Nav";
 
 function Survey(props) {
 

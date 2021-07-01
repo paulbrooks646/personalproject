@@ -1,9 +1,4 @@
-* {
-  text-decoration: none;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+
 
 @import "./mixins";
 @import "./variables";
@@ -146,10 +141,10 @@ h1 {
     border: solid 1px black;
   }
 
-  button {
-    @include button;
-    font-size: 10px;
-  }
+  // button {
+  //   @include button;
+  //   font-size: 10px;
+  // }
 
   h3 {
     font-family: $disney;

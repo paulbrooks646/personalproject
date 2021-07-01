@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
-import { getAttractions } from "../ducks/attractionReducer";
+import { getAttractions } from "../../ducks/attractionReducer";
 import axios from "axios";
-import "./components.scss";
+import "./Dashboard.scss";
 import { Link } from "react-router-dom";
-import Countdown from "./Countdown.js";
-import { getUser } from "../ducks/userReducer";
-import Nav from "./Nav";
+import Countdown from "../Countdown/Countdown";
+import { getUser } from "../../ducks/userReducer";
+import Nav from "../Nav/Nav";
 
 function Dashboard(props) {
   const { id } = props.user.user;

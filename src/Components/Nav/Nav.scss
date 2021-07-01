@@ -1,3 +1,58 @@
 @import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
 @import "../mixins";
 @import "../variables";
+
+.navbar {
+  @include center(space-evenly);
+  position: fixed;
+  width: 100vw;
+  height: 120px;
+  background-color: #ffff66;
+  z-index: 2;
+  border: solid 1px black;
+
+  img {
+    width: 100px;
+    height: 100px;
+    border: solid 1px black;
+  }
+
+  h3 {
+    font-family: $disney;
+    color: $purple;
+  }
+}
+
+.mapnav {
+  @include center(center);
+
+  .buttons {
+    @include center(space-evenly);
+    width: 50vw;
+
+    button {
+      @include button;
+      font-size: 10px;
+    }
+  }
+}
+
+@media (max-width: 825px) {
+  .mapnav {
+    .buttons {
+      width: 70vw;
+    }
+  }
+}
+
+@media (max-width: 775px) {
+  .mapnav {
+    justify-content: start;
+    align-items: center;
+    margin-left: 65px;
+
+    .buttons {
+      width: 70vw;
+    }
+  }
+}

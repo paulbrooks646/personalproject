@@ -12,17 +12,19 @@
   border: solid 1px black;
 
   .nav-welcome-div {
-      @include center(center);
+      @include center(space-evenly);
+      flex-direction: column;
       height: 100%;
-      width: 25vw;
+      width: 15vw;
       text-align: center;
     .nav-welcome {
       font-family: $disney;
+      
     }
   }
 
   .nav-link-div {
-      width: 45vw;
+      width: 20vw;
       height: 100%;
       @include center(space-evenly);
 
@@ -38,7 +40,7 @@
   .nav-logout-div {
        @include center(center);
       height: 100%;
-      width: 25vw;
+      width: 10vw;
   }
 }
 

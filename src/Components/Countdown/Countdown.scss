@@ -4,18 +4,28 @@
 
 .countdown-div {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+
+  .countdown-div-section {
+    margin-right: 5px;
+  }
+}
+
+.countdown-div-closed {
+  display: none;
+}
+
+.date-selector {
+  position: relative;
+  display: flex;
+  align-items: center;
   justify-content: space-evenly;
-}
 
-.countertitle {
-  color: $main;
-  position: relative;
-}
+  .trip-date-text {
+    margin-right: 10px;
+  }
 
-.counter {
-  @include center(center);
-  color: blue;
-  font-size: 60px;
-  position: relative;
+  .trip-date-input {
+    margin-right: 10px;
+  }
 }

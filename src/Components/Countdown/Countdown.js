@@ -1,60 +1,97 @@
-import React, {useState, useEffect} from 'react'
-import {connect} from 'react-redux'
-import { getAttractions } from '../../ducks/attractionReducer.js'
-import "./Countdown.scss"
-
+import React, { useState, useEffect } from "react";
+import { connect } from "react-redux";
+import { getAttractions } from "../../ducks/attractionReducer.js";
+import { getUser } from "../../ducks/userReducer";
+import Typography from "@material-ui/core/Typography";
+import Button from "@material-ui/core/Button";
+import Input from "@material-ui/core/Input";
+import "./Countdown.scss";
+import axios from "axios";
 
 function Countdown(props) {
+  const { id } = props.user.user;
 
-const calculateTimeLeft = () => {
+  const [date, setDate] = useState("");
 
+  function selectDate() {
+    axios.put(`/api/date/${id}`, { date }).then(res => {
+      props.getUser(res.data);
+    });
+  }
+
+  const calculateTimeLeft = () => {
     const difference = +new Date(props.user.user.date) - +new Date();
 
     let timeLeft = {};
 
     if (difference > 0) {
-        timeLeft = {
-            days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-        };
+      timeLeft = {
+        days: (Math.floor(difference / (1000 * 60 * 60 * 24)) + 1),
+      };
     } else {
-        timeLeft = {
-            days: "???"
-        }
+      timeLeft = {
+        days: "???",
+      };
     }
     return timeLeft;
-};
+  };
 
-const [timeLeft, setTimeLeft] = useState(calculateTimeLeft())
+  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
 
-useEffect(() => {
+  useEffect(() => {
     setTimeout(() => {
-        setTimeLeft(calculateTimeLeft())
-    }, 1000)
-})
+      setTimeLeft(calculateTimeLeft());
+    }, 1000);
+  });
 
-const timerComponents = []
+  const timerComponents = [];
 
-Object.keys(timeLeft).forEach(interval => {
+  Object.keys(timeLeft).forEach((interval) => {
     if (!timeLeft[interval]) {
-        return
+      return;
     }
 
     timerComponents.push(
-        <h1 key={"time"} className='counter'>
-            {timeLeft[interval]}{""}
-        </h1>
-        
-    )
-})
+      <Typography variant="h5" color="primary" key={"time"}>
+        {timeLeft[interval]}
+      </Typography>
+    );
+  });
 
-return (
+  return props.user.user.date ? (
     <div className="countdown-div">
-        <h1 className="countertitle">Days until your trip:</h1>
-        {timerComponents.length ? timerComponents : <span></span>}
+      <div className="countdown-div-section">
+        <Typography variant="h6" color="secondary" className="nav-welcome">
+          Only
+        </Typography>
+      </div>
+      <div className="countdown-div-section">
+        {timerComponents.length ? timerComponents : <div></div>}
+      </div>
+      <div className="countdown-div-section">
+        <Typography variant="h6" color="secondary" className="nav-welcome">
+          days til your trip!
+        </Typography>
+      </div>
     </div>
-)
+  ) : (
+    <div className="date-selector">
+      <Typography variant="h6" color="secondary" className="trip-date-text">
+        ADD TRIP DATE:
+      </Typography>
+      <Input
+        type="date"
+        value={date}
+        onChange={(e) => setDate(e.target.value)}
+                  variant="filled"
+                  className="trip-date-input"
+      />
+      <Button onClick={() => selectDate()} variant="contained" color="secondary" className="trip-date-button">
+        Submit
+      </Button>
+    </div>
+  );
 }
 
-
-const mapStateToProps = reduxState => reduxState
-export default connect(mapStateToProps, { getAttractions })(Countdown)
+const mapStateToProps = (reduxState) => reduxState;
+export default connect(mapStateToProps, { getAttractions, getUser })(Countdown);

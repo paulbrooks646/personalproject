@@ -273,7 +273,7 @@ module.exports = {
         email: user[0].email,
         date: user[0].trip_date,
       };
-      res.sendStatus(200);
+      res.status(200).send(req.session.user);
     });
   },
 };

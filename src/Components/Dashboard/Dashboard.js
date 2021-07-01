@@ -30,7 +30,6 @@ function Dashboard(props) {
 
   function getDayLinks() {
     axios.get(`/api/trips/${id}`).then((res) => {
-      console.log(res.data)
       setDayLinks(res.data)
     });
   }
@@ -77,18 +76,7 @@ function Dashboard(props) {
     <>
       <Nav />
       <div className="dashboardmain">
-        <div className="countdowndiv">
-          <Countdown />
-          <div className="dateselector">
-            <h2>Add Date To Trip:</h2>
-            <input
-              type="date"
-              value={date}
-              onChange={(e) => setDate(e.target.value)}
-            />
-            <button onClick={() => selectDate()}>Submit</button>
-          </div>
-        </div>
+        
         <h1 className="dashboardtitle">Plan Your Trip</h1>
         <div className="dashboarddays">
           <h6>Click day to edit</h6>

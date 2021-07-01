@@ -10,9 +10,8 @@
   .countdowndiv {
     @include center(space-evenly);
 
-    .dateselector {
+    .date-selector {
       position: relative;
-
       display: flex;
       flex-direction: column;
       align-items: center;

@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { Link, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { logoutUser, getUser } from "../../ducks/userReducer";
+import Countdown from "../Countdown/Countdown"
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import axios from "axios";
@@ -22,10 +23,14 @@ function Nav(props) {
   return (
     <div className="navbar">
       <div className="nav-welcome-div">
-        <Typography variant="h5" color="secondary" className="nav-welcome">
-          Welcome {props.user.user.username}
+        <Typography variant="h5" color="primary" className="nav-welcome">
+          Welcome
+        </Typography>
+        <Typography variant="h5" color="primary" className="nav-welcome">
+          {props.user.user.username}
         </Typography>
       </div>
+      <Countdown />
       <div className="nav-link-div">
         <Link
           to="/Dashboard"
@@ -36,7 +41,7 @@ function Nav(props) {
           }`}
         >
           <Button color="primary" variant="contained">
-            Trip Builder
+            Trip
           </Button>
         </Link>
         <Link
@@ -46,7 +51,7 @@ function Nav(props) {
           }`}
         >
           <Button color="primary" variant="contained">
-            Disneyland Map
+            Map
           </Button>
         </Link>
         <Link
@@ -70,7 +75,7 @@ function Nav(props) {
           }`}
         >
           <Button color="primary" variant="contained">
-            Statistics
+            Stats
           </Button>
         </Link>
       </div>

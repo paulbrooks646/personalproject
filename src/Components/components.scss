@@ -1,9 +1,9 @@
 
 
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
 @import "./mixins";
 @import "./variables";
 @import "./tripqueries";
-@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
 
 //AUTH
 
@@ -11,118 +11,7 @@
 //     border: solid;
 // }
 
-h1 {
-  color: $green;
-  font-size: 60px;
-  font-family: $disney;
-}
 
-.auth-main {
-  width: 100vw;
-  height: 100vh;
-  background-image: url("https://cdn1.parksmedia.wdprapps.disney.com/media/blog/wp-content/uploads/2019/05/ksjfhury85ui11.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
-  min-height: 100%;
-  opacity: 0.8;
-
-  .auth-title,
-  .auth-subtitle {
-    font-family: $disney;
-    position: relative;
-    top: 20px;
-  }
-
-  .auth-title {
-    color: #fed90f;
-  }
-
-  .login-card {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-
-    .auth-card {
-      width: 500px;
-      height: 500px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-evenly;
-      position: relative;
-      top: 100px;
-
-      .login-form {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        height: 60%;
-      }
-    }
-  }
-}
-
-.register-card {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-
-  .auth-card {
-    width: 500px;
-    height: 500px;
-    position: relative;
-    top: 100px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-
-    .register-form {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-evenly;
-      height: 70%;
-    }
-  }
-}
-
-.register-card-closed {
-  display: none;
-}
-
-.login-card-closed {
-  display: none;
-}
-
-@media (max-width: 665px) {
-  .auth-main {
-    .auth-title {
-      font-size: 25px;
-    }
-
-    .auth-subtitle {
-      font-size: 20px;
-    }
-
-    .login-card {
-      .auth-card {
-        width: 300px;
-        height: 400px;
-      }
-    }
-  }
-
-  .register-card {
-    .auth-card {
-      width: 300px;
-      height: 400px;
-    }
-    .register-text {
-      font-size: 15px;
-    }
-  }
-}
 
 //NAV
 

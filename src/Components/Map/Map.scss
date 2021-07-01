@@ -1,3 +1,1210 @@
 @import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
 @import "../mixins";
 @import "../variables";
+@import "../tripqueries";
+
+.adventure-array {
+  position: relative;
+  height: 150px;
+  width: 320px;
+  top: 490px;
+  left: 520px;
+}
+
+.critter-array {
+  position: relative;
+  top: 180px;
+  left: 20px;
+  width: 230px;
+  height: 100px;
+}
+
+.fantasy-array {
+  position: relative;
+  width: 500px;
+  height: 200px;
+  left: 790px;
+  top: -50px;
+}
+
+.main-array {
+  width: 200px;
+  height: 150px;
+  position: relative;
+  left: 860px;
+}
+
+.new-array {
+  position: relative;
+  top: -330px;
+  left: 230px;
+  height: 100px;
+  width: 230px;
+}
+
+.frontier-array {
+  position: relative;
+  top: -170px;
+  left: 500px;
+  width: 200px;
+  height: 150px;
+}
+
+.tomorrow-array {
+  position: relative;
+  height: 180px;
+  width: 500px;
+  top: -490px;
+  left: 1060px;
+}
+
+.toon-array {
+  position: relative;
+  width: 400px;
+  height: 100px;
+  left: 750px;
+  top: -880px;
+}
+
+.map-main {
+  @include center(center);
+}
+
+.disneyland {
+  opacity: 0.75;
+  width: 100vw;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-image: url($map);
+  background-position: 0px 100px;
+}
+
+.Winnie {
+  @include ride(5px, 130px);
+}
+
+.Splash {
+  @include ride(50px, 70px);
+}
+
+.Enchanted {
+  @include ride(0px, 230px);
+}
+
+.Indiana {
+  @include ride(120px, 0px);
+}
+
+.Jungle {
+  @include ride(0px, 140px);
+}
+
+.Tarzan {
+  @include ride(20px, 20px);
+}
+
+.Alice {
+  @include ride(80px, 0px);
+}
+
+.Casey {
+  @include ride(60px, 0px);
+}
+
+.Dumbo {
+  @include ride(50px, 160px);
+}
+
+.Its {
+  @include ride(0px, 380px);
+}
+
+.King {
+  @include ride(80px, 85px);
+}
+
+.Matterhorn {
+  @include ride(110px, 390px);
+}
+
+.Mr {
+  @include ride(80px, 170px);
+}
+
+.Peter {
+  @include ride(115px, 170px);
+}
+
+.Pinocchio {
+  @include ride(115px, 0px);
+}
+
+.Snow {
+  @include ride(135px, 0px);
+}
+
+.Storybookland {
+  @include ride(70px, 260px);
+}
+
+.Teacups {
+  @include ride(90px, 300px);
+}
+
+.Big {
+  @include ride(50px, 90px);
+}
+
+.Mark {
+  @include ride(110px, 0px);
+}
+
+.Sailing {
+  @include ride(70px, 0px);
+}
+
+.Disneyland {
+  @include ride(60px, 50px);
+}
+
+.Haunted {
+  @include ride(0px, 0px);
+}
+
+.Pirates {
+  @include ride(50px, 230px);
+}
+
+.Astroblasters {
+  @include ride(60px, 190px);
+}
+
+.Astro {
+  @include ride(70px, 10px);
+}
+
+.Autopia {
+  @include ride(40px, 390px);
+}
+
+.Space {
+  @include ride(130px, 300px);
+}
+
+.Star {
+  @include ride(90px, 150px);
+}
+
+.Submarine {
+  @include ride(0px, 300px);
+}
+
+.Gadgets {
+  @include ride(0px, 50px);
+}
+
+.Roger {
+  @include ride(20px, 320px);
+}
+
+.land-div {
+  position: relative;
+  left: 200px;
+}
+
+.fantasy {
+  @include land($fantasy);
+}
+
+.main {
+  @include land($main);
+}
+
+.critter {
+  @include land($critter);
+}
+
+.new {
+  @include land($new);
+}
+.adventure {
+  @include land($adventure);
+}
+.frontier {
+  @include land($frontier);
+}
+
+.toon {
+  @include land($toon);
+}
+
+.tomorrow {
+  @include land($tomorrow);
+}
+
+@media (min-width: 901px) {
+  .fantasy {
+    display: none;
+  }
+
+  .adventure {
+    display: none;
+  }
+
+  .critter {
+    display: none;
+  }
+
+  .frontier {
+    display: none;
+  }
+
+  .main {
+    display: none;
+  }
+
+  .new {
+    display: none;
+  }
+
+  .tomorrow {
+    display: none;
+  }
+
+  .toon {
+    display: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .imagediv {
+    display: none;
+  }
+
+  .greetingdiv {
+    display: none;
+  }
+}
+
+@media (max-width: 800px) {
+  .authbutton {
+    @include button;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 1550px) {
+  .adventure-array {
+    position: relative;
+    height: 150px;
+    width: 320px;
+    top: 490px;
+    left: 420px;
+  }
+
+  .critter-array {
+    position: relative;
+    top: 180px;
+    left: 20px;
+    width: 230px;
+    height: 100px;
+  }
+
+  .fantasy-array {
+    position: relative;
+    width: 500px;
+    height: 200px;
+    left: 740px;
+    top: -50px;
+  }
+
+  .main-array {
+    width: 200px;
+    height: 150px;
+    position: relative;
+    left: 760px;
+  }
+
+  .new-array {
+    position: relative;
+    top: -330px;
+    left: 180px;
+    height: 100px;
+    width: 230px;
+  }
+
+  .frontier-array {
+    position: relative;
+    top: -170px;
+    left: 450px;
+    width: 200px;
+    height: 150px;
+  }
+
+  .tomorrow-array {
+    position: relative;
+    height: 180px;
+    width: 500px;
+    top: -490px;
+    left: 960px;
+  }
+
+  .toon-array {
+    position: relative;
+    width: 400px;
+    height: 100px;
+    left: 650px;
+    top: -880px;
+  }
+}
+
+@media (max-width: 1450px) {
+  .adventure-array {
+    position: relative;
+    height: 150px;
+    width: 320px;
+    top: 490px;
+    left: 380px;
+  }
+
+  .critter-array {
+    position: relative;
+    top: 180px;
+    left: 20px;
+    width: 230px;
+    height: 100px;
+  }
+
+  .fantasy-array {
+    position: relative;
+    width: 500px;
+    height: 200px;
+    left: 610px;
+    top: -50px;
+  }
+
+  .main-array {
+    width: 200px;
+    height: 150px;
+    position: relative;
+    left: 660px;
+  }
+
+  .new-array {
+    position: relative;
+    top: -330px;
+    left: 160px;
+    height: 100px;
+    width: 230px;
+  }
+
+  .frontier-array {
+    position: relative;
+    top: -170px;
+    left: 410px;
+    width: 200px;
+    height: 150px;
+  }
+
+  .tomorrow-array {
+    position: relative;
+    height: 180px;
+    width: 500px;
+    top: -490px;
+    left: 840px;
+  }
+
+  .toon-array {
+    position: relative;
+    width: 400px;
+    height: 100px;
+    left: 535px;
+    top: -880px;
+  }
+}
+
+@media (max-width: 1350px) {
+  .adventure-array {
+    position: relative;
+    height: 150px;
+    width: 320px;
+    top: 490px;
+    left: 380px;
+  }
+
+  .critter-array {
+    position: relative;
+    top: 180px;
+    left: 20px;
+    width: 230px;
+    height: 100px;
+  }
+
+  .fantasy-array {
+    position: relative;
+    width: 500px;
+    height: 200px;
+    left: 550px;
+    top: -50px;
+  }
+
+  .main-array {
+    width: 200px;
+    height: 150px;
+    position: relative;
+    left: 660px;
+  }
+
+  .new-array {
+    position: relative;
+    top: -330px;
+    left: 160px;
+    height: 100px;
+    width: 230px;
+  }
+
+  .frontier-array {
+    position: relative;
+    top: -170px;
+    left: 375px;
+    width: 200px;
+    height: 150px;
+  }
+
+  .tomorrow-array {
+    position: relative;
+    height: 180px;
+    width: 500px;
+    top: -490px;
+    left: 760px;
+  }
+
+  .toon-array {
+    position: relative;
+    width: 400px;
+    height: 100px;
+    left: 515px;
+    top: -880px;
+  }
+}
+
+@media (max-width: 1250px) {
+  .adventure-array {
+    position: relative;
+    height: 150px;
+    width: 320px;
+    top: 490px;
+    left: 340px;
+  }
+
+  .critter-array {
+    position: relative;
+    top: 180px;
+    left: 0px;
+    width: 230px;
+    height: 100px;
+  }
+
+  .fantasy-array {
+    position: relative;
+    width: 500px;
+    height: 200px;
+    left: 500px;
+    top: -50px;
+  }
+
+  .main-array {
+    width: 200px;
+    height: 150px;
+    position: relative;
+    left: 600px;
+  }
+
+  .new-array {
+    position: relative;
+    top: -330px;
+    left: 130px;
+    height: 100px;
+    width: 230px;
+  }
+
+  .frontier-array {
+    position: relative;
+    top: -170px;
+    left: 325px;
+    width: 200px;
+    height: 150px;
+  }
+
+  .tomorrow-array {
+    position: relative;
+    height: 180px;
+    width: 500px;
+    top: -490px;
+    left: 690px;
+  }
+
+  .toon-array {
+    position: relative;
+    width: 400px;
+    height: 100px;
+    left: 480px;
+    top: -880px;
+  }
+}
+
+@media (max-width: 1150px) {
+  .adventure-array {
+    position: relative;
+    height: 150px;
+    width: 320px;
+    top: 490px;
+    left: 300px;
+  }
+
+  .critter-array {
+    position: relative;
+    top: 180px;
+    left: 0px;
+    width: 230px;
+    height: 100px;
+  }
+
+  .fantasy-array {
+    position: relative;
+    width: 500px;
+    height: 200px;
+    left: 450px;
+    top: -50px;
+  }
+
+  .main-array {
+    width: 200px;
+    height: 150px;
+    position: relative;
+    left: 600px;
+  }
+
+  .new-array {
+    position: relative;
+    top: -330px;
+    left: 100px;
+    height: 100px;
+    width: 230px;
+  }
+
+  .frontier-array {
+    position: relative;
+    top: -170px;
+    left: 275px;
+    width: 200px;
+    height: 150px;
+  }
+
+  .tomorrow-array {
+    position: relative;
+    height: 180px;
+    width: 500px;
+    top: -490px;
+    left: 640px;
+  }
+
+  .toon-array {
+    position: relative;
+    width: 400px;
+    height: 100px;
+    left: 410px;
+    top: -880px;
+  }
+}
+
+@media (max-width: 1050px) {
+  .adventure-array {
+    position: relative;
+    height: 150px;
+    width: 320px;
+    top: 490px;
+    left: 300px;
+  }
+
+  .critter-array {
+    position: relative;
+    top: 180px;
+    left: -50px;
+    width: 230px;
+    height: 100px;
+  }
+
+  .fantasy-array {
+    position: relative;
+    width: 500px;
+    height: 200px;
+    left: 400px;
+    top: -50px;
+  }
+
+  .main-array {
+    width: 200px;
+    height: 150px;
+    position: relative;
+    left: 600px;
+  }
+
+  .new-array {
+    position: relative;
+    top: -330px;
+    left: 100px;
+    height: 100px;
+    width: 230px;
+  }
+
+  .frontier-array {
+    position: relative;
+    top: -170px;
+    left: 225px;
+    width: 200px;
+    height: 150px;
+  }
+
+  .tomorrow-array {
+    position: relative;
+    height: 180px;
+    width: 500px;
+    top: -490px;
+    left: 540px;
+  }
+
+  .toon-array {
+    position: relative;
+    width: 400px;
+    height: 100px;
+    left: 360px;
+    top: -880px;
+  }
+}
+
+@media (max-width: 950px) {
+  .adventure-array {
+    position: relative;
+    height: 150px;
+    width: 320px;
+    top: 490px;
+    left: 300px;
+  }
+
+  .critter-array {
+    position: relative;
+    top: 180px;
+    left: -70px;
+    width: 230px;
+    height: 100px;
+  }
+
+  .fantasy-array {
+    position: relative;
+    width: 500px;
+    height: 200px;
+    left: 310px;
+    top: -50px;
+  }
+
+  .main-array {
+    width: 200px;
+    height: 150px;
+    position: relative;
+    left: 600px;
+  }
+
+  .new-array {
+    position: relative;
+    top: -330px;
+    left: 25px;
+    height: 100px;
+    width: 230px;
+  }
+
+  .frontier-array {
+    position: relative;
+    top: -145px;
+    left: 185px;
+    width: 200px;
+    height: 150px;
+  }
+
+  .tomorrow-array {
+    position: relative;
+    height: 180px;
+    width: 500px;
+    top: -490px;
+    left: 470px;
+  }
+
+  .toon-array {
+    position: relative;
+    width: 400px;
+    height: 100px;
+    left: 300px;
+    top: -880px;
+  }
+}
+
+@media (max-width: 900px) {
+  .adventure-array {
+    display: none;
+  }
+
+  .critter-array {
+    display: none;
+  }
+
+  .fantasy-array {
+    display: none;
+  }
+
+  .main-array {
+    display: none;
+  }
+
+  .new-array {
+    display: none;
+  }
+
+  .frontier-array {
+    display: none;
+  }
+
+  .tomorrow-array {
+    display: none;
+  }
+
+  .toon-array {
+    display: none;
+  }
+
+  .disneyland {
+    display: none;
+  }
+}
+
+.mapAlice {
+  @include location($fantasy);
+  border: solid;
+  top: -122px;
+}
+
+.mapAstro {
+  @include location($tomorrow);
+  border: solid;
+  top: -25px;
+}
+
+.mapAstroblasters {
+  @include location($tomorrow);
+  border: solid;
+  top: -25px;
+}
+
+.mapAutopia {
+  @include location($tomorrow);
+  border: solid;
+  top: -25px;
+}
+
+.mapBig {
+  @include location($frontier);
+  border: solid;
+  top: -98px;
+}
+
+.mapCasey {
+  @include location($fantasy);
+  border: solid;
+  top: -122px;
+}
+
+.mapDisneyland {
+  @include location($main);
+  border: solid;
+  top: -73px;
+}
+.mapDumbo {
+  @include location($fantasy);
+  border: solid;
+  top: -122px;
+}
+
+.mapEnchanted {
+  @include location($adventure);
+  border: solid;
+  top: -170px;
+}
+
+.mapGadgets {
+  @include location($toon);
+  border: solid;
+  top: -1px;
+}
+
+.mapHaunted {
+  @include location($new);
+  border: solid;
+  top: -49px;
+}
+
+.mapIndiana {
+  @include location($adventure);
+  border: solid;
+  top: -170px;
+}
+
+.mapIts {
+  @include location($fantasy);
+  border: solid;
+  top: -122px;
+}
+
+.mapJungle {
+  @include location($adventure);
+  border: solid;
+  top: -170px;
+}
+
+.mapKing {
+  @include location($fantasy);
+  border: solid;
+  top: -122px;
+}
+
+.mapMark {
+  @include location($frontier);
+  border: solid;
+  top: -98px;
+}
+
+.mapMatterhorn {
+  @include location($fantasy);
+  border: solid;
+  top: -122px;
+}
+
+.mapMr {
+  @include location($fantasy);
+  border: solid;
+  top: -122px;
+}
+
+.mapPeter {
+  @include location($fantasy);
+  border: solid;
+  top: -122px;
+}
+
+.mapPinocchio {
+  @include location($fantasy);
+  border: solid;
+  top: -122px;
+}
+
+.mapPirates {
+  @include location($new);
+  border: solid;
+  top: -49px;
+}
+
+.mapRoger {
+  @include location($toon);
+  border: solid;
+  top: -1px;
+}
+
+.mapSailing {
+  @include location($frontier);
+  border: solid;
+  top: -98px;
+}
+
+.mapSnow {
+  @include location($fantasy);
+  border: solid;
+  top: -122px;
+}
+
+.mapSpace {
+  @include location($tomorrow);
+  border: solid;
+  top: -25px;
+}
+
+.mapSplash {
+  @include location($critter);
+  border: solid;
+  top: -146px;
+}
+
+.mapStar {
+  @include location($tomorrow);
+  border: solid;
+  top: -25px;
+}
+
+.mapStorybookland {
+  @include location($fantasy);
+  border: solid;
+  top: -122px;
+}
+
+.mapSubmarine {
+  @include location($tomorrow);
+  border: solid;
+  top: -25px;
+}
+
+.mapTarzan {
+  @include location($adventure);
+  border: solid;
+  top: -170px;
+}
+
+.mapTeacups {
+  @include location($fantasy);
+  border: solid;
+  top: -122px;
+}
+
+.mapWinnie {
+  @include location($critter);
+  border: solid;
+  top: -146px;
+}
+
+.land-div {
+  top: 120px;
+}
+
+.adventure {
+  border: solid 1px transparent;
+}
+
+.critter {
+  position: relative;
+  top: 99px;
+  border: solid 1px transparent;
+}
+
+.fantasy {
+  position: relative;
+  top: 149px;
+  border: solid 1px transparent;
+}
+
+.frontier {
+  position: relative;
+  top: 447px;
+  border: solid 1px transparent;
+}
+
+.main {
+  position: relative;
+  top: 522px;
+  border: solid 1px transparent;
+}
+
+.new {
+  position: relative;
+  top: 547px;
+  border: solid 1px transparent;
+}
+
+.tomorrow {
+  position: relative;
+  top: 597px;
+  border: solid 1px transparent;
+}
+
+.toon {
+  position: relative;
+  top: 746px;
+  border: solid 1px transparent;
+}
+
+@media (min-width: 901px) {
+  .land-div {
+    display: none;
+  }
+
+  .mapAlice {
+ display: none;
+
+}
+
+.mapAstro {
+  display: none;
+}
+
+.mapAstroblasters {
+  display: none;
+}
+
+.mapAutopia {
+  display: none;
+}
+
+.mapBig {
+display: none;
+}
+
+.mapCasey {
+  display: none;
+}
+
+.mapDisneyland {
+  display: none;
+}
+.mapDumbo {
+display: none;
+}
+
+.mapEnchanted {
+  display: none;
+}
+
+.mapGadgets {
+  @include location($toon);
+  border: none;
+  top: -1px;
+}
+
+.mapHaunted {
+  @include location($new);
+  border: none;
+  top: -49px;
+}
+
+.mapIndiana {
+  @include location($adventure);
+  border: none;
+  top: -170px;
+}
+
+.mapIts {
+  @include location($fantasy);
+  border: none;
+  top: -122px;
+}
+
+.mapJungle {
+  @include location($adventure);
+  border: none;
+  top: -170px;
+}
+
+.mapKing {
+  @include location($fantasy);
+  border: none;
+  top: -122px;
+}
+
+.mapMark {
+  @include location($frontier);
+  border: none;
+  top: -98px;
+}
+
+.mapMatterhorn {
+  @include location($fantasy);
+  border: none;
+  top: -122px;
+}
+
+.mapMr {
+  @include location($fantasy);
+  border: none;
+  top: -122px;
+}
+
+.mapPeter {
+  @include location($fantasy);
+  border: none;
+  top: -122px;
+}
+
+.mapPinocchio {
+  @include location($fantasy);
+  border: none;
+  top: -122px;
+}
+
+.mapPirates {
+  @include location($new);
+  border: none;
+  top: -49px;
+}
+
+.mapRoger {
+  @include location($toon);
+  border: none;
+  top: -1px;
+}
+
+.mapSailing {
+  @include location($frontier);
+  border: none;
+  top: -98px;
+}
+
+.mapSnow {
+  @include location($fantasy);
+  border: none;
+  top: -122px;
+}
+
+.mapSpace {
+  @include location($tomorrow);
+  border: none;
+  top: -25px;
+}
+
+.mapSplash {
+  @include location($critter);
+  border: none;
+  top: -146px;
+}
+
+.mapStar {
+  @include location($tomorrow);
+  border: none;
+  top: -25px;
+}
+
+.mapStorybookland {
+  @include location($fantasy);
+  border: none;
+  top: -122px;
+}
+
+.mapSubmarine {
+  @include location($tomorrow);
+  border: none;
+  top: -25px;
+}
+
+.mapTarzan {
+  @include location($adventure);
+  border: none;
+  top: -170px;
+}
+
+.mapTeacups {
+  @include location($fantasy);
+  border: none;
+  top: -122px;
+}
+
+.mapWinnie {
+  @include location($critter);
+  border: none;
+  top: -146px;
+}
+
+}

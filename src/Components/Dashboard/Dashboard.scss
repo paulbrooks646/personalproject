@@ -4,8 +4,8 @@
 
 .dashboardmain {
   position: relative;
-  top: 120px;
-  height: 100%;
+  top: 10vh;
+  height: 90vh;
 
   .countdowndiv {
     @include center(space-evenly);

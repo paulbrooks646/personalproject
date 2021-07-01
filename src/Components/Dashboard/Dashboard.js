@@ -4,7 +4,6 @@ import { getAttractions } from "../../ducks/attractionReducer";
 import axios from "axios";
 import "./Dashboard.scss";
 import { Link } from "react-router-dom";
-import Countdown from "../Countdown/Countdown";
 import { getUser } from "../../ducks/userReducer";
 import Nav from "../Nav/Nav";
 
@@ -30,7 +29,7 @@ function Dashboard(props) {
 
   function getDayLinks() {
     axios.get(`/api/trips/${id}`).then((res) => {
-      setDayLinks(res.data)
+      setDayLinks(res.data);
     });
   }
 
@@ -59,7 +58,9 @@ function Dashboard(props) {
           <h1>Day {index + 1}</h1>
         </Link>
         {e.events.map((event, index) => (
-          <h3 key={index} className="dashboardattraction">{event}</h3>
+          <h3 key={index} className="dashboardattraction">
+            {event}
+          </h3>
         ))}
         <button onClick={() => deleteDay(e.trip_id)}>Delete Day</button>
       </div>
@@ -76,7 +77,6 @@ function Dashboard(props) {
     <>
       <Nav />
       <div className="dashboardmain">
-        
         <h1 className="dashboardtitle">Plan Your Trip</h1>
         <div className="dashboarddays">
           <h6>Click day to edit</h6>
@@ -87,14 +87,7 @@ function Dashboard(props) {
         <div className="trip-so-far">
           <h3>Your trip so far:</h3>
         </div>
-
         <div className="dashboardlist">{filledDays}</div>
-        <div className="statsbuttondiv">
-          <h4 id="dashstat">Click here to see:</h4>
-          <Link to="/Statistics">
-            <button className="statsbutton">Attraction Statistics</button>
-          </Link>
-        </div>
       </div>
     </>
   );

@@ -1,3 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
 @import "../mixins";
 @import "../variables";
+
+.countdown-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.countertitle {
+  color: $main;
+  position: relative;
+}
+
+.counter {
+  @include center(center);
+  color: blue;
+  font-size: 60px;
+  position: relative;
+}

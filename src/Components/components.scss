@@ -23,23 +23,7 @@
 
 //COUNTDOWN
 
-.countdown-div {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-}
 
-.countertitle {
-  color: $main;
-  position: relative;
-}
-
-.counter {
-  @include center(center);
-  color: blue;
-  font-size: 60px;
-  position: relative;
-}
 
 //ATTRACTION
 

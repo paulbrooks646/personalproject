@@ -12,35 +12,33 @@
   border: solid 1px black;
 
   .nav-welcome-div {
-      @include center(space-evenly);
-      flex-direction: column;
-      height: 100%;
-      width: 15vw;
-      text-align: center;
+    @include center(space-evenly);
+    flex-direction: column;
+    height: 100%;
+    width: 15vw;
+    text-align: center;
     .nav-welcome {
       font-family: $disney;
-      
     }
   }
 
   .nav-link-div {
-      width: 20vw;
-      height: 100%;
-      @include center(space-evenly);
+    width: 20vw;
+    height: 100%;
+    @include center(space-evenly);
 
-      #nav-link {
+    #nav-link {
+    }
 
-      }
-
-      #nav-link-closed {
-          display: none;
-      }
+    #nav-link-closed {
+      display: none;
+    }
   }
 
   .nav-logout-div {
-       @include center(center);
-      height: 100%;
-      width: 10vw;
+    @include center(center);
+    height: 100%;
+    width: 10vw;
   }
 }
 

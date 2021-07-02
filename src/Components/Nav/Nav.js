@@ -21,6 +21,7 @@ function Nav(props) {
   };
 
   return (
+    props.location.pathname === "/" ? <div></div> :
     <div className="navbar">
       <div className="nav-welcome-div">
         <Typography variant="h5" color="primary" className="nav-welcome">

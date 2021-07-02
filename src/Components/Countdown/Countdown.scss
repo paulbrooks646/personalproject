@@ -4,10 +4,24 @@
 
 .countdown-div {
   display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
   align-items: center;
 
   .countdown-div-section {
-    margin-right: 5px;
+display: flex;
+  align-items: center;
+
+    .countdown-div-item {
+      margin-right: 5px;
+    }
+  }
+
+  #countdown-edit {
+font-size: 15px;
+color: green;
+cursor: pointer;
+text-decoration: underline;
   }
 }
 

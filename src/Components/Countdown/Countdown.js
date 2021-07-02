@@ -14,7 +14,7 @@ function Countdown(props) {
   const [date, setDate] = useState("");
 
   function selectDate() {
-    axios.put(`/api/date/${id}`, { date }).then(res => {
+    axios.put(`/api/date/${id}`, { date }).then((res) => {
       props.getUser(res.data);
     });
   }
@@ -26,7 +26,7 @@ function Countdown(props) {
 
     if (difference > 0) {
       timeLeft = {
-        days: (Math.floor(difference / (1000 * 60 * 60 * 24)) + 1),
+        days: Math.floor(difference / (1000 * 60 * 60 * 24)) + 1,
       };
     } else {
       timeLeft = {
@@ -61,16 +61,23 @@ function Countdown(props) {
   return props.user.user.date ? (
     <div className="countdown-div">
       <div className="countdown-div-section">
-        <Typography variant="h6" color="secondary" className="nav-welcome">
-          Only
-        </Typography>
+        <div className="countdown-div-item">
+          <Typography variant="h6" color="secondary" className="nav-welcome">
+            Only
+          </Typography>
+        </div>
+        <div className="countdown-div-item">
+          {timerComponents.length ? timerComponents : <div></div>}
+        </div>
+        <div className="countdown-div-item">
+          <Typography variant="h6" color="secondary" className="nav-welcome">
+            days til your trip!
+          </Typography>
+        </div>
       </div>
-      <div className="countdown-div-section">
-        {timerComponents.length ? timerComponents : <div></div>}
-      </div>
-      <div className="countdown-div-section">
-        <Typography variant="h6" color="secondary" className="nav-welcome">
-          days til your trip!
+      <div className="countdown-edit-section">
+        <Typography variant="h6" color="primary" id="countdown-edit">
+          EDIT TRIP DATE
         </Typography>
       </div>
     </div>
@@ -83,10 +90,15 @@ function Countdown(props) {
         type="date"
         value={date}
         onChange={(e) => setDate(e.target.value)}
-                  variant="filled"
-                  className="trip-date-input"
+        variant="filled"
+        className="trip-date-input"
       />
-      <Button onClick={() => selectDate()} variant="contained" color="secondary" className="trip-date-button">
+      <Button
+        onClick={() => selectDate()}
+        variant="contained"
+        color="secondary"
+        className="trip-date-button"
+      >
         Submit
       </Button>
     </div>

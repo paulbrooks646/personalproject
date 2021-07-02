@@ -5,6 +5,7 @@ import { getUser } from "../../ducks/userReducer";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import Input from "@material-ui/core/Input";
+import Card from "@material-ui/core/Card";
 import "./Countdown.scss";
 import axios from "axios";
 
@@ -12,6 +13,14 @@ function Countdown(props) {
   const { id } = props.user.user;
 
   const [date, setDate] = useState("");
+  const [tripDateCard, setTripDateCard] = useState(false);
+
+  function selectDate() {
+    axios.put(`/api/date/${id}`, { date }).then((res) => {
+      props.getUser(res.data);
+      setTripDateCard(false);
+    });
+  }
 
   function selectDate() {
     axios.put(`/api/date/${id}`, { date }).then((res) => {
@@ -76,10 +85,33 @@ function Countdown(props) {
         </div>
       </div>
       <div className="countdown-edit-section">
-        <Typography variant="h6" color="primary" id="countdown-edit">
+        <Typography
+          variant="h6"
+          color="primary"
+          id="countdown-edit"
+          onClick={() => setTripDateCard(true)}
+        >
           EDIT TRIP DATE
         </Typography>
       </div>
+      <Card
+        id={`${
+          tripDateCard ? "trip-date-card" : "trip-date-card-closed"
+        }`}
+      >
+        <Typography variant="h4" color="primary">
+          CHOOSE TRIP DATE
+        </Typography>
+        <Input
+          type="date"
+          value={date}
+          onChange={(e) => setDate(e.target.value)}
+          variant="filled"
+        ></Input>
+        <Button variant="contained" color="secondary" onClick={selectDate}>
+          SUBMIT
+        </Button>
+      </Card>
     </div>
   ) : (
     <div className="date-selector">
@@ -101,6 +133,24 @@ function Countdown(props) {
       >
         Submit
       </Button>
+      <Card
+        id={`${
+          tripDateCard ? "trip-date-card" : "trip-date-card-closed"
+        }`}
+      >
+        <Typography variant="h4" color="primary">
+          CHOOSE TRIP DATE
+        </Typography>
+        <Input
+          type="date"
+          value={date}
+          onChange={(e) => setDate(e.target.value)}
+          variant="filled"
+        ></Input>
+        <Button variant="contained" color="secondary" onClick={selectDate}>
+          SUBMIT
+        </Button>
+      </Card>
     </div>
   );
 }

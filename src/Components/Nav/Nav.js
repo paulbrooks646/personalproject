@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { logoutUser, getUser } from "../../ducks/userReducer";
@@ -9,9 +9,12 @@ import axios from "axios";
 import "./Nav.scss";
 
 function Nav(props) {
+  const { id } = props.user.user
   useEffect(() => {
     getUser();
   }, []);
+
+  
 
   const logout = () => {
     axios.delete("/api/logout").then(() => {
@@ -20,8 +23,10 @@ function Nav(props) {
     });
   };
 
-  return (
-    props.location.pathname === "/" ? <div></div> :
+
+  return props.location.pathname === "/" ? (
+    <div></div>
+  ) : (
     <div className="navbar">
       <div className="nav-welcome-div">
         <Typography variant="h5" color="primary" className="nav-welcome">
@@ -31,7 +36,7 @@ function Nav(props) {
           {props.user.user.username}
         </Typography>
       </div>
-      <Countdown />
+      <Countdown/>
       <div className="nav-link-div">
         <Link
           to="/Dashboard"
@@ -85,6 +90,7 @@ function Nav(props) {
           Logout
         </Button>
       </div>
+      
     </div>
   );
 }

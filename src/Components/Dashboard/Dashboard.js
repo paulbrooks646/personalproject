@@ -5,7 +5,6 @@ import axios from "axios";
 import "./Dashboard.scss";
 import { Link } from "react-router-dom";
 import { getUser } from "../../ducks/userReducer";
-import Nav from "../Nav/Nav";
 
 function Dashboard(props) {
   const { id } = props.user.user;
@@ -75,7 +74,6 @@ function Dashboard(props) {
 
   return (
     <>
-      <Nav />
       <div className="dashboardmain">
         <h1 className="dashboardtitle">Plan Your Trip</h1>
         <div className="dashboarddays">

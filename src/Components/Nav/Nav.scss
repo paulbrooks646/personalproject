@@ -4,7 +4,6 @@
 
 .navbar {
   @include center(space-between);
-  position: fixed;
   width: 100vw;
   height: 10vh;
   background-color: #ffff66;
@@ -75,3 +74,5 @@
     }
   }
 }
+
+

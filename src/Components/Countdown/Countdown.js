@@ -25,6 +25,7 @@ function Countdown(props) {
   function selectDate() {
     axios.put(`/api/date/${id}`, { date }).then((res) => {
       props.getUser(res.data);
+      setTripDateCard(false)
     });
   }
 

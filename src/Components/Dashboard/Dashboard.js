@@ -5,6 +5,7 @@ import axios from "axios";
 import "./Dashboard.scss";
 import { Link } from "react-router-dom";
 import { getUser } from "../../ducks/userReducer";
+import Button from "@material-ui/core/Button"
 
 function Dashboard(props) {
   const { id } = props.user.user;
@@ -20,7 +21,6 @@ function Dashboard(props) {
 
   const [dayLinks, setDayLinks] = useState([]);
   const [days, setDays] = useState([]);
-  const [date, setDate] = useState("2030-10-30");
 
   function getDays() {
     axios.get(`/api/days/${id}`).then((res) => setDays(res.data));
@@ -44,24 +44,26 @@ function Dashboard(props) {
     getDayLinks();
   }
 
-  function selectDate() {
-    axios.put(`/api/date/${id}`, { date }).then(() => {
-      props.getUser();
-    });
-  }
-
   const filledDays = days.map((e, index) => {
     return (
-      <div key={index}>
+      <div key={index} className="filled-day">
         <Link to={`/Trip/${e.trip_id}`}>
-          <h1>Day {index + 1}</h1>
+          <h1 className="filled-day-title">Day {index + 1}</h1>
         </Link>
         {e.events.map((event, index) => (
-          <h3 key={index} className="dashboardattraction">
-            {event}
-          </h3>
+          <Link to={`/Attraction/${event[2]}`}>
+            <h3 key={index} className={`dashboard${event[1]}`}>
+              {event[0]}
+            </h3>
+          </Link>
         ))}
-        <button onClick={() => deleteDay(e.trip_id)}>Delete Day</button>
+        <Button
+          variant="contained"
+          color="secondary"
+          onClick={() => deleteDay(e.trip_id)}
+        >
+          Delete Day
+        </Button>
       </div>
     );
   });
@@ -80,7 +82,7 @@ function Dashboard(props) {
           <h6>Click day to edit</h6>
           <h6 className="dayslist">{emptyDays}</h6>
           <h6>or</h6>
-          <button onClick={() => newlist()}>Add Day to Trip</button>
+          <Button variant="contained" color="primary" onClick={() => newlist()}>Add Day to Trip</Button>
         </div>
         <div className="trip-so-far">
           <h3>Your trip so far:</h3>

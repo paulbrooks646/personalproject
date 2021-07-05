@@ -24,7 +24,6 @@ function Trip(props) {
   }
 
   function newEvent(trip_id, attraction_id, user_id) {
-    console.log(trip_id, attraction_id, user_id);
     axios.post("/api/event", { trip_id, attraction_id, user_id });
     getTrip();
   }

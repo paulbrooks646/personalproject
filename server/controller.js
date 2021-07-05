@@ -188,18 +188,19 @@ module.exports = {
 
   getDays: (req, res) => {
     const db = req.app.get("db");
-    console.log(req.params)
+
     const { id } = req.params;
 
     db.get_days([id]).then((events) => {
+
       const formattedEvents = events.reduce((acc, curr) => {
         const index = acc.findIndex((e) => {
           return e.trip_id === curr.trip_id;
         });
         if (index === -1) {
-          acc.push({ trip_id: curr.trip_id, events: [curr.name] });
+          acc.push({ trip_id: curr.trip_id, events: [[curr.name, curr.location, curr.attraction_id]] });
         } else {
-          acc[index].events.push(curr.name);
+          acc[index].events.push([curr.name, curr.location, curr.attraction_id]);
         }
         return acc;
       }, []);

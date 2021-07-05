@@ -1,10 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
 @import "../mixins";
 @import "../variables";
+@import "../tripqueries";
 
 .dashboardmain {
   position: relative;
-  top: 10vh;
   height: 90vh;
 
   .dashboardtitle {
@@ -22,13 +22,11 @@
 
     .dayslist {
       @include center(center);
-    }
 
-    button {
-      @include button;
-      font-size: 12px;
-      position: relative;
     }
+   
+
+   
   }
 
   .trip-so-far {
@@ -38,25 +36,27 @@
   }
 
   .dashboardlist {
-    @include center(space-evenly);
+    @include center(center);
     align-items: flex-start;
     width: 100vw;
     position: relative;
 
-    .dashboardattraction {
-      color: $blue;
-      top: 0px;
-    }
+    .filled-day {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      align-items: center;
+      justify-content: space-evenly;
 
-    button {
-      @include button;
+
+      
+ .dashboardCritter {
+      color: $critter;
+    }
     }
   }
 }
 
-#dashstat {
-  margin-right: 20px;
-}
 
 h6 {
   margin-right: 20px;

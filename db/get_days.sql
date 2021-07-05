@@ -1,4 +1,4 @@
-select attractions.name, attractions.location, events.trip_id 
+select attractions.name, attractions.location, attractions.attraction_id, events.trip_id 
 from attractions
 join events on attractions.attraction_id = events.attraction_id
 where events.user_id = $1

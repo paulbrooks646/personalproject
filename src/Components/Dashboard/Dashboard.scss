@@ -6,57 +6,75 @@
 .dashboardmain {
   position: relative;
   height: 90vh;
-
-  .dashboardtitle {
-    @include center(center);
-    font-size: 80px;
-    font-family: $disney;
-    color: $purple;
-    position: relative;
-  }
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+   background-color: #f8f8ff;
 
   .dashboarddays {
     @include center(center);
     position: relative;
-    height: 100px;
+    height: 10vh;
 
     .dayslist {
       @include center(center);
-
     }
-   
-
-   
   }
 
-  .trip-so-far {
-    width: 100%;
+  .dashboard-carousel {
+    width: 70vw;
+    height: 75vh;
     display: flex;
-    justify-content: center;
-  }
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    border: solid .5px;
+    border-radius: 5%;
+    box-shadow: 2px 2px 2px 2px;
+    background-color: white;
 
-  .dashboardlist {
-    @include center(center);
-    align-items: flex-start;
-    width: 100vw;
-    position: relative;
-
-    .filled-day {
+    #filled-day {
       display: flex;
       flex-direction: column;
       text-align: center;
       align-items: center;
       justify-content: space-evenly;
+      width: 40vw;
+      height: 65vh;
+       background-color: rgb(212, 212, 212);
 
+      .dashboardCritter {
+        color: $critter;
+      }
 
-      
- .dashboardCritter {
-      color: $critter;
-    }
+      .dashboardFantasyland {
+        color: $fantasy;
+      }
+
+      .dashboardMain {
+        color: $main;
+      }
+
+      .dashboardFrontierland {
+        color: $frontier;
+      }
+
+      .dashboardTomorrowland {
+        color: $tomorrow;
+      }
+
+      .dashboardNew {
+        color: $new;
+      }
+
+      .dashboardAdventureland {
+        color: $adventure;
+      }
     }
   }
 }
-
 
 h6 {
   margin-right: 20px;

@@ -5,7 +5,10 @@ import axios from "axios";
 import "./Dashboard.scss";
 import { Link } from "react-router-dom";
 import { getUser } from "../../ducks/userReducer";
-import Button from "@material-ui/core/Button"
+import Button from "@material-ui/core/Button";
+import Carousel from "react-material-ui-carousel";
+import Card from "@material-ui/core/Card";
+import Typography from "@material-ui/core/Typography";
 
 function Dashboard(props) {
   const { id } = props.user.user;
@@ -46,10 +49,11 @@ function Dashboard(props) {
 
   const filledDays = days.map((e, index) => {
     return (
-      <div key={index} className="filled-day">
-        <Link to={`/Trip/${e.trip_id}`}>
-          <h1 className="filled-day-title">Day {index + 1}</h1>
-        </Link>
+      <Card key={index} id="filled-day">
+        <Typography variant="h4" color="primary" className="filled-day-title">
+          Day {index + 1}
+        </Typography>
+
         {e.events.map((event, index) => (
           <Link to={`/Attraction/${event[2]}`}>
             <h3 key={index} className={`dashboard${event[1]}`}>
@@ -57,14 +61,21 @@ function Dashboard(props) {
             </h3>
           </Link>
         ))}
-        <Button
-          variant="contained"
-          color="secondary"
-          onClick={() => deleteDay(e.trip_id)}
-        >
-          Delete Day
-        </Button>
-      </div>
+        <div className="filled-day-button-div">
+          <Link to={`/Trip/${e.trip_id}`}>
+            <Button variant="contained" color="secondary">
+              Edit Day
+            </Button>
+          </Link>
+          <Button
+            variant="contained"
+            color="secondary"
+            onClick={() => deleteDay(e.trip_id)}
+          >
+            Delete Day
+          </Button>
+        </div>
+      </Card>
     );
   });
 
@@ -77,17 +88,24 @@ function Dashboard(props) {
   return (
     <>
       <div className="dashboardmain">
-        <h1 className="dashboardtitle">Plan Your Trip</h1>
         <div className="dashboarddays">
           <h6>Click day to edit</h6>
           <h6 className="dayslist">{emptyDays}</h6>
           <h6>or</h6>
-          <Button variant="contained" color="primary" onClick={() => newlist()}>Add Day to Trip</Button>
+          <Button variant="contained" color="primary" onClick={() => newlist()}>
+            Add Day to Trip
+          </Button>
         </div>
-        <div className="trip-so-far">
-          <h3>Your trip so far:</h3>
-        </div>
-        <div className="dashboardlist">{filledDays}</div>
+
+        <Carousel
+          autoPlay={false}
+          navButtonsAlwaysVisible={true}
+          navButtonsAlwaysInvisible={false}
+          fullHeightHover={false}
+          className="dashboard-carousel"
+        >
+          {filledDays}
+        </Carousel>
       </div>
     </>
   );

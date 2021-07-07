@@ -4,7 +4,6 @@ import { getAttractions } from "../../ducks/attractionReducer";
 import { Link } from "react-router-dom";
 import "./Map.scss";
 import axios from "axios";
-import Nav from "../Nav/Nav";
 
 function Map(props) {
   useEffect(() => {
@@ -103,7 +102,6 @@ function Map(props) {
 
   return (
     <>
-      <Nav />
       <div className="map-main">
         <div className="disneyland">
           <div className="adventure-array">{adventureArray}</div>

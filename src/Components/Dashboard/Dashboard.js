@@ -33,6 +33,7 @@ function Dashboard(props) {
 
   function getDayLinks() {
     axios.get(`/api/trips/${id}`).then((res) => {
+      console.log(res.data);
       setDayLinks(res.data);
     });
   }
@@ -50,7 +51,6 @@ function Dashboard(props) {
   }
 
   const filledDays = days.map((e, index) => {
-
     return (
       <Card key={index} id="filled-day">
         <Typography variant="h4" color="primary" className="filled-day-title">
@@ -81,11 +81,14 @@ function Dashboard(props) {
     );
   });
 
-  const emptyDays = dayLinks.map((e, index) => (
-    <Link to={`/Trip/${e.trip_id}`} key={index}>
-      <h6>Day {index + 1}</h6>
-    </Link>
-  ));
+  const emptyDays = dayLinks.map((e, index) => {
+   
+   return (
+      <Link to={`/Trip/${e.trip_id}`} key={index}>
+       <h6>{e.atrraction_name}</h6>
+      </Link>
+    )
+  });
 
   return (
     <>

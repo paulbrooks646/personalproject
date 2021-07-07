@@ -4,7 +4,6 @@ import { getAttractions } from "../../ducks/attractionReducer";
 import axios from "axios";
 import "./Trip.scss";
 import { Link } from "react-router-dom";
-import Nav from "../Nav/Nav";
 
 function Trip(props) {
   const [trip, setTrip] = useState([]);
@@ -64,7 +63,6 @@ function Trip(props) {
   });
   return (
     <>
-      <Nav />
       <div className="tripmain">
         <div className="trip">
           {attractionsArray}

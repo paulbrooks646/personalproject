@@ -4,7 +4,6 @@ import { getAttractions } from "../../ducks/attractionReducer";
 import "./Survey.scss";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import Nav from "../Nav/Nav";
 
 function Survey(props) {
 
@@ -142,7 +141,6 @@ function Survey(props) {
 
   return (
     <>
-      <Nav />
       <div className="surveymain">
         <div className="survey-introduction">
           <h1>Disneyland Attraction Survey</h1>
@@ -153,12 +151,7 @@ function Survey(props) {
           </h2>
         </div>
         <div className="surveyarray">{attractionsArray}</div>
-        <div className="statsbuttondiv">
-          <h2>Click here to see:</h2>
-          <Link to="/Statistics">
-            <button className="statsbutton">Attraction Statistics</button>
-          </Link>
-        </div>
+        
       </div>
     </>
   );

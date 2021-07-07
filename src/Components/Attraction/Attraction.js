@@ -3,7 +3,6 @@ import "./Attraction.scss"
 import axios from 'axios'
 import ScrollArea from 'react-scrollbar'
 import { Link } from 'react-router-dom'
-import Nav from "../Nav/Nav"
 
 function Attraction(props) {
 
@@ -19,7 +18,7 @@ function Attraction(props) {
 
     return (
         <div>
-            <Nav/>
+            
             { attraction.comments ?
             <div className="attractionmain"> 
                 <div className={`attractioncard${attraction.location}`}>
@@ -41,12 +40,7 @@ function Attraction(props) {
             </div>
             : null
             }
-            <div className="statsbuttondiv" id="attractionstatsbuttondiv">
-                <h2>Click here to see:</h2>
-                <Link to="/Statistics">
-                    <button className="statsbutton">Attraction Statistics</button>
-                </Link>
-            </div>
+           
         </div>
     )
 }

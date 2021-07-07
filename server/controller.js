@@ -143,11 +143,23 @@ module.exports = {
     }
   },
 
-  retrieveTrips: (req, res) => {
+  retrieveTrips: async (req, res) => {
     const db = req.app.get("db");
     const { id } = req.params;
+    const events = await db.get_days([id]);
+    const trips = await db.get_trips([id]);
+    const filledTrips = []
 
-    db.get_trips(id).then((trip) => res.status(200).send(trip));
+    for (let i = 0; i < trips.length; i++) {
+      filledTrips.push([])
+      for (let j = 0; j < events.length; j++) {
+        if (trips[i].trip_id === events[j].trip_id) {
+          filledTrips[i].push(events[j])
+        }
+
+      }
+    }
+    res.status(200).send(filledTrips);
   },
 
   addTrip: (req, res) => {
@@ -167,8 +179,9 @@ module.exports = {
   getTrip: (req, res) => {
     const db = req.app.get("db");
     const { id } = req.params;
-
+    
     db.get_trip([id]).then((trip) => res.status(200).send(trip));
+   
   },
 
   deleteFromTrip: (req, res) => {

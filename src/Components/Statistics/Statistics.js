@@ -4,7 +4,6 @@ import axios from "axios";
 import { Bar } from "react-chartjs-2";
 import { connect } from "react-redux";
 import { getAttractions } from "../../ducks/attractionReducer";
-import Nav from "../Nav/Nav";
 
 function Statistics(props) {
   const [ratings, setRatings] = useState([]);
@@ -68,7 +67,6 @@ function Statistics(props) {
 
   return (
     <>
-      <Nav />
       <div className="statsmain">
         <div className="overallbarchart">
           <Bar

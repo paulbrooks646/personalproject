@@ -1,67 +1,61 @@
 @mixin button {
-    height: 30px;
-    width: 90px;
-    background-color: black;
-    color: $white; 
-    margin-right: 10px;
+  height: 30px;
+  width: 90px;
+  background-color: black;
+  color: $white;
+  margin-right: 10px;
 }
 
 @mixin center($justify) {
-    display: flex;
-    justify-content: $justify;
-    align-items: center;
+  display: flex;
+  justify-content: $justify;
+  align-items: center;
 }
 
 @mixin ride($top, $left) {
-    position: absolute;
-    color: rgba(0,0,0,1);
-    font-size: 12px;
-    top: $top;
-    left: $left;
-    border: solid 1px rgba(0,0,0,1);
-    width: 85px;
-    text-align: center;
-  
+  position: absolute;
+  color: rgba(0, 0, 0, 1);
+  font-size: 12px;
+  top: $top;
+  left: $left;
+  border: solid 1px rgba(0, 0, 0, 1);
+  width: 85px;
+  text-align: center;
 }
 
 @mixin location($color) {
-    font-size: 15px;
-    color: $color;
-    position: relative;
-    border: solid 1px black;
-    width: 200px;
-    
+  font-size: 15px;
+  color: $color;
+  position: relative;
+  border: solid 1px black;
+  width: 200px;
 }
 
 @mixin land($color) {
-    color: $color;
-    font-family: $disney;
-    font-size: 15px;
-    position: relative;
-    border: solid 1px black;
-    width: 200px;
+  color: $color;
+  font-family: $disney;
+  position: relative;
+  cursor: pointer;
 }
 
 @mixin card($color) {
-
-        height: 70vh;
-        width: 60vw;
-        background-color: $color;
-        position: relative;
-        @include center(space-evenly);
-        flex-direction: column;
-        border: solid 1px black;
-        box-shadow: 5px 5px 5px 5px;
+  height: 70vh;
+  width: 60vw;
+  background-color: $color;
+  position: relative;
+  @include center(space-evenly);
+  flex-direction: column;
+  border: solid 1px black;
+  box-shadow: 5px 5px 5px 5px;
 }
 
 @mixin tripdiv($top, $left) {
-    @include center(center);
-    height: 35px;
-    width: 300px;
-    position: relative;
-    border: solid 1px transparent;
-    top: $top;
-    left: $left;
-    margin-right: 0px;
+  @include center(center);
+  height: 35px;
+  width: 300px;
+  position: relative;
+  border: solid 1px transparent;
+  top: $top;
+  left: $left;
+  margin-right: 0px;
 }
-

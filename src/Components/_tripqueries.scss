@@ -4,10 +4,17 @@
     right: -890px;
     border: solid 1px transparent;
     margin-bottom: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
   .tripyourday {
     position: relative;
     right: -890px;
+     display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }
 
@@ -17,11 +24,18 @@
     right: -680px;
     border: solid 1px transparent;
     margin-bottom: 5px;
+     display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 
   .tripyourday {
     position: relative;
     right: -680px;
+     display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }
 
@@ -187,50 +201,42 @@
 
 .tripfantasy {
   @include land($fantasy);
-  top: -1230px;
-  left: 350px;
+  
 }
 
 .tripmains {
   @include land($main);
-  top: -950px;
-  left: 650px;
+  
 }
 
 .tripcritter {
   @include land($critter);
-  top: -1303px;
-  left: 50px;
+  
 }
 
 .tripfrontier {
   @include land($frontier);
-  top: -1145px;
-  left: 50px;
+  
 }
 
 .tripnew {
   @include land($new);
-  top: -834px;
-  left: 50px;
+  
 }
 
 .tripadventure {
   @include land($adventure);
-  top: -1060px;
-  left: 50px;
+  
 }
 
 .triptoon {
   @include land($toon);
-  top: -930px;
-  left: 350px;
+  
 }
 
 .triptomorrow {
   @include land($tomorrow);
-  top: -1375px;
-  left: 650px;
+  
 }
 
 .divtripAlice {
@@ -364,50 +370,42 @@
 @media (max-width: 1200px) {
   .tripfantasy {
     @include land($fantasy);
-    top: -1230px;
-    left: 350px;
+   
   }
 
   .tripmains {
     @include land($main);
-    top: -713px;
-    left: 50px;
+   
   }
 
   .tripcritter {
     @include land($critter);
-    top: -1303px;
-    left: 50px;
+    
   }
 
   .tripfrontier {
     @include land($frontier);
-    top: -1184px;
-    left: 50px;
+   
   }
 
   .tripnew {
     @include land($new);
-    top: -974px;
-    left: 50px;
+   
   }
 
   .tripadventure {
     @include land($adventure);
-    top: -1127px;
-    left: 50px;
+    
   }
 
   .triptoon {
     @include land($toon);
-    top: -953px;
-    left: 50px;
+   
   }
 
   .triptomorrow {
     @include land($tomorrow);
-    top: -941px;
-    left: 350px;
+   
   }
 
   .divtripAlice {
@@ -557,50 +555,42 @@
 @media (max-width: 900px) {
   .tripfantasy {
     @include land($fantasy);
-    top: -454px;
-    left: 50px;
+   
   }
 
   .tripmains {
     @include land($main);
-    top: -570px;
-    left: 50px;
+   
   }
 
   .tripcritter {
     @include land($critter);
-    top: -1305px;
-    left: 50px;
+   
   }
 
   .tripfrontier {
     @include land($frontier);
-    top: -1160px;
-    left: 50px;
+   
   }
 
   .tripnew {
     @include land($new);
-    top: -894px;
-    left: 50px;
+    
   }
 
   .tripadventure {
     @include land($adventure);
-    top: -1076px;
-    left: 50px;
+    
   }
 
   .triptoon {
     @include land($toon);
-    top: -842px;
-    left: 50px;
+    
   }
 
   .triptomorrow {
     @include land($tomorrow);
-    top: -119px;
-    left: 50px;
+   
   }
 
   .divtripAlice {

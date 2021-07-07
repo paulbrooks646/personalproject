@@ -41,7 +41,6 @@ module.exports = {
     const db = req.app.get("db");
     const { newUsername, newPassword, newEmail } = req.body;
 
-
     const existingUser = await db.check_user(newUsername);
     if (existingUser[0]) {
       return res.status(409).send("User already exists!");
@@ -57,7 +56,7 @@ module.exports = {
       date: newUser[0].trip_date,
     };
     res.status(200).send(req.session.user);
- 
+
     // main(newEmail, newUsername);
   },
 
@@ -192,15 +191,21 @@ module.exports = {
     const { id } = req.params;
 
     db.get_days([id]).then((events) => {
-
       const formattedEvents = events.reduce((acc, curr) => {
         const index = acc.findIndex((e) => {
           return e.trip_id === curr.trip_id;
         });
         if (index === -1) {
-          acc.push({ trip_id: curr.trip_id, events: [[curr.name, curr.location, curr.attraction_id]] });
+          acc.push({
+            trip_id: curr.trip_id,
+            events: [[curr.name, curr.location, curr.attraction_id]],
+          });
         } else {
-          acc[index].events.push([curr.name, curr.location, curr.attraction_id]);
+          acc[index].events.push([
+            curr.name,
+            curr.location,
+            curr.attraction_id,
+          ]);
         }
         return acc;
       }, []);

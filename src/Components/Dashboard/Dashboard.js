@@ -26,7 +26,9 @@ function Dashboard(props) {
   const [days, setDays] = useState([]);
 
   function getDays() {
-    axios.get(`/api/days/${id}`).then((res) => setDays(res.data));
+    axios.get(`/api/days/${id}`).then((res) => {
+      setDays(res.data);
+    });
   }
 
   function getDayLinks() {
@@ -48,12 +50,12 @@ function Dashboard(props) {
   }
 
   const filledDays = days.map((e, index) => {
+
     return (
       <Card key={index} id="filled-day">
         <Typography variant="h4" color="primary" className="filled-day-title">
           Day {index + 1}
         </Typography>
-
         {e.events.map((event, index) => (
           <Link to={`/Attraction/${event[2]}`}>
             <h3 key={index} className={`dashboard${event[1]}`}>
@@ -63,7 +65,7 @@ function Dashboard(props) {
         ))}
         <div className="filled-day-button-div">
           <Link to={`/Trip/${e.trip_id}`}>
-            <Button variant="contained" color="secondary">
+            <Button variant="contained" color="primary">
               Edit Day
             </Button>
           </Link>

@@ -33,7 +33,7 @@
     border: solid .5px;
     border-radius: 5%;
     box-shadow: 2px 2px 2px 2px;
-    background-color: white;
+    background-color: rgb(212, 212, 212);
 
     #filled-day {
       display: flex;
@@ -43,7 +43,7 @@
       justify-content: space-evenly;
       width: 40vw;
       height: 65vh;
-       background-color: rgb(212, 212, 212);
+       background-color: white;
 
       .dashboardCritter {
         color: $critter;
@@ -71,6 +71,13 @@
 
       .dashboardAdventureland {
         color: $adventure;
+      }
+
+      .filled-day-button-div {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 100%;
       }
     }
   }

@@ -30,11 +30,11 @@ function Auth(props) {
   const passwordsMatch = true;
 
   const login = (event) => {
-    console.log("login");
+    
     axios
       .post("/api/login", { username, password })
       .then((res) => {
-        console.log(res.data);
+        
         props.loginUser(res.data);
         props.history.push("/Dashboard");
       })

@@ -48,7 +48,6 @@
         width: 60vw;
         background-color: $color;
         position: relative;
-        top: 150px;
         @include center(space-evenly);
         flex-direction: column;
         border: solid 1px black;

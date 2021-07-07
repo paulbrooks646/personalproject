@@ -3,7 +3,12 @@
 @import "../variables";
 
 .attractionmain {
-  @include center(space-evenly);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+  width: 100vw;
   text-align: center;
 
   .attraction-name {
@@ -13,6 +18,7 @@
 
   .attractioncardTomorrowland {
     @include card($tomorrow);
+    
   }
 
   .attractioncardMain {

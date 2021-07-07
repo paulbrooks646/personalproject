@@ -4,7 +4,8 @@
 
 .statsmain {
   position: relative;
-  top: 200px;
+  height: 90vh;
+  width: 100vw;
   @include center(center);
   flex-direction: column;
 
@@ -18,29 +19,5 @@
     position: relative;
     width: 750px;
     @include center(center);
-  }
-}
-
-.statsbuttondiv {
-  @include center(center);
-  position: relative;
-  top: 20px;
-
-  h2 {
-    margin-right: 20px;
-  }
-
-  .statsbutton {
-    border-radius: 50%;
-    height: 90px;
-    width: 90px;
-    font-size: 16px;
-    background-color: #ffff66;
-    color: $blue;
-    z-index: 3;
-    border: solid 3px black;
-    box-shadow: 4px 4px 7px 1px black;
-    text-decoration: underline;
-    position: relative;
   }
 }

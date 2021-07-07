@@ -147,19 +147,22 @@ module.exports = {
     const db = req.app.get("db");
     const { id } = req.params;
     const events = await db.get_days([id]);
+
     const trips = await db.get_trips([id]);
-    const filledTrips = []
+
+    const filledTrips = [];
+    const tripsIDs = []
 
     for (let i = 0; i < trips.length; i++) {
-      filledTrips.push([])
+      filledTrips.push([]);
+      tripsIDs.push(trips[i].trip_id)
       for (let j = 0; j < events.length; j++) {
         if (trips[i].trip_id === events[j].trip_id) {
-          filledTrips[i].push(events[j])
+          filledTrips[i].push(events[j]);
         }
-
       }
     }
-    res.status(200).send(filledTrips);
+    res.status(200).send([filledTrips, tripsIDs]);
   },
 
   addTrip: (req, res) => {
@@ -179,9 +182,8 @@ module.exports = {
   getTrip: (req, res) => {
     const db = req.app.get("db");
     const { id } = req.params;
-    
+
     db.get_trip([id]).then((trip) => res.status(200).send(trip));
-   
   },
 
   deleteFromTrip: (req, res) => {

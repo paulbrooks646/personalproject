@@ -19,84 +19,107 @@ function Dashboard(props) {
     });
 
     getDayLinks();
-    getDays();
+    // getDays();
   }, [props.getAttractions, props.user.user]);
 
   const [dayLinks, setDayLinks] = useState([]);
-  const [days, setDays] = useState([]);
+  // const [days, setDays] = useState([]);
+  const [tripIDs, setTripIDs] = useState([])
 
-  function getDays() {
-    axios.get(`/api/days/${id}`).then((res) => {
-      setDays(res.data);
-    });
-  }
+  // function getDays() {
+  //   axios.get(`/api/days/${id}`).then((res) => {
+  //     setDays(res.data);
+  //   });
+  // }
 
   function getDayLinks() {
     axios.get(`/api/trips/${id}`).then((res) => {
-      console.log(res.data);
-      setDayLinks(res.data);
+      
+      setDayLinks(res.data[0]);
+      setTripIDs(res.data[1])
     });
   }
 
   function newlist() {
     axios.post("/api/trip", { id });
-    getDays();
+    // getDays();
     getDayLinks();
   }
 
   function deleteDay(trip_id) {
     axios.delete(`/api/day/${trip_id}`);
-    getDays();
+    // getDays();
     getDayLinks();
   }
 
-  const filledDays = days.map((e, index) => {
-    return (
-      <Card key={index} id="filled-day">
-        <Typography variant="h4" color="primary" className="filled-day-title">
-          Day {index + 1}
-        </Typography>
-        {e.events.map((event, index) => (
-          <Link to={`/Attraction/${event[2]}`}>
-            <h3 key={index} className={`dashboard${event[1]}`}>
-              {event[0]}
-            </h3>
-          </Link>
-        ))}
-        <div className="filled-day-button-div">
-          <Link to={`/Trip/${e.trip_id}`}>
-            <Button variant="contained" color="primary">
-              Edit Day
-            </Button>
-          </Link>
-          <Button
-            variant="contained"
-            color="secondary"
-            onClick={() => deleteDay(e.trip_id)}
-          >
-            Delete Day
-          </Button>
-        </div>
-      </Card>
-    );
-  });
+  // const filledDays = days.map((e, index) => {
+  //   return (
+  //     <Card key={index} id="filled-day">
+  //       <Typography variant="h4" color="primary" className="filled-day-title">
+  //         Day {index + 1}
+  //       </Typography>
+  //       {e.events.map((event, index) => (
+  //         <Link to={`/Attraction/${event[2]}`}>
+  //           <h3 key={index} className={`dashboard${event[1]}`}>
+  //             {event[0]}
+  //           </h3>
+  //         </Link>
+  //       ))}
+  //       <div className="filled-day-button-div">
+  //         <Link to={`/Trip/${tripIDs[index]}`}>
+  //           <Button variant="contained" color="primary">
+  //             Edit Day
+  //           </Button>
+  //         </Link>
+  //         <Button
+  //           variant="contained"
+  //           color="secondary"
+  //           onClick={() => deleteDay(tripIDs[index])}
+  //         >
+  //           Delete Day
+  //         </Button>
+  //       </div>
+  //     </Card>
+  //   );
+  // });
 
   const emptyDays = dayLinks.map((e, index) => {
-   
-   return (
-      <Link to={`/Trip/${e.trip_id}`} key={index}>
-       <h6>{e.atrraction_name}</h6>
-      </Link>
+    return (
+    <Card key={index} id="filled-day">
+      <Typography variant="h4" color="primary" className="filled-day-title">
+        Day {index + 1}
+      </Typography>
+      {e.map((event, index) => (
+        <Link to={`/Attraction/${event.attraction_id}`}>
+          <h3 key={index} className={`dashboard${event.location}`}>
+            {event.name}
+          </h3>
+        </Link>
+      ))}
+      <div className="filled-day-button-div">
+        <Link to={`/Trip/${tripIDs[index]}`}>
+          <Button variant="contained" color="primary">
+            Edit Day
+          </Button>
+        </Link>
+        <Button
+          variant="contained"
+          color="secondary"
+          onClick={() => deleteDay(tripIDs[index])}
+        >
+          Delete Day
+        </Button>
+      </div>
+    </Card>
     )
+    
   });
 
   return (
     <>
       <div className="dashboardmain">
         <div className="dashboarddays">
-          <h6>Click day to edit</h6>
-          <h6 className="dayslist">{emptyDays}</h6>
-          <h6>or</h6>
+         
           <Button variant="contained" color="primary" onClick={() => newlist()}>
             Add Day to Trip
           </Button>
@@ -109,7 +132,7 @@ function Dashboard(props) {
           fullHeightHover={false}
           className="dashboard-carousel"
         >
-          {filledDays}
+          {emptyDays}
         </Carousel>
       </div>
     </>

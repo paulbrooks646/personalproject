@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import { getAttractions } from "../../ducks/attractionReducer";
 import "./Survey.scss";
 import axios from "axios";
-import { Link } from "react-router-dom";
 
 function Survey(props) {
 

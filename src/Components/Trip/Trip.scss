@@ -7,12 +7,34 @@
   height: 90vh;
   width: 100vw;
   position: relative;
+  justify-content: space-evenly;
+  text-align: center;
 
-  .trip {
-    position: relative;
+  .trip-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
   }
 
+  .trip-right {
+display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  .trip-trip {
+
+  }
+
+ 
+
   
+}
+
+.triptrip {
+  margin-right: 150px;
 }
 
 .tripdiv {
@@ -21,6 +43,3 @@
   width: 50vw;
 }
 
-.triptrip {
-  margin-right: 150px;
-}

@@ -9,14 +9,14 @@ import Typography from "@material-ui/core/Typography";
 
 function Trip(props) {
   const [trip, setTrip] = useState([]);
-  const [fantasyCard, setFantasyCard] = useState(false)
-  const [mainCard, setMainCard] = useState(false)
-  const [frontierCard, setFrontierCard] = useState(false)
-  const [critterCard, setCritterCard] = useState(false)
-  const [newCard, setNewCard] = useState(false)
-  const [adventureCard, setAdventureCard] = useState(false)
-  const [tomorrowCard, setTomorrowCard] = useState(false)
-  const [toonCard, setToonCard] = useState(false)
+  const [fantasyCard, setFantasyCard] = useState(false);
+  const [mainCard, setMainCard] = useState(false);
+  const [frontierCard, setFrontierCard] = useState(false);
+  const [critterCard, setCritterCard] = useState(false);
+  const [newCard, setNewCard] = useState(false);
+  const [adventureCard, setAdventureCard] = useState(false);
+  const [tomorrowCard, setTomorrowCard] = useState(false);
+  const [toonCard, setToonCard] = useState(false);
 
   useEffect(() => {
     axios.get("/api/attractions").then((res) => {
@@ -80,19 +80,37 @@ function Trip(props) {
   return (
     <>
       <div className="tripmain">
-        <div className="trip">
+        {/* <div className="trip"> */}
           {/* {attractionsArray} */}
-          <Typography variant="h2" className="tripfantasy">
-            Fantasyland
-          </Typography>
-          <Typography variant="h2" className="tripmains">Main Street USA</Typography>
-          <Typography variant="h2" className="tripfrontier">Frontierland</Typography>
-          <Typography variant="h2" className="tripcritter">Critter Country</Typography>
-          <Typography variant="h2" className="tripnew">New Orleans Square</Typography>
-          <Typography variant="h2" className="tripadventure">Adventureland</Typography>
-          <Typography variant="h2" className="triptomorrow">Tomorrowland</Typography>
-          <Typography variant="h2" className="triptoon">Toon Town</Typography>
-        </div>
+          <div className="trip-left">
+            <Typography variant="h2" className="tripadventure">
+              Adventureland
+            </Typography>
+            <Typography variant="h2" className="tripcritter">
+              Critter Country
+            </Typography>
+            <Typography variant="h2" className="tripfantasy">
+              Fantasyland
+            </Typography>
+            <Typography variant="h2" className="tripfrontier">
+              Frontierland
+            </Typography>
+          </div>
+          <div className="trip-right">
+            <Typography variant="h2" className="tripmains">
+              Main Street USA
+            </Typography>
+            <Typography variant="h2" className="tripnew">
+              New Orleans Square
+            </Typography>
+            <Typography variant="h2" className="triptomorrow">
+              Tomorrowland
+            </Typography>
+            <Typography variant="h2" className="triptoon">
+              Toon Town
+            </Typography>
+          </div>
+        {/* </div> */}
         <div className="triptrip">
           <h2 className="tripyourday">Your day:</h2>
           {tripArray}

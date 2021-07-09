@@ -6,6 +6,7 @@ import "./Trip.scss";
 import { Link } from "react-router-dom";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
+import Card from "@material-ui/core/Card"
 
 function Trip(props) {
   const [trip, setTrip] = useState([]);
@@ -55,6 +56,187 @@ function Trip(props) {
     </div>
   ));
 
+  const adventureArray = props.attractions.attractions.map((e, index) => {
+
+    if (e.location === "Adventureland") {
+      return (
+        <div className={`divtrip${e.name}`} key={index}>
+          <Link to={`/Attraction/${e.attraction_id}`}>
+            <h2 className={`trip${e.name}`}>{e.name}</h2>
+          </Link>
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={() =>
+              newEvent(
+                props.match.params.trip_id,
+                e.attraction_id,
+                props.user.user.id
+              )
+            }
+          >
+            Add
+          </Button>
+        </div>
+      )
+    };
+  });
+
+  const critterArray = props.attractions.attractions.map((e, index) => {
+    return (
+      <div className={`divtrip${e.name}`} key={index}>
+        <Link to={`/Attraction/${e.attraction_id}`}>
+          <h2 className={`trip${e.name}`}>{e.name}</h2>
+        </Link>
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={() =>
+            newEvent(
+              props.match.params.trip_id,
+              e.attraction_id,
+              props.user.user.id
+            )
+          }
+        >
+          Add
+        </Button>
+      </div>
+    );
+  });
+  const fantasyArray = props.attractions.attractions.map((e, index) => {
+    return (
+      <div className={`divtrip${e.name}`} key={index}>
+        <Link to={`/Attraction/${e.attraction_id}`}>
+          <h2 className={`trip${e.name}`}>{e.name}</h2>
+        </Link>
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={() =>
+            newEvent(
+              props.match.params.trip_id,
+              e.attraction_id,
+              props.user.user.id
+            )
+          }
+        >
+          Add
+        </Button>
+      </div>
+    );
+  });
+  const frontierArray = props.attractions.attractions.map((e, index) => {
+    return (
+      <div className={`divtrip${e.name}`} key={index}>
+        <Link to={`/Attraction/${e.attraction_id}`}>
+          <h2 className={`trip${e.name}`}>{e.name}</h2>
+        </Link>
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={() =>
+            newEvent(
+              props.match.params.trip_id,
+              e.attraction_id,
+              props.user.user.id
+            )
+          }
+        >
+          Add
+        </Button>
+      </div>
+    );
+  });
+  const newArray = props.attractions.attractions.map((e, index) => {
+    return (
+      <div className={`divtrip${e.name}`} key={index}>
+        <Link to={`/Attraction/${e.attraction_id}`}>
+          <h2 className={`trip${e.name}`}>{e.name}</h2>
+        </Link>
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={() =>
+            newEvent(
+              props.match.params.trip_id,
+              e.attraction_id,
+              props.user.user.id
+            )
+          }
+        >
+          Add
+        </Button>
+      </div>
+    );
+  });
+  const mainArray = props.attractions.attractions.map((e, index) => {
+    return (
+      <div className={`divtrip${e.name}`} key={index}>
+        <Link to={`/Attraction/${e.attraction_id}`}>
+          <h2 className={`trip${e.name}`}>{e.name}</h2>
+        </Link>
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={() =>
+            newEvent(
+              props.match.params.trip_id,
+              e.attraction_id,
+              props.user.user.id
+            )
+          }
+        >
+          Add
+        </Button>
+      </div>
+    );
+  });
+
+  const toonArray = props.attractions.attractions.map((e, index) => {
+    return (
+      <div className={`divtrip${e.name}`} key={index}>
+        <Link to={`/Attraction/${e.attraction_id}`}>
+          <h2 className={`trip${e.name}`}>{e.name}</h2>
+        </Link>
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={() =>
+            newEvent(
+              props.match.params.trip_id,
+              e.attraction_id,
+              props.user.user.id
+            )
+          }
+        >
+          Add
+        </Button>
+      </div>
+    );
+  });
+  const tomorrowArray = props.attractions.attractions.map((e, index) => {
+    return (
+      <div className={`divtrip${e.name}`} key={index}>
+        <Link to={`/Attraction/${e.attraction_id}`}>
+          <h2 className={`trip${e.name}`}>{e.name}</h2>
+        </Link>
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={() =>
+            newEvent(
+              props.match.params.trip_id,
+              e.attraction_id,
+              props.user.user.id
+            )
+          }
+        >
+          Add
+        </Button>
+      </div>
+    );
+  });
   const attractionsArray = props.attractions.attractions.map((e, index) => {
     return (
       <div className={`divtrip${e.name}`} key={index}>
@@ -77,44 +259,50 @@ function Trip(props) {
       </div>
     );
   });
+
   return (
     <>
-      <div className="tripmain">
-        {/* <div className="trip"> */}
-          {/* {attractionsArray} */}
-          <div className="trip-left">
-            <Typography variant="h2" className="tripadventure">
-              Adventureland
-            </Typography>
-            <Typography variant="h2" className="tripcritter">
-              Critter Country
-            </Typography>
-            <Typography variant="h2" className="tripfantasy">
-              Fantasyland
-            </Typography>
-            <Typography variant="h2" className="tripfrontier">
-              Frontierland
-            </Typography>
+      <div className="trip-main">
+        <div className="trip-lands">
+          <Typography variant="h4" color="primary" className="trip-lands-title">
+            From which land would you like to add rides to your trip?
+          </Typography>
+          <div className="trip-lands-main">
+            <div className="trip-lands-left">
+              <Typography variant="h2" className="trip-adventure" onClick={() => setAdventureCard(true)}>
+                Adventureland
+              </Typography>
+              <Typography variant="h2" className="trip-critter">
+                Critter Country
+              </Typography>
+              <Typography variant="h2" className="trip-fantasy">
+                Fantasyland
+              </Typography>
+              <Typography variant="h2" className="trip-frontier">
+                Frontierland
+              </Typography>
+            </div>
+            <div className="trip-lands-right">
+              <Typography variant="h2" className="trip-mains">
+                Main Street USA
+              </Typography>
+              <Typography variant="h2" className="trip-new">
+                New Orleans Square
+              </Typography>
+              <Typography variant="h2" className="trip-tomorrow">
+                Tomorrowland
+              </Typography>
+              <Typography variant="h2" className="trip-toon">
+                Toon Town
+              </Typography>
+            </div>
           </div>
-          <div className="trip-right">
-            <Typography variant="h2" className="tripmains">
-              Main Street USA
-            </Typography>
-            <Typography variant="h2" className="tripnew">
-              New Orleans Square
-            </Typography>
-            <Typography variant="h2" className="triptomorrow">
-              Tomorrowland
-            </Typography>
-            <Typography variant="h2" className="triptoon">
-              Toon Town
-            </Typography>
-          </div>
-        {/* </div> */}
-        <div className="triptrip">
+        </div>
+        <div className="trip-trip">
           <h2 className="tripyourday">Your day:</h2>
           {tripArray}
         </div>
+        <Card className={`${adventureCard ? "trip-land-card" : "trip-land-card-closed"}`}>{adventureArray}</Card>
       </div>
     </>
   );

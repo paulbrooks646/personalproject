@@ -105,3 +105,174 @@
 //   height: 35px;
 //   width: 50vw;
 // }
+
+.tripAlice {
+  @include triplocation($fantasy);
+  border: none;
+}
+
+.tripAstro {
+  @include triplocation($tomorrow);
+  border: none;
+}
+
+.tripAstroblasters {
+  @include triplocation($tomorrow);
+  border: none;
+}
+
+.tripAutopia {
+  @include triplocation($tomorrow);
+  border: none;
+}
+
+.tripBig {
+  @include triplocation($frontier);
+  border: none;
+}
+
+.tripCasey {
+  @include triplocation($fantasy);
+  border: none;
+}
+
+.tripDisneyland {
+  @include triplocation($main);
+  border: none;
+}
+
+.tripDumbo {
+  @include triplocation($fantasy);
+  border: none;
+}
+
+.tripEnchanted {
+  @include triplocation($adventure);
+  border: none;
+}
+
+.tripGadgets {
+  @include triplocation($toon);
+  border: none;
+}
+
+.tripHaunted {
+  @include triplocation($new);
+  border: none;
+}
+
+.tripIndiana {
+  @include triplocation($adventure);
+  border: none;
+}
+
+.tripIts {
+  @include triplocation($fantasy);
+  border: none;
+}
+
+.tripJungle {
+  @include triplocation($adventure);
+  border: none;
+}
+
+.tripKing {
+  @include triplocation($fantasy);
+  border: none;
+}
+
+.tripMark {
+  @include triplocation($frontier);
+  border: none;
+}
+
+.tripMatterhorn {
+  @include triplocation($fantasy);
+  border: none;
+}
+
+.tripMr {
+  @include triplocation($fantasy);
+  border: none;
+}
+
+.tripPeter {
+  @include triplocation($fantasy);
+  border: none;
+}
+
+.tripPinocchio {
+  @include triplocation($fantasy);
+  border: none;
+}
+
+.tripPirates {
+  @include triplocation($new);
+  border: none;
+}
+
+.tripRoger {
+  @include triplocation($toon);
+  border: none;
+}
+
+.tripSailing {
+  @include triplocation($frontier);
+  border: none;
+}
+
+.tripSnow {
+  @include triplocation($fantasy);
+  border: none;
+}
+
+.tripSpace {
+  @include triplocation($tomorrow);
+  border: none;
+}
+
+.tripSplash {
+  @include triplocation($critter);
+  border: none;
+}
+
+.tripStar {
+  @include triplocation($tomorrow);
+  border: none;
+}
+
+.tripStorybookland {
+  @include triplocation($fantasy);
+  border: none;
+}
+
+.tripSubmarine {
+  @include triplocation($tomorrow);
+  border: none;
+}
+
+.tripTarzan {
+  @include triplocation($adventure);
+  border: none;
+}
+
+.tripTeacups {
+  @include triplocation($fantasy);
+  border: none;
+}
+
+.tripWinnie {
+  @include triplocation($critter);
+  border: none;
+}
+
+#trip-button {
+height: 20px;
+width: 15px;
+border-radius: 50%;
+}
+
+#adventure-card-title {
+  color: $adventure;
+  font-family: $disney;
+}

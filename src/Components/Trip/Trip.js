@@ -67,6 +67,7 @@ function Trip(props) {
           <Button
             variant="contained"
             color="primary"
+            id="trip-button"
             onClick={() =>
               newEvent(
                 props.match.params.trip_id,
@@ -179,6 +180,7 @@ function Trip(props) {
         <Button
           variant="contained"
           color="primary"
+          id="trip-button"
           onClick={() =>
             newEvent(
               props.match.params.trip_id,
@@ -269,7 +271,11 @@ function Trip(props) {
           </Typography>
           <div className="trip-lands-main">
             <div className="trip-lands-left">
-              <Typography variant="h2" className="trip-adventure" onClick={() => setAdventureCard(true)}>
+              <Typography
+                variant="h2"
+                className="trip-adventure"
+                onClick={() => setAdventureCard(true)}
+              >
                 Adventureland
               </Typography>
               <Typography variant="h2" className="trip-critter">
@@ -302,7 +308,142 @@ function Trip(props) {
           <h2 className="tripyourday">Your day:</h2>
           {tripArray}
         </div>
-        <Card className={`${adventureCard ? "trip-land-card" : "trip-land-card-closed"}`}>{adventureArray}</Card>
+        <Card
+          className={`${
+            adventureCard ? "trip-land-card" : "trip-land-card-closed"
+          }`}
+        >
+          <Typography variant="h5" id="adventure-card-title">
+            Adventureland
+          </Typography>
+          {adventureArray}
+          <Button
+            onClick={() => setAdventureCard(false)}
+            variant="contained"
+            color="secondary"
+          >
+            CLOSE
+          </Button>
+        </Card>
+        <Card
+          className={`${
+            adventureCard ? "trip-land-card" : "trip-land-card-closed"
+          }`}
+        >
+          <Typography variant="h5" id="adventure-card-title">
+            Adventureland
+          </Typography>
+          {adventureArray}
+          <Button
+            onClick={() => setAdventureCard(false)}
+            variant="contained"
+            color="secondary"
+          >
+            CLOSE
+          </Button>
+        </Card>
+        <Card
+          className={`${
+            adventureCard ? "trip-land-card" : "trip-land-card-closed"
+          }`}
+        >
+          <Typography variant="h5" id="adventure-card-title">
+            Adventureland
+          </Typography>
+          {adventureArray}
+          <Button
+            onClick={() => setAdventureCard(false)}
+            variant="contained"
+            color="secondary"
+          >
+            CLOSE
+          </Button>
+        </Card>
+        <Card
+          className={`${
+            adventureCard ? "trip-land-card" : "trip-land-card-closed"
+          }`}
+        >
+          <Typography variant="h5" id="adventure-card-title">
+            Adventureland
+          </Typography>
+          {adventureArray}
+          <Button
+            onClick={() => setAdventureCard(false)}
+            variant="contained"
+            color="secondary"
+          >
+            CLOSE
+          </Button>
+        </Card>
+        <Card
+          className={`${
+            adventureCard ? "trip-land-card" : "trip-land-card-closed"
+          }`}
+        >
+          <Typography variant="h5" id="adventure-card-title">
+            Adventureland
+          </Typography>
+          {adventureArray}
+          <Button
+            onClick={() => setAdventureCard(false)}
+            variant="contained"
+            color="secondary"
+          >
+            CLOSE
+          </Button>
+        </Card>
+        <Card
+          className={`${
+            adventureCard ? "trip-land-card" : "trip-land-card-closed"
+          }`}
+        >
+          <Typography variant="h5" id="adventure-card-title">
+            Adventureland
+          </Typography>
+          {adventureArray}
+          <Button
+            onClick={() => setAdventureCard(false)}
+            variant="contained"
+            color="secondary"
+          >
+            CLOSE
+          </Button>
+        </Card>
+        <Card
+          className={`${
+            adventureCard ? "trip-land-card" : "trip-land-card-closed"
+          }`}
+        >
+          <Typography variant="h5" id="adventure-card-title">
+            Adventureland
+          </Typography>
+          {adventureArray}
+          <Button
+            onClick={() => setAdventureCard(false)}
+            variant="contained"
+            color="secondary"
+          >
+            CLOSE
+          </Button>
+        </Card>
+        <Card
+          className={`${
+            adventureCard ? "trip-land-card" : "trip-land-card-closed"
+          }`}
+        >
+          <Typography variant="h5" id="adventure-card-title">
+            Adventureland
+          </Typography>
+          {adventureArray}
+          <Button
+            onClick={() => setAdventureCard(false)}
+            variant="contained"
+            color="secondary"
+          >
+            CLOSE
+          </Button>
+        </Card>
       </div>
     </>
   );

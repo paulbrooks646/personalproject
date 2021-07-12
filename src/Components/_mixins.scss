@@ -31,6 +31,14 @@
   width: 200px;
 }
 
+@mixin triplocation($color) {
+ font-size: 20px;
+  color: $color;
+  position: relative;
+  border: solid 1px black;
+  width: 200px;
+}
+
 @mixin land($color) {
   color: $color;
   font-family: $disney;

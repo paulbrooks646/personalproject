@@ -6,7 +6,7 @@ import "./Trip.scss";
 import { Link } from "react-router-dom";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
-import Card from "@material-ui/core/Card"
+import Card from "@material-ui/core/Card";
 
 function Trip(props) {
   const [trip, setTrip] = useState([]);
@@ -57,7 +57,6 @@ function Trip(props) {
   ));
 
   const adventureArray = props.attractions.attractions.map((e, index) => {
-
     if (e.location === "Adventureland") {
       return (
         <div className={`divtrip${e.name}`} key={index}>
@@ -79,32 +78,36 @@ function Trip(props) {
             Add
           </Button>
         </div>
-      )
-    };
+      );
+    }
   });
 
   const critterArray = props.attractions.attractions.map((e, index) => {
-    return (
-      <div className={`divtrip${e.name}`} key={index}>
-        <Link to={`/Attraction/${e.attraction_id}`}>
-          <h2 className={`trip${e.name}`}>{e.name}</h2>
-        </Link>
-        <Button
-          variant="contained"
-          color="primary"
-          onClick={() =>
-            newEvent(
-              props.match.params.trip_id,
-              e.attraction_id,
-              props.user.user.id
-            )
-          }
-        >
-          Add
-        </Button>
-      </div>
-    );
+    if (e.location === "Critter Country") {
+      return (
+        <div className={`divtrip${e.name}`} key={index}>
+          <Link to={`/Attraction/${e.attraction_id}`}>
+            <h2 className={`trip${e.name}`}>{e.name}</h2>
+          </Link>
+          <Button
+            variant="contained"
+            color="primary"
+            id="trip-button"
+            onClick={() =>
+              newEvent(
+                props.match.params.trip_id,
+                e.attraction_id,
+                props.user.user.id
+              )
+            }
+          >
+            Add
+          </Button>
+        </div>
+      );
+    }
   });
+
   const fantasyArray = props.attractions.attractions.map((e, index) => {
     return (
       <div className={`divtrip${e.name}`} key={index}>
@@ -278,27 +281,55 @@ function Trip(props) {
               >
                 Adventureland
               </Typography>
-              <Typography variant="h2" className="trip-critter">
+              <Typography
+                variant="h2"
+                className="trip-critter"
+                onClick={() => setCritterCard(true)}
+              >
                 Critter Country
               </Typography>
-              <Typography variant="h2" className="trip-fantasy">
+              <Typography
+                variant="h2"
+                className="trip-fantasy"
+                onClick={() => setFantasyCard(true)}
+              >
                 Fantasyland
               </Typography>
-              <Typography variant="h2" className="trip-frontier">
+              <Typography
+                variant="h2"
+                className="trip-frontier"
+                onClick={() => setFrontierCard(true)}
+              >
                 Frontierland
               </Typography>
             </div>
             <div className="trip-lands-right">
-              <Typography variant="h2" className="trip-mains">
+              <Typography
+                variant="h2"
+                className="trip-mains"
+                onClick={() => setMainCard(true)}
+              >
                 Main Street USA
               </Typography>
-              <Typography variant="h2" className="trip-new">
+              <Typography
+                variant="h2"
+                className="trip-new"
+                onClick={() => setNewCard(true)}
+              >
                 New Orleans Square
               </Typography>
-              <Typography variant="h2" className="trip-tomorrow">
+              <Typography
+                variant="h2"
+                className="trip-tomorrow"
+                onClick={() => setTomorrowCard(true)}
+              >
                 Tomorrowland
               </Typography>
-              <Typography variant="h2" className="trip-toon">
+              <Typography
+                variant="h2"
+                className="trip-toon"
+                onClick={() => setToonCard(true)}
+              >
                 Toon Town
               </Typography>
             </div>
@@ -410,34 +441,18 @@ function Trip(props) {
             CLOSE
           </Button>
         </Card>
+        
         <Card
           className={`${
-            adventureCard ? "trip-land-card" : "trip-land-card-closed"
+            critterCard ? "trip-land-card" : "trip-land-card-closed"
           }`}
         >
-          <Typography variant="h5" id="adventure-card-title">
-            Adventureland
+          <Typography variant="h5" id="critter-card-title">
+            Critter Country
           </Typography>
-          {adventureArray}
+          {critterArray}
           <Button
-            onClick={() => setAdventureCard(false)}
-            variant="contained"
-            color="secondary"
-          >
-            CLOSE
-          </Button>
-        </Card>
-        <Card
-          className={`${
-            adventureCard ? "trip-land-card" : "trip-land-card-closed"
-          }`}
-        >
-          <Typography variant="h5" id="adventure-card-title">
-            Adventureland
-          </Typography>
-          {adventureArray}
-          <Button
-            onClick={() => setAdventureCard(false)}
+            onClick={() => setCritterCard(false)}
             variant="contained"
             color="secondary"
           >

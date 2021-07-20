@@ -148,77 +148,85 @@ function Survey(props) {
           </h2>
         </div>
         <div className="surveyarray">{attractionsArray}</div> */}
-        <div className="turtle">
-          <div className="michaelangelo">
-            <div className="turtle-eye">
-              <div className="turtle-pupil"></div>
+        <div className="swiper">
+          <div className="swiper-head">
+            <div className="swiper-ears">
+              <div className="swiper-ear-left">
+                <div className="swiper-inner-ear"></div>
+              </div>
+              <div className="swiper-ear-right">
+                <div className="swiper-inner-ear"></div>
+              </div>
             </div>
-            <div className="turtle-eye">
-              <div className="turtle-pupil"></div>
-            </div>
-          </div>
-
-          <div className="turtle-mouth"></div>
-        </div>
-        <div className="turtle">
-          <div className="donatello">
-            <div className="turtle-eye">
-              <div className="turtle-pupil"></div>
-            </div>
-            <div className="turtle-eye">
-              <div className="turtle-pupil"></div>
-            </div>
-          </div>
-
-          <div className="turtle-mouth"></div>
-        </div>
-        <div className="turtle">
-          <div className="raphael">
-            <div className="turtle-eye">
-              <div className="turtle-pupil"></div>
-            </div>
-            <div className="turtle-eye">
-              <div className="turtle-pupil"></div>
-            </div>
-          </div>
-
-          <div className="turtle-mouth"></div>
-        </div>
-        <div className="turtle">
-          <div className="leonardo">
-            <div className="turtle-eye">
-              <div className="turtle-pupil"></div>
-            </div>
-            <div className="turtle-eye">
-              <div className="turtle-pupil"></div>
-            </div>
-          </div>
-
-          <div className="turtle-mouth"></div>
-        </div>
-        <div className="lily">
-          <div className="lily-head">
-            <div className="lily-hair-left"></div>
-            <div className="lily-face">
-              <div className="lily-eyes">
-                <div className="lily-eye">
-                  <div className="lily-iris">
-                    <div className="lily-pupil"></div>
+            <div className="swiper-face">
+              <div className="swiper-mask">
+                <div className="swiper-brows">
+                  <div className="swiper-brow-left"></div>
+                  <div className="swiper-brow-right"></div>
+                </div>
+                <div className="swiper-eyes">
+                  <div className="swiper-eye">
+                    <div className="swiper-pupil"></div>
+                  </div>
+                  <div className="swiper-eye">
+                    <div className="swiper-pupil"></div>
                   </div>
                 </div>
-                <div className="lily-eye">
-                  <div className="lily-iris">
-                    <div className="lily-pupil"></div>
+                <div className="swiper-nose">
+                  <div className="swiper-nose-tip"></div>
+                  <div className="swiper-whiskers">
+                    <div className="swiper-whiskers-top">
+                      <div className="whisker-left"></div>
+                      <div className="whisker-middle"></div>
+                      <div className="whisker-right"></div>
+                    </div>
+                    <div className="swiper-whiskers-bottom">
+                      <div className="whisker-left"></div>
+                      <div className="whisker-middle"></div>
+                      <div className="whisker-right"></div>
+                    </div>
+                  </div>
+                </div>
+                <div className="swiper-mouth">
+                  <div className="swiper-mouth-top">
+                    <div className="swiper-tooth"></div>
+                    <div className="swiper-tooth"></div>
+                    <div className="swiper-tooth"></div>
+                    <div className="swiper-tooth"></div>
+                    <div className="swiper-tooth"></div>
+                    <div className="swiper-tooth"></div>
+                  </div>
+                  <div className="swiper-mouth-bottom">
+                    <div className="swiper-tooth"></div>
+                    <div className="swiper-tooth"></div>
+                    <div className="swiper-tooth"></div>
+                    <div className="swiper-tooth"></div>
+                    <div className="swiper-tooth"></div>
+                    <div className="swiper-tooth"></div>
                   </div>
                 </div>
               </div>
-              <div className="lily-nose"></div>
-              <div className="lily-mouth"></div>
             </div>
-            <div className="lily-hair-right"></div>
           </div>
-          <div className="lily-body"></div>
-          <div className="lily-legs"></div>
+          <div className="swiper-body">
+            <div className="swiper-left-arm">
+              <div className="swiper-glove">
+                <div className="swiper-finger-one"></div>
+                <div className="swiper-finger-two"></div>
+                <div className="swiper-finger-three"></div>
+                <div className="swiper-finger-four"></div>
+              </div>
+            </div>
+            <div className="swiper-tummy"></div>
+            <div className="swiper-right-arm">
+              <div className="swiper-glove">
+                <div className="swiper-finger-one"></div>
+                <div className="swiper-finger-two"></div>
+                <div className="swiper-finger-three"></div>
+                <div className="swiper-finger-four"></div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </>

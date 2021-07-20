@@ -5,8 +5,6 @@ import "./Survey.scss";
 import axios from "axios";
 
 function Survey(props) {
-
-
   useEffect(() => {
     axios.get("/api/attractions").then((res) => {
       props.getAttractions(res.data);
@@ -141,7 +139,7 @@ function Survey(props) {
   return (
     <>
       <div className="surveymain">
-        <div className="survey-introduction">
+        {/* <div className="survey-introduction">
           <h1>Disneyland Attraction Survey</h1>
           <h2>
             We strive to give our users the most accurate information. We would
@@ -149,8 +147,79 @@ function Survey(props) {
             feedback but would like to change your opinion, simply submit again.
           </h2>
         </div>
-        <div className="surveyarray">{attractionsArray}</div>
-        
+        <div className="surveyarray">{attractionsArray}</div> */}
+        <div className="turtle">
+          <div className="michaelangelo">
+            <div className="turtle-eye">
+              <div className="turtle-pupil"></div>
+            </div>
+            <div className="turtle-eye">
+              <div className="turtle-pupil"></div>
+            </div>
+          </div>
+
+          <div className="turtle-mouth"></div>
+        </div>
+        <div className="turtle">
+          <div className="donatello">
+            <div className="turtle-eye">
+              <div className="turtle-pupil"></div>
+            </div>
+            <div className="turtle-eye">
+              <div className="turtle-pupil"></div>
+            </div>
+          </div>
+
+          <div className="turtle-mouth"></div>
+        </div>
+        <div className="turtle">
+          <div className="raphael">
+            <div className="turtle-eye">
+              <div className="turtle-pupil"></div>
+            </div>
+            <div className="turtle-eye">
+              <div className="turtle-pupil"></div>
+            </div>
+          </div>
+
+          <div className="turtle-mouth"></div>
+        </div>
+        <div className="turtle">
+          <div className="leonardo">
+            <div className="turtle-eye">
+              <div className="turtle-pupil"></div>
+            </div>
+            <div className="turtle-eye">
+              <div className="turtle-pupil"></div>
+            </div>
+          </div>
+
+          <div className="turtle-mouth"></div>
+        </div>
+        <div className="lily">
+          <div className="lily-head">
+            <div className="lily-hair-left"></div>
+            <div className="lily-face">
+              <div className="lily-eyes">
+                <div className="lily-eye">
+                  <div className="lily-iris">
+                    <div className="lily-pupil"></div>
+                  </div>
+                </div>
+                <div className="lily-eye">
+                  <div className="lily-iris">
+                    <div className="lily-pupil"></div>
+                  </div>
+                </div>
+              </div>
+              <div className="lily-nose"></div>
+              <div className="lily-mouth"></div>
+            </div>
+            <div className="lily-hair-right"></div>
+          </div>
+          <div className="lily-body"></div>
+          <div className="lily-legs"></div>
+        </div>
       </div>
     </>
   );
